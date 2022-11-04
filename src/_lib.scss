@@ -1,0 +1,15 @@
+body {
+  font-size: 14px;
+  background: $bg2;
+}
+li {
+  list-style: none;
+}
+a {
+  color: $anchor_text;
+}
+
+.help-links-wrapper,
+.header-wrapper {
+  padding: $padding;
+}

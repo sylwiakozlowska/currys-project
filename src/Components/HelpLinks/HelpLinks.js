@@ -13,14 +13,16 @@ const helpLinks = [
 export const HelpLinks = () => {
   const helpLinksMenu = helpLinks.map((helpLink) => {
     return (
-      <a>
-        <li>{helpLink}</li>
-      </a>
+      <li className="help-links-list">
+        <a href="#" className="help-link">
+          {helpLink}
+        </a>
+      </li>
     );
   });
   return (
-    <section className="help-links-component">
-      <ul>{helpLinksMenu}</ul>
-    </section>
+    <div className="help-links-component">
+      <ul className="help-links-content">{helpLinksMenu}</ul>
+    </div>
   );
 };

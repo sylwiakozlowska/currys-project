@@ -1,4 +1,17 @@
+.help-links-wrapper {
+  border: 2px solid green;
+  background: $helpLinks_background;
+}
 .help-links-component {
-    border: 2px solid green;
-    background: $helpLinks_background;
+  @include touch {
+    display: none;
+  }
+}
+.help-links-content {
+  display: flex;
+  justify-content: flex-end;
+  .help-links-list {
+    list-style-type: disc;
+    margin: 0 $margin2;
+  }
 }
