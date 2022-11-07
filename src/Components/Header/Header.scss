@@ -1,18 +1,13 @@
 .header-component {
   border: 1px solid red;
   display: flex;
+  @include mobile {
+    display: none;
+  }
+  @include touch {
+    display: none;
+  }
 
-  //   .header-logo-wrapper {
-  //     @include mobile {
-  //       flex-grow: 1;
-  //     }
-  //     img {
-  //       @include mobile {
-  //         height: 50px;
-  //         flex-grow: 1;
-  //       }
-  //     }
-  //   }
   .header-content-wrapper {
     display: flex;
     flex-direction: column;
@@ -25,20 +20,7 @@
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
-    // width: 100%;
-    // @include mobile {
-    //   flex-wrap: wrap-reverse;
-    // }
-    // .header-search-wrapper,
-    // .header-icons-wrapper {
-    //   //   width: 100%;
-    //   //   @include mobile {
-    //   //     width: 100%;
-    //   //   }
-    //   //   @include touch {
-    //   //     width: 100%;
-    //   //   }
-    // }
+    align-items: center;
   }
   .header-menu-nav-wrapper {
     @include touch {
