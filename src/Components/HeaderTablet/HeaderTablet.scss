@@ -1,0 +1,29 @@
+.header-tablet-component {
+  border: 1px solid blue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  @include desktop {
+    display: none;
+  }
+
+  .header-tablet-logo-wrapper {
+    width: 16%;
+    display: flex;
+  }
+  .header-tablet-icons-wrapper {
+    border: 1px solid rgba(231, 77, 16, 0.165);
+
+  }
+  .header-tablet-search-wrapper {
+    border: 1px solid brown;
+  }
+  @include mobile {
+    .header-tablet-search-wrapper {
+      width: 100%;
+      order: 3;
+      padding: 5px;
+    }
+  }
+}
