@@ -8,14 +8,14 @@ export const MenuNav = () => {
   const { listOptions, listTech } = useSelector(selectMenuNav);
   const menuListOptions = listOptions.map(({ id, text }) => {
     return (
-      <li key={id}>
+      <li className="options" key={id}>
         <a href="#">{text}</a>
       </li>
     );
   });
   const menuListTech = listTech.map(({ id, text }) => {
     return (
-      <li key={id}>
+      <li className="tech" key={id}>
         <a href="#">{text}</a>
       </li>
     );

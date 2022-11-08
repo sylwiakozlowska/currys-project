@@ -1,8 +1,10 @@
 import "./App.css";
 import { HelpLinks } from "./Components/HelpLinks/HelpLinks";
 import { Header } from "./Components/Header/Header";
-import "./styles.scss";
+import { HeaderTablet } from "./Components/HeaderTablet/HeaderTablet";
 import "./Components/icons.scss";
+
+import "./styles.scss";
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
       </section>
       <header className="header-wrapper">
         <Header />
+        <HeaderTablet />
       </header>
     </div>
   );
