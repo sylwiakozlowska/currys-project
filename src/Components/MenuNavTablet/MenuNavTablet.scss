@@ -1,0 +1,8 @@
+.menu-nav-tablet-component {
+  @include desktop {
+    display: none;
+  }
+  a {
+    margin: 0 10px;
+  }
+}

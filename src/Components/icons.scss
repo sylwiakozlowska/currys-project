@@ -12,15 +12,18 @@ body {
 //   font-size: 0.3em;
 // }
 .location-icon::before {
-    content: "\e90c";
-  }
-  .account-icon::before {
-    content: "\e90d";
-  }
-  .basket-icon::before {
-    content: "\e90e";
-  }
-  .search-icon::before {
-    content: "\e91D";
-    // color: $search-icon_text;
-  }
+  content: "\e90c";
+}
+.account-icon::before {
+  content: "\e90d";
+}
+.basket-icon::before {
+  content: "\e90e";
+}
+.search-icon::before {
+  content: "\e91D";
+  // color: $search-icon_text;
+}
+.menu-icon::before {
+  content: "\f0C9";
+}
