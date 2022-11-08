@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles.scss";
 import logo from "../../assets/logo.svg";
 import { HeaderIcons } from "./HeaderIcons/HeaderIcons";
-
+import { MenuNav } from "../MenuNav/MenuNav";
 export const Header = () => {
   return (
     <section className="header-component">
@@ -16,7 +16,9 @@ export const Header = () => {
             <HeaderIcons />
           </div>
         </div>
-        <div className="header-menu-nav-wrapper">menu</div>
+        <div className="header-menu-nav-wrapper">
+          <MenuNav />
+        </div>
       </div>
     </section>
   );
