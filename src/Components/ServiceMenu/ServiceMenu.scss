@@ -1,0 +1,21 @@
+.service-menu-wrapper {
+  border: 1px solid greenyellow;
+  .service-menu-component {
+    background: $service-menu_bg;
+    padding: 0 30px;
+  }
+  .service-menu-content {
+    display: flex;
+    justify-content: space-around;
+    .service-menu-list {
+      display: flex;
+      padding: 10px;
+      a {
+        display: flex;
+        i {
+          margin: 0 2px;
+        }
+      }
+    }
+  }
+}
