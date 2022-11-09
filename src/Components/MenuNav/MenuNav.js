@@ -1,6 +1,5 @@
 import React from "react";
 import "../../styles.scss";
-// import { listOptions, listTech } from "../../assets/MenuNavData.js";
 import { selectMenuNav } from "../../Store/features/menuNav/menuNavSlice";
 import { useSelector } from "react-redux";
 

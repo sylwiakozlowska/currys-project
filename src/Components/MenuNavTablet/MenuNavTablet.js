@@ -1,7 +1,5 @@
 import React from "react";
 import "../../styles.scss";
-// import { selectMenuNav } from "../../Store/features/menuNav/menuNavSlice";
-// import { useSelector } from "react-redux";
 
 export const MenuNavTablet = () => {
   return (
