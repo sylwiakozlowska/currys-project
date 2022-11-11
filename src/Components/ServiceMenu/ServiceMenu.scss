@@ -18,4 +18,18 @@
       }
     }
   }
+  .carousel {
+    width: 100%;
+    .carousel-initialized {
+      @include desktop {
+        display: none;
+      }
+      .carousel-prev:before {
+        display: none;
+      }
+      .carousel-next:before {
+        background: url(https://currysprod.a.bigcontent.io/v1/static/icon-arrowright_1);
+      }
+    }
+  }
 }

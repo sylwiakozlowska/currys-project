@@ -30,3 +30,17 @@ body {
 .tick-icon::before {
   content: "\e620";
 }
+
+.carousel-next::before {
+  content: "";
+  background: url(https://currysprod.a.bigcontent.io/v1/static/icon-arrowright_1);
+  background-color: #56707a;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  background-position: 5px;
+}
+.carousel-prev::before {
+  content: "";
+  display: none;
+}

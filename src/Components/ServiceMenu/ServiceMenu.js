@@ -2,7 +2,16 @@ import React from "react";
 import "../../styles.scss";
 import { useSelector } from "react-redux";
 import { selectServiceMenu } from "../../Store/features/serviceMenu/serviceMenuSlice";
+import Slider from "infinite-react-carousel";
 
+const settings = {
+  autoplay: true,
+  autoplaySpeed: 8000,
+  wheelScroll: 3,
+  // dots: true,
+  centerPadding: 90,
+  arrows: false,
+};
 export const ServiceMenu = () => {
   const { serviceMenu } = useSelector(selectServiceMenu);
   const serviceMenuList = serviceMenu.map(({ id, serviceIcon, text }) => {
@@ -19,7 +28,11 @@ export const ServiceMenu = () => {
   });
   return (
     <nav className="service-menu-component">
-      <ul className="service-menu-content">{serviceMenuList}</ul>
+      <ul className="service-menu-content">
+        <Slider className="carousel" {...settings}>
+          {serviceMenuList}
+        </Slider>
+      </ul>
     </nav>
   );
 };
