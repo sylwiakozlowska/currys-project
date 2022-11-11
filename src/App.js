@@ -3,6 +3,7 @@ import { HelpLinks } from "./Components/HelpLinks/HelpLinks";
 import { Header } from "./Components/Header/Header";
 import { HeaderTablet } from "./Components/HeaderTablet/HeaderTablet";
 import {ServiceMenu} from "./Components/ServiceMenu/ServiceMenu";
+import {CardDeal} from "./Components/Card/CardDeal";
 import "./Components/icons.scss";
 
 import "./styles.scss";
@@ -19,6 +20,9 @@ function App() {
       </header>
       <section className="service-menu-wrapper">
         <ServiceMenu />
+      </section>
+      <section className="card-deal-wrapper">
+        <CardDeal/>
       </section>
     </div>
   );

@@ -1,0 +1,17 @@
+.card-deal-wrapper {
+  border: 1px solid goldenrod;
+  padding: 0 10%;
+}
+
+.card-deal-component {
+  .card-deal-content {
+    display: flex;
+  }
+  .card-deal-save-content {
+    display: flex;
+  }
+  img {
+    padding: 10px;
+    border-radius: 20px;
+  }
+}
