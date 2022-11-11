@@ -6,9 +6,15 @@
 .card-deal-component {
   .card-deal-content {
     display: flex;
+    // @include mobile {
+    //     flex-direction: column;
+    // }
   }
   .card-deal-save-content {
     display: flex;
+    .carousel {
+      width: 100%;
+    }
   }
   img {
     padding: 10px;
