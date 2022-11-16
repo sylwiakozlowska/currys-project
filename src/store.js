@@ -1,10 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
-import menuNavReducer from "./Store/features/menuNav/menuNavSlice";
+import menuReducer from "./Store/features/menu/menuSlice";
 import serviceMenuReducer from "./Store/features/serviceMenu/serviceMenuSlice";
 import cardDealReducer from "./Store/features/cardDeal/cardDealSlice";
+import helpLinksReducer from "./Store/features/helpLinks/helpLinksSlice";
 
 export const store = configureStore({
-  reducer: { menuNav: menuNavReducer, serviceMenu: serviceMenuReducer, cardDeal: cardDealReducer  },
+  reducer: {
+    menu: menuReducer,
+    serviceMenu: serviceMenuReducer,
+    cardDeal: cardDealReducer,
+    helpLinks: helpLinksReducer,
+  },
 });
 export default store;
 // console.log(store.getState())
