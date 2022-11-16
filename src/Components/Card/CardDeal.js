@@ -6,7 +6,7 @@ import Slider from "infinite-react-carousel";
 
 const settings = {
   autoplay: true,
-  autoplaySpeed: 8000,
+  autoplaySpeed: 3e3,
   wheelScroll: 3,
   // dots: true,
   centerPadding: 90,
