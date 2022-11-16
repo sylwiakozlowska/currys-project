@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles.scss";
 import logo from "../../assets/logo.svg";
 import { HeaderIcons } from "./HeaderIcons/HeaderIcons";
-import { MenuNav } from "../MenuNav/MenuNav";
+import { MenuNav } from "../Menu/MenuNav/MenuNav";
 export const Header = () => {
   return (
     <section className="header-component">

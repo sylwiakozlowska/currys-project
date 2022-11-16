@@ -1,6 +1,6 @@
 import React from "react";
 import "../HeaderIcons/HeaderIcons.scss";
-import {MenuNavTablet} from "../../MenuNavTablet/MenuNavTablet";
+import {MenuNavTablet} from "../../MenuTablet/MenuNavTablet/MenuNavTablet";
 
 export const HeaderIcons = () => {
   return (
