@@ -1,16 +1,11 @@
 import React from "react";
 import "../../styles.scss";
+import { useSelector } from "react-redux";
+import { selectHelpLinks } from "../../Store/features/helpLinks/helpLinksSlice";
 
-const helpLinks = [
-  "Help & Support",
-  "Track my order & repair",
-  "Returns",
-  "Spread the cost",
-  "Gift cards",
-  "TechTalk",
-  "Business",
-];
 export const HelpLinks = () => {
+  const { helpLinks } = useSelector(selectHelpLinks);
+
   const helpLinksMenu = helpLinks.map((helpLink) => {
     return (
       <li className="help-links-list">
@@ -21,7 +16,7 @@ export const HelpLinks = () => {
     );
   });
   return (
-    <div className="help-links-component">
+    <div className="help-links-component ">
       <ul className="help-links-content">{helpLinksMenu}</ul>
     </div>
   );
