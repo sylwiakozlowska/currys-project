@@ -11,6 +11,11 @@ body {
 //   content: "\e61c";
 //   font-size: 0.3em;
 // }
+.close-icon::before {
+  content: "\e607";
+  font-size: 1.5em;
+  color: #ccc;
+}
 .location-icon::before {
   content: "\e90c";
 }
@@ -29,6 +34,37 @@ body {
 }
 .tick-icon::before {
   content: "\e620";
+}
+.expand-menu-right-icon::before {
+  content: "\f054";
+  font-size: 0.7em;
+  font-weight: lighter;
+}
+
+.washingmachine-icon::before {
+  content: "\e901";
+}
+.tv-icon::before {
+  content: "\e900";
+}
+.computing-icon::before {
+  content: "\e902";
+}
+.games-icon::before {
+  content: "\e903";
+}
+
+.cameras-icon::before {
+  content: "\e904";
+}
+.phones-icon::before {
+  content: "\e905";
+}
+.smarttech-icon::before {
+  content: "\e906";
+}
+.home-icon::before {
+  content: "\e907";
 }
 
 .carousel-next::before {
