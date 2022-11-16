@@ -1,0 +1,43 @@
+.menu-nav-component {
+  display: flex;
+  flex-wrap: wrap;
+
+  .menu-list-options-component {
+    display: flex;
+  }
+  .menu-list-options,
+  .menu-list-tech {
+    display: inline-flex;
+    padding: $padding2;
+    .options,
+    .tech {
+      a {
+        padding: $padding2;
+      }
+    }
+  }
+  .menu-list-options {
+    flex-grow: 1;
+  }
+  .menu-list-tech {
+    li:last-child {
+      background: $menu-nav_deal_bg;
+      border-radius: $menu-nav_deal_border;
+      a {
+        color: $menu-nav_deal_text;
+      }
+    }
+  }
+}
+
+//////////
+.header-menu-nav-wrapper {
+  border: 1px solid black;
+}
+.menu-nav-component {
+  border: 1px solid rgb(49, 4, 85);
+}
+.menu-list-options,
+.menu-list-tech {
+  border: 1px solid rgb(240, 8, 47);
+}
