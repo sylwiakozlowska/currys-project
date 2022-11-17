@@ -37,7 +37,7 @@ body {
 }
 .expand-menu-right-icon::before {
   content: "\f054";
-  font-size: 0.7em;
+  font-size: 1em;
   font-weight: lighter;
 }
 
@@ -79,4 +79,15 @@ body {
 .carousel-prev::before {
   content: "";
   display: none;
+}
+
+.washingmachine-icon,
+.tv-icon,
+.computing-icon,
+.games-icon,
+.cameras-icon,
+.phones-icon,
+.smarttech-icon,
+.home-icon {
+  font-size: large;
 }

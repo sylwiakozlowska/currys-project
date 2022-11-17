@@ -1,9 +1,10 @@
 .menu-nav-component {
-  display: flex;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-wrap: wrap;
 
-  .menu-list-options-component {
+  .menu-nav-list-component {
     display: flex;
+    // flex-wrap: nowrap;
   }
   .menu-list-options,
   .menu-list-tech {

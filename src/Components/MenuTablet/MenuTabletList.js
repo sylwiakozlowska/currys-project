@@ -37,8 +37,8 @@ export const MenuTabletList = () => {
   });
   return (
     <div className="list-options-component">
-      <ul>{menuListOptions}</ul>
-      <ul>{menuListTech}</ul>
+      <ul className="menu-nav-tablet-list-options">{menuListOptions}</ul>
+      <ul className=" menu-nav-tablet-list-tech">{menuListTech}</ul>
     </div>
   );
 };

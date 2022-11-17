@@ -22,7 +22,7 @@ export const MenuNavLists = () => {
     );
   });
   return (
-    <div className="menu-list-options-component">
+    <div className="menu-nav-list-component">
       <ul className="menu-list-options">{menuListOptions}</ul>
       <ul className="menu-list-tech">{menuListTech}</ul>
     </div>

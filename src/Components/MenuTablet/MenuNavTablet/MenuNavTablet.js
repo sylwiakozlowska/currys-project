@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import "../../../styles.scss";
 import { HelpLinks } from "../../HelpLinks/HelpLinks";
-// import { ListOptions } from "../MenuNavLists/MenuList";
-// import { ListTech } from "../MenuNavLists/ListTech";
 import { MenuTabletList } from "../MenuTabletList";
 
 export const MenuNavTablet = () => {
@@ -32,10 +30,8 @@ export const MenuNavTablet = () => {
               ></i>
             </button>
           </div>
-          <h1>Shop by category</h1>
-          <div className="menu-nav-tablet-list-options menu-nav-tablet-list-tech">
-            <MenuTabletList />
-          </div>
+          <h1 className="menu-nav-tablet-title">Shop by category</h1>
+          <MenuTabletList />
           <HelpLinks />
         </div>
       )}

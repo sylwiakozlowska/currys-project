@@ -5,12 +5,11 @@ import { HeaderTablet } from "./Components/HeaderTablet/HeaderTablet";
 import {ServiceMenu} from "./Components/ServiceMenu/ServiceMenu";
 import {CardDeal} from "./Components/Card/CardDeal";
 import "./Components/icons.scss";
-
 import "./styles.scss";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App page">
       <section className="help-links-wrapper">
         <HelpLinks />
       </section>
