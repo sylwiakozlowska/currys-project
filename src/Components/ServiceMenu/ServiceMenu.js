@@ -5,12 +5,16 @@ import { selectServiceMenu } from "../../Store/features/serviceMenu/serviceMenuS
 import Slider from "infinite-react-carousel";
 
 const settings = {
+  rows: 1,
   autoplay: true,
   autoplaySpeed: 3e3,
-  wheelScroll: 1,
-  slidesPerRow:3,
+  slidesToShow: 3,
+  autoplayScroll: 1,
+  // wheelScroll: 1,
+  slidesPerRow:1,
   centerPadding: 90,
   arrows: false,
+  
 };
 export const ServiceMenu = () => {
   const { serviceMenu } = useSelector(selectServiceMenu);
