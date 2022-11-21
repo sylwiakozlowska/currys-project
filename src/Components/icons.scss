@@ -32,8 +32,10 @@ body {
 .menu-icon::before {
   content: "\f0C9";
 }
-.tick-icon::before {
-  content: "\e620";
+.deal-icon::before {
+  content: "\e90a";
+  font-size: 1.5em;
+
 }
 .expand-menu-right-icon::before {
   content: "\f054";

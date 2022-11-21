@@ -1,13 +1,17 @@
+import React, { useState } from "react";
 import "./App.css";
+
 import { HelpLinks } from "./Components/HelpLinks/HelpLinks";
 import { Header } from "./Components/Header/Header";
 import { HeaderTablet } from "./Components/HeaderTablet/HeaderTablet";
-import {ServiceMenu} from "./Components/ServiceMenu/ServiceMenu";
-import {CardDeal} from "./Components/Card/CardDeal";
+import { ServiceMenu } from "./Components/ServiceMenu/ServiceMenu";
+import { CardDeal } from "./Components/Card/CardDeal";
 import "./Components/icons.scss";
 import "./styles.scss";
 
 function App() {
+  // const [openMenu, setOpenMenu] = useState(false);
+
   return (
     <div className="App page">
       <section className="help-links-wrapper">
@@ -21,7 +25,7 @@ function App() {
         <ServiceMenu />
       </section>
       <section className="card-deal-wrapper">
-        <CardDeal/>
+        <CardDeal />
       </section>
     </div>
   );

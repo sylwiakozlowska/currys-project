@@ -19,7 +19,7 @@ export const HeaderIcons = () => {
               <i className="glyph basket-icon"></i>
               <p>Basket</p>
             </a>
-            <MenuNavTablet/>
+            {/* <MenuNavTablet/> */}
         </div>
       </div>
     </div>

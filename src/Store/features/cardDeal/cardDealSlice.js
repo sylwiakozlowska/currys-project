@@ -25,7 +25,7 @@ const initialState = {
       alt: "LSTV Campaign - Save up to £500 on selected TVs",
     },
     {
-      id: 2,
+      id: 1,
       src: "https://media.currys.biz/i/currysprod/wk27-hero-small-tv-1in20-lstv?$jpegSmall$",
       alt: "LSTV Campaign - Save up to £500 on selected TVs",
     },

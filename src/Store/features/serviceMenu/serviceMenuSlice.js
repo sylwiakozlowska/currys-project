@@ -4,24 +4,24 @@ const initialState = {
   serviceMenu: [
     {
       id: 0,
-      serviceIcon: "tick-icon",
+      serviceIcon: "deal-icon",
       text: "ShopLive 24/7, video call an expert to help you shop",
     },
     {
       id: 1,
-      serviceIcon: "tick-icon",
+      serviceIcon: "deal-icon",
       text: "You won't get it cheaper. Full stop.",
     },
     {
       id: 2,
-      serviceIcon: "tick-icon",
+      serviceIcon: "deal-icon",
       text: "Spread the cost from £99 (24.9% APR representative variable)",
     },
-    {
-      id: 3,
-      serviceIcon: "tick-icon",
-      text: "Free order &amp; collect in an hour",
-    },
+    // {
+    //   id: 3,
+    //   serviceIcon: "deal-icon",
+    //   text: "Free order &amp; collect in an hour",
+    // },
   ],
 };
 export const serviceMenuSlice = createSlice({
