@@ -1,6 +1,5 @@
 import React from "react";
 import "../HeaderIcons/HeaderIcons.scss";
-import {MenuNavTablet} from "../../MenuTablet/MenuNavTablet/MenuNavTablet";
 
 export const HeaderIcons = () => {
   return (
@@ -19,7 +18,6 @@ export const HeaderIcons = () => {
               <i className="glyph basket-icon"></i>
               <p>Basket</p>
             </a>
-            {/* <MenuNavTablet/> */}
         </div>
       </div>
     </div>
