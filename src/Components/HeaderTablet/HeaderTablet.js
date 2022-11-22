@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../styles.scss";
 import logo from "../../assets/logo.svg";
 import { HeaderIcons } from "../Header/HeaderIcons/HeaderIcons";
-import { MenuNavTablet } from "../MenuTablet/MenuNavTablet/MenuNavTablet";
+import { useDispatch } from "react-redux";
+import { showMenu } from "../../Store/features/app/appSlice";
+
 
 export const HeaderTablet = () => {
-  const [openMenu, setOpenMenu] = useState(false);
-  const onClose = () => {
-    setOpenMenu(false);
-  };
+  const dispatch = useDispatch()
   return (
     <section className="header-tablet-component">
       <div className="header-tablet-logo-wrapper">
@@ -20,13 +19,12 @@ export const HeaderTablet = () => {
         <a
           href="#"
           onClick={() => {
-            setOpenMenu(true);
+            dispatch(showMenu());
           }}
         >
           <i className="glyph menu-icon"></i>
           <p>Menu</p>
         </a>
-        {openMenu && <MenuNavTablet onClose={onClose} />}
       </div>
     </section>
   );

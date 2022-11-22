@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import "./App.css";
-
+import "./Components/icons.scss";
+import "./styles.scss";
 import { HelpLinks } from "./Components/HelpLinks/HelpLinks";
 import { Header } from "./Components/Header/Header";
 import { HeaderTablet } from "./Components/HeaderTablet/HeaderTablet";
 import { ServiceMenu } from "./Components/ServiceMenu/ServiceMenu";
 import { CardDeal } from "./Components/Card/CardDeal";
-import "./Components/icons.scss";
-import "./styles.scss";
+
+import { useSelector } from "react-redux";
+import { selectMenuOpen } from "./Store/features/app/appSlice";
+import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTablet";
 
 function App() {
-  // const [openMenu, setOpenMenu] = useState(false);
+  const openMenu = useSelector(selectMenuOpen);
+  console.log("openMenu", openMenu);
 
   return (
     <div className="App page">
@@ -27,6 +31,7 @@ function App() {
       <section className="card-deal-wrapper">
         <CardDeal />
       </section>
+      {openMenu && <MenuNavTablet />}
     </div>
   );
 }
