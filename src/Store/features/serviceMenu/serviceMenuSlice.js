@@ -17,11 +17,11 @@ const initialState = {
       serviceIcon: "deal-icon",
       text: "Spread the cost from £99 (24.9% APR representative variable)",
     },
-    {
-      id: 3,
-      serviceIcon: "deal-icon",
-      text: "Free order &amp; collect in an hour",
-    },
+      {
+        id: 3,
+        serviceIcon: "deal-icon",
+        text: "Free order & collect in an hour",
+      },
   ],
 };
 export const serviceMenuSlice = createSlice({

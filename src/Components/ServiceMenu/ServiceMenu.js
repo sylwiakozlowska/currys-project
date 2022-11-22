@@ -10,17 +10,19 @@ const settings = {
   autoplaySpeed: 3e3,
   slidesToShow: 3,
   autoplayScroll: 1,
-  // wheelScroll: 1,
-  slidesPerRow:1,
+  slidesPerRow: 1,
   centerPadding: 90,
   arrows: false,
-  
+  onResize: (e, x) => {console.log(e, x, this);
+},
 };
+
+
 export const ServiceMenu = () => {
   const { serviceMenu } = useSelector(selectServiceMenu);
+
   const serviceMenuList = serviceMenu.map(({ id, serviceIcon, text }) => {
     const cn = `glyph ${serviceIcon}`;
-
     return (
       <li className="service-menu-list" key={id}>
         <a href="#">
