@@ -1,0 +1,26 @@
+html,
+body,
+.App,
+#root {
+  height: 100%;
+  box-sizing: border-box;
+}
+.App {
+  // text-align: center;
+  overflow-y: scroll;
+
+}
+.hide-scroll {
+  overflow-y: hidden;
+}
+.App-link {
+  color: #61dafb;
+}
+.carousel {
+  z-index: 0 !important;
+}
+/* .page {
+  background-color: #213038;
+  opacity: .40;
+  z-index: 3;
+} */

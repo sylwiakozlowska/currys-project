@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import "./App.css";
+import React from "react";
 import "./Components/icons.scss";
 import "./styles.scss";
 import { HelpLinks } from "./Components/HelpLinks/HelpLinks";
@@ -11,13 +10,15 @@ import { CardDeal } from "./Components/Card/CardDeal";
 import { useSelector } from "react-redux";
 import { selectMenuOpen } from "./Store/features/app/appSlice";
 import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTablet";
+import { Overlay } from "./Components/Overlay/Overlay";
 
 function App() {
   const openMenu = useSelector(selectMenuOpen);
   console.log("openMenu", openMenu);
 
+  const scrollBarStyle = openMenu ? "hide-scroll" : "";
   return (
-    <div className="App page">
+    <div className={`App page ${scrollBarStyle}`}>
       <section className="help-links-wrapper">
         <HelpLinks />
       </section>
@@ -31,7 +32,14 @@ function App() {
       <section className="card-deal-wrapper">
         <CardDeal />
       </section>
-      {openMenu && <MenuNavTablet />}
+      <section className="card-deal-wrapper">
+        <CardDeal />
+      </section>
+      {openMenu && (
+        <Overlay>
+          <MenuNavTablet />
+        </Overlay>
+      )}
     </div>
   );
 }
