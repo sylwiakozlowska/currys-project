@@ -8,7 +8,6 @@ const settings = {
   autoplay: true,
   autoplaySpeed: 3e3,
   wheelScroll: 3,
-  // dots: true,
   centerPadding: 90,
   arrows: true,
 };
