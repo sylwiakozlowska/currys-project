@@ -1,9 +1,14 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
 html,
 body,
 .App,
 #root {
   height: 100%;
-  box-sizing: border-box;
 }
 
 body {
@@ -18,9 +23,26 @@ a {
 }
 
 .help-links-wrapper,
-.header-wrapper, 
+.header-wrapper,
 .card-deal-wrapper,
 .service-menu-wrapper {
   padding: 0 3%;
 }
 //change to 3%
+.header-wrapper {
+  .header-component,
+  .header-tablet-component {
+    margin: 16px 0;
+    @include mobile {
+      margin: 10px 0;
+    }
+  }
+  .header-icons {
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 10px;
+    }
+  }
+}

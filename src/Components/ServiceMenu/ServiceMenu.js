@@ -13,20 +13,21 @@ const settings = {
   slidesPerRow: 1,
   centerPadding: 90,
   arrows: false,
-  onResize: (e, x) => {console.log(e, x, this);
-},
+  onResize: (e, x) => {
+    console.log(e, x, this);
+  },
 };
-
 
 export const ServiceMenu = () => {
   const { serviceMenu } = useSelector(selectServiceMenu);
 
-  const serviceMenuList = serviceMenu.map(({ id, serviceIcon, text }) => {
-    const cn = `glyph ${serviceIcon}`;
+  const serviceMenuList = serviceMenu.map(({ id, src, text }) => {
+    // const cn = `glyph ${serviceIcon}`;
     return (
       <li className="service-menu-list" key={id}>
         <a href="#">
-          <i className={cn}></i>
+          <img src={src} />
+          {/* <i className={cn}></i> */}
           <p>{text}</p>
         </a>
       </li>

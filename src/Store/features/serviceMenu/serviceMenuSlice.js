@@ -4,24 +4,27 @@ const initialState = {
   serviceMenu: [
     {
       id: 0,
-      serviceIcon: "deal-icon",
+      // serviceIcon: "deal-icon",
       text: "ShopLive 24/7, video call an expert to help you shop",
+      src: "https://currysprod.a.bigcontent.io/v1/static/video-svg",
+
+     
     },
     {
       id: 1,
-      serviceIcon: "deal-icon",
       text: "You won't get it cheaper. Full stop.",
+      src:"https://currysprod.a.bigcontent.io/v1/static/price-promise-svg",      
     },
     {
       id: 2,
-      serviceIcon: "deal-icon",
       text: "Spread the cost from £99 (24.9% APR representative variable)",
+      src:"https://currysprod.a.bigcontent.io/v1/static/calendar-svg" 
     },
-      {
-        id: 3,
-        serviceIcon: "deal-icon",
-        text: "Free order & collect in an hour",
-      },
+    {
+      id: 3,
+      text: "Free order & collect in an hour",
+      src: "https://currysprod.a.bigcontent.io/v1/static/store-svg",
+    },
   ],
 };
 export const serviceMenuSlice = createSlice({
