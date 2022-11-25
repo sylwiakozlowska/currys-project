@@ -35,6 +35,11 @@ body {
 .deal-icon::before {
   content: "\e90a";
   font-size: 1.5em;
+}
+.search-icon::before {
+  content: "\f002";
+  font-size: 1.5em;
+  color: white;
 
 }
 .expand-menu-right-icon::before {

@@ -6,11 +6,12 @@ import { Header } from "./Components/Header/Header";
 import { HeaderTablet } from "./Components/HeaderTablet/HeaderTablet";
 import { ServiceMenu } from "./Components/ServiceMenu/ServiceMenu";
 import { CardDeal } from "./Components/Card/CardDeal";
+import { Overlay } from "./Components/Overlay/Overlay";
 
 import { useSelector } from "react-redux";
 import { selectMenuOpen } from "./Store/features/app/appSlice";
 import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTablet";
-import { Overlay } from "./Components/Overlay/Overlay";
+import { SearchBar } from "./Components/SearchBar/SearchBar";
 
 function App() {
   const openMenu = useSelector(selectMenuOpen);
@@ -32,9 +33,7 @@ function App() {
       <section className="card-deal-wrapper">
         <CardDeal />
       </section>
-      <section className="card-deal-wrapper">
-        <CardDeal />
-      </section>
+      <SearchBar/>
       {openMenu && (
         <Overlay>
           <MenuNavTablet />

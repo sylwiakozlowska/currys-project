@@ -1,5 +1,6 @@
 import React from "react";
-import "../HeaderIcons/HeaderIcons.scss";
+import "../../../styles.scss";
+// import "../HeaderIcons/HeaderIcons.scss";
 
 export const HeaderIcons = () => {
   return (
