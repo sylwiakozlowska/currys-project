@@ -1,0 +1,28 @@
+.dropdown {
+  .simple-products {
+    color: $simple-product-list_text;
+    li:last-of-type {
+      border-bottom: 1px solid $simple-product-list_border;
+    }
+  }
+  .product-link {
+    text-decoration: none;
+    color: $simple-product-list_text;
+    display: block;
+    margin: $margin0;
+
+    &:focus {
+      outline: none;
+    }
+    &:focus-visible {
+      background: $simple-product-list_background__focus-visible;
+    }
+    &:hover {
+      background: $simple-product-list_background__hover;
+    }
+  }
+  .product-group {
+    display: flex;
+    padding: $simple-product_padding;
+  }
+}

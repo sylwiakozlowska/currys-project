@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles.scss";
-export const SearchBar = ({ simpleProducts, onChange }) => {
+import { SimpleProductList } from "./SimpleProductList/SimpleProductList";
+export const SearchBar = ({ simpleProducts, onChange, onSelected }) => {
   const [text, setText] = useState("");
+  const [shown, setShown] = useState(false);
+
   // const searchText = useSelector(selectSearchTerm);
   // const dispatch = useDispatch();
 
@@ -13,6 +16,21 @@ export const SearchBar = ({ simpleProducts, onChange }) => {
     }
     console.log("value", value);
   };
+
+  useEffect(() => {
+    //if (the input has text)
+    //{then open the dropdown}
+    //else the input is empty
+    //{then dont open the dropdown}
+
+    // if (text.length > 0) {
+    //   setShown(true);
+    // } else {
+    //   setShown(false);
+    // }
+
+    setShown(text.length > 0);
+  }, [text]);
   return (
     // <SearchBar on
     <div className="search-bar-component">
@@ -32,7 +50,20 @@ export const SearchBar = ({ simpleProducts, onChange }) => {
           </button>
         </div>
       </div>
-      <div className="dropdown"></div>
+      <div className="dropdown">
+        {shown && (
+          <div className="dropdown-content">
+            <SimpleProductList
+              simpleProducts={simpleProducts}
+              onSelected={onSelected}
+            />
+            {/* <DetailedProductList
+            detailedProducts={detailedProducts}
+            onSelected={onSelected}
+          /> */}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
