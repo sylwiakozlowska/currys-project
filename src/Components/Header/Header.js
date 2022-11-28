@@ -3,7 +3,7 @@ import "../../styles.scss";
 import logo from "../../assets/logo.svg";
 import { HeaderIcons } from "./HeaderIcons/HeaderIcons";
 import { MenuNav } from "../Menu/MenuNav/MenuNav";
-import { SearchBar } from "../SearchBar/SearchBar";
+import { SearchBarWrapper } from "../SearchBar/SearchBarWrapper";
 export const Header = () => {
   return (
     <section className="header-component">
@@ -13,7 +13,7 @@ export const Header = () => {
       <div className="header-content-wrapper">
         <div className="header-content">
           <div className="header-search-wrapper">
-            <SearchBar />
+            <SearchBarWrapper />
           </div>
           <div className="header-icons-wrapper">
             <HeaderIcons />
