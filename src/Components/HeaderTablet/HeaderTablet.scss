@@ -1,3 +1,14 @@
+.header-tablet-search-wrapper {
+  @include touch {
+    width: 50%;
+  }
+  @include mobile {
+    width: 100%;
+    order: 3;
+    padding: 5px;
+  }
+}
+
 .header-tablet-component {
   border: 1px solid blue;
   display: flex;
@@ -25,11 +36,11 @@
   .header-tablet-search-wrapper {
     border: 1px solid brown;
   }
-  @include mobile {
-    .header-tablet-search-wrapper {
-      width: 100%;
-      order: 3;
-      padding: 5px;
-    }
-  }
+  // @include mobile {
+  //   .header-tablet-search-wrapper {
+  //     width: 100%;
+  //     order: 3;
+  //     padding: 5px;
+  //   }
+  // }
 }
