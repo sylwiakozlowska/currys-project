@@ -1,41 +1,55 @@
 .search-bar-component {
-  padding: 50px;
-  border: 1px solid green;
-  .search-bar-content,
+  border: 1px solid $search-bar_border;
+  border-radius: $search-bar_border-radius;
+  display: flex;
+  flex-direction: column;
+  @include mobile {
+    width: 100%;
+  }
+  &:focus-within {
+    border: 2px solid $search-bar_border__focus-within;
+    border-radius: $search-bar_border-radius;
+  }
   .field.has-addons {
+    padding: $search-bar_padding;
+    border-radius: $search-bar_border-radius;
+    margin-bottom: 0;
+    .control:first-child {
+      flex-grow: 1;
+    }
     .control {
-      .input {
-        &:focus {
-          border: none;
-          box-shadow: none;
+      .button {
+        &.is-primary {
+          background: $button_background_primary;
+          border-color: $button_border_primary;
+          color: $button_text_primary;
+          border-radius: $button_radious_primary;
+          width: 38px;
+          height: 38px;
+          margin-left: 5px;
         }
       }
     }
   }
-  .control-input {
-    border: 2px solid #4c12a1;
-    // border-radius: 50px;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    flex-grow: 1;
-  }
   .input {
-    border-radius: 50px;
+    border: none;
     box-shadow: none;
-    border: none;
+    border-radius: $search-bar_border-radius;
   }
-  .control-button {
-    border: 2px solid #4c12a1;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-left: none;
-    background: #4c12a1;
-  }
-  .search-bar-button {
-    margin-top: 5px;
+  .button.cross {
     border: none;
-    background: none;
-    width: 38px;
-    height: 38px;
+    box-shadow: none;
+  }
+  .dropdown {
+    position: relative;
+    .dropdown-content {
+      flex-direction: column;
+      border: 1px solid $search-bar_border;
+      width: 100%;
+      position: absolute;
+      box-shadow: rgb(33 48 56 / 20%) 0px 0px 6px 0px;
+      border-radius: $search-bar_border-radius-dropdown;
+      margin-top: 5px;
+    }
   }
 }

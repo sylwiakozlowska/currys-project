@@ -11,7 +11,6 @@ import { Overlay } from "./Components/Overlay/Overlay";
 import { useSelector } from "react-redux";
 import { selectMenuOpen } from "./Store/features/app/appSlice";
 import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTablet";
-import { SearchBar } from "./Components/SearchBar/SearchBar";
 
 function App() {
   const openMenu = useSelector(selectMenuOpen);
@@ -33,7 +32,6 @@ function App() {
       <section className="card-deal-wrapper">
         <CardDeal />
       </section>
-      <SearchBar/>
       {openMenu && (
         <Overlay>
           <MenuNavTablet />
