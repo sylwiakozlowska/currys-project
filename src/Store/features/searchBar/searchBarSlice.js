@@ -5,8 +5,8 @@ const allProducts = {
     { id: 0, text: "Samsung Deals" },
     { id: 1, text: "Samsung trade in" },
     { id: 2, text: "Samsung Galaxy Buds 2" },
-    // { id: 3, text: "LG Deals" },
-    // { id: 4, text: "JVC Deals" },
+    { id: 3, text: "LG Deals" },
+    { id: 4, text: "JVC Deals" },
   ],
 
   detailedProducts: [
@@ -57,7 +57,7 @@ export const searchBarSlice = createSlice({
   },
   reducers: {
     setSearchTerm: (state, { payload }) => {
-    //   state.searchTerm = payload;
+      //   state.searchTerm = payload;
 
       const { simpleProducts, detailedProducts } = allProducts;
       //going through array
@@ -66,7 +66,7 @@ export const searchBarSlice = createSlice({
       state.simpleProducts = simpleProducts.filter(({ text }) =>
         new RegExp(payload, "i").test(text)
       );
-      console.log(state.simpleProducts)
+      console.log(state.simpleProducts);
     },
   },
 });
@@ -74,6 +74,6 @@ export const searchBarSlice = createSlice({
 export const { setSearchTerm } = searchBarSlice.actions;
 
 export const selectSimpleProducts = (state) => {
-    return state.searchBar.simpleProducts;
-  };
+  return state.searchBar.simpleProducts;
+};
 export default searchBarSlice.reducer;

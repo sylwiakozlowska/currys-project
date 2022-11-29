@@ -17,7 +17,7 @@ export const SearchBarWrapper = () => {
   };
   return (
     <div className="search-bar-wrapper">
-      <SearchBar simpleProducts={simpleProducts} onChange={onChangeText} />
+      <SearchBar simpleProducts={simpleProducts} onChange={onChangeText}/>
     </div>
   );
 };

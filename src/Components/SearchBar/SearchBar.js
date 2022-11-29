@@ -32,38 +32,46 @@ export const SearchBar = ({ simpleProducts, onChange, onSelected }) => {
     setShown(text.length > 0);
   }, [text]);
   return (
-    // <SearchBar on
     <div className="search-bar-component">
-      <div className="search-bar-content field has-addons">
-        <div className="control-input control has-icons-right">
-          <input
-            className="input is-medium"
-            value={text}
-            type="text"
-            placeholder="Looking for something?"
-            onChange={onChangeText}
-          />
-        </div>
-        <div className="control-button control">
-          <button class="search-bar-button">
-            <i className="glyph search-icon"></i>
+    <div className="field has-addons">
+      <div className="control">
+        <input
+          className="input"
+          value={text}
+          type="text"
+          placeholder="Looking for something?"
+          onChange={onChangeText}
+        />
+      </div>
+      {/* {shown && (
+        <div className="control">
+          <button className="button cross" onClick={onClose}>
+            <span className="icon">
+              <i className="glyph cross-icon"></i>
+            </span>
           </button>
         </div>
-      </div>
-      <div className="dropdown">
-        {shown && (
-          <div className="dropdown-content">
-            <SimpleProductList
-              simpleProducts={simpleProducts}
-              onSelected={onSelected}
-            />
-            {/* <DetailedProductList
-            detailedProducts={detailedProducts}
-            onSelected={onSelected}
-          /> */}
-          </div>
-        )}
+      )} */}
+      <div className="control">
+        <button className="button is-primary">
+          <i className="glyph search-icon"></i>
+        </button>
       </div>
     </div>
+    <div className="dropdown">
+    {shown && (
+      <div className="dropdown-content">
+        <SimpleProductList
+          simpleProducts={simpleProducts}
+          onSelected={onSelected}
+        />
+        {/* <DetailedProductList
+          detailedProducts={detailedProducts}
+          onSelected={onSelected}
+        /> */}
+      </div>
+    )}
+    </div>
+  </div>
   );
 };
