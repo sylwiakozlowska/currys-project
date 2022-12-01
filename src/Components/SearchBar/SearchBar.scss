@@ -36,7 +36,7 @@
     box-shadow: none;
     border-radius: $search-bar_border-radius;
   }
-  .button.cross {
+  .button.close {
     border: none;
     box-shadow: none;
   }
@@ -50,6 +50,7 @@
       box-shadow: rgb(33 48 56 / 20%) 0px 0px 6px 0px;
       border-radius: $search-bar_border-radius-dropdown;
       margin-top: 5px;
+      z-index: 1;
     }
   }
 }

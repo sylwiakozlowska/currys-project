@@ -12,48 +12,46 @@ const allProducts = {
   detailedProducts: [
     {
       id: 0,
-      text: 'JVC LT-55CF890 Fire TV Edition 55"',
-      price: "£359.99",
-      rating: 3,
-      imageUrl: "/assets/jvc1.jpg",
+      text: 'SAMSUNG Galaxy A13 - 64 GB, Black',
+      price: "£129.00",
+      rating: 4.5,
+      src: "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
     },
     {
       id: 1,
-      text: 'LG 32LM6300PLA 32"',
+      text: 'SAMSUNG Galaxy Tab A8 10.5" Tablet - 32 GB, Graphite',
       price: "£211.99",
       rating: 4.5,
-      imageUrl: "/assets/lg.jpg",
+      src: "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
     },
     {
       id: 2,
       text: 'Samsung UE32t4300AkXXU 32"',
       price: "£199",
       rating: 2.5,
-      imageUrl: "/assets/samsung1.jpg",
+      src: "https://media.currys.biz/i/currysprod/M10234328_black?$g-small$&amp;fmt=auto",
     },
     {
       id: 3,
       text: 'JVC LT-40CA890 Android TV 40"',
       price: "£229.99",
       rating: 0.5,
-      imageUrl: "/assets/jvc2.jpg",
+      src: "https://media.currys.biz/i/currysprod/M10234328_black?$g-small$&amp;fmt=auto",
     },
     {
       id: 4,
-      text: 'Samsung UE50TU7020KXXU 50"',
+      text: 'SAMSUNG Galaxy Tab A8 10.5" Tablet - 32 GB, Graphite',
       price: "£429",
       rating: 3.5,
-      imageUrl: "/assets/samsung2.jpg",
+      src: "https://media.currys.biz/i/currysprod/M10234328_black?$g-small$&amp;fmt=auto",
     },
   ],
 };
 export const searchBarSlice = createSlice({
   name: "searchBar",
   initialState: {
-    // searchTerm: "",
     simpleProducts: [],
     detailedProducts: [],
-    // dropdownOpen: true,
   },
   reducers: {
     setSearchTerm: (state, { payload }) => {
@@ -67,7 +65,13 @@ export const searchBarSlice = createSlice({
         new RegExp(payload, "i").test(text)
       );
       console.log(state.simpleProducts);
+
+      state.detailedProducts = detailedProducts.filter(({ id, text, price, rating, imageUrl }) =>
+        new RegExp(payload, "i").test(text)
+      );
+      console.log(state.detailedProducts);
     },
+    
   },
 });
 
@@ -75,5 +79,8 @@ export const { setSearchTerm } = searchBarSlice.actions;
 
 export const selectSimpleProducts = (state) => {
   return state.searchBar.simpleProducts;
+};
+export const selectDetailedProducts = (state) => {
+  return state.searchBar.detailedProducts;
 };
 export default searchBarSlice.reducer;
