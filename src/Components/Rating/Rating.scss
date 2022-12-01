@@ -1,0 +1,12 @@
+.rating-component {
+  .grey {
+    color: $rating_empty-icon_background;
+    position: absolute;
+    
+  }
+
+  .orange {
+    color: $rating_filled-icon_background;
+    position: relative;
+  }
+}
