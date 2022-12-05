@@ -1,0 +1,37 @@
+.glyph {
+  font-family: "dcg-icons";
+  font-style: normal;
+}
+.icon-info::before {
+  content: "\e926";
+  font-size: 18px;
+}
+.product-price-component {
+  padding: 10px;
+  padding-left: 20px;
+}
+.new-price {
+  font-weight: bold;
+  font-size: 22px;
+  color: #222222;
+}
+.saved-money {
+  font-weight: bold;
+  font-size: 14px;
+  color: #e5006d;
+  margin-left: 5px;
+}
+
+.cost-button {
+  text-align: center;
+
+  button {
+    display: flex;
+    align-items: center;
+    border: none;
+    color: #4c12a1;
+    background: none;
+    cursor: pointer;
+    padding: 5px 0;
+  }
+}

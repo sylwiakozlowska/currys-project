@@ -1,0 +1,69 @@
+// background: #f5f6fc;
+// bg #ffffff
+.glyph {
+  font-family: "dcg-icons";
+  font-style: normal;
+}
+
+.cost-card-content {
+  width: 400px;
+  border-radius: 4px;
+  box-shadow: rgb(34 34 34 / 30%) 1px 2px 4px 0px;
+  .cross-icon::before {
+    color: white;
+  }
+}
+.cost-card-header {
+  display: flex;
+  align-items: center;
+  background: #161b7a;
+  border-radius: 4px 4px 0px 0px;
+  padding: 10px;
+  h1 {
+    flex-grow: 1;
+    color: white;
+    font-weight: bold;
+    padding: 0;
+  }
+  .button-cost {
+    background: #161b7a;
+    box-shadow: none;
+    border: none;
+  }
+}
+.cost-card-info {
+  padding: 10px 20px;
+  img {
+    width: 180px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  span {
+    text-align: center;
+    font-size: 11px;
+    a {
+      margin-top: 8px;
+    }
+    a:hover {
+      color: #161b7a;
+    }
+  }
+}
+.monthly-spread,
+.cost-example {
+  border-bottom: 1px solid #ccc;
+}
+
+.cost-example {
+  color: #666;
+  font-weight: bold;
+  p:first-child {
+    text-align: center;
+    margin-top: 8px;
+  }
+  p:last-child {
+    font-size: 11px;
+    font-weight: normal;
+  }
+}

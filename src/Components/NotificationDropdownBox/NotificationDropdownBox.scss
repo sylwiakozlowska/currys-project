@@ -1,0 +1,36 @@
+.glyph {
+  font-family: "dcg-icons";
+  font-style: normal;
+}
+
+.icon-arrow-up::before {
+  content: "\e924";
+}
+.icon-arrow-down::before {
+  content: "\e925";
+}
+.icon-arrow-up,
+.icon-arrow-down {
+  color: #4c12a1;
+  font-size: 1.5em;
+}
+
+.notification-drop-component {
+  .content {
+    display: flex;
+    align-items: center;
+    color: #4c12a1;
+    border: none;
+    background: white;
+    i {
+      padding: 5px;
+    }
+  }
+}
+// .notification-dropdown-box-component {
+//   .notification-dropdown-box-content {
+//     width: 100%;
+//     left: 0;
+//     padding: 0 20px;
+//   }
+// }
