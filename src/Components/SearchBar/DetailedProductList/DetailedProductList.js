@@ -15,7 +15,7 @@ export const DetailedProductList = ({ detailedProducts, onSelected }) => {
   return (
     <ul className="detailed-products">
       {detailedProducts.map(({ id, text, price, rating, src }) => (
-        <li key={id}>
+        <li key={id} className="detailed-products-list">
           <a
             className="product-link"
             href="#"
@@ -28,7 +28,7 @@ export const DetailedProductList = ({ detailedProducts, onSelected }) => {
               />
               <div className="column is-one-third text-rating-group">
                 <span className="column">{text}</span>
-                <div><Rating value={rating} count={COUNT} /></div>
+                <Rating value={rating} count={COUNT} />
               </div>
               <div className="column product-price">{price}</div>
             </div>

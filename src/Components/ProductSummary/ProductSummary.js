@@ -7,9 +7,10 @@ import { NotificationBox } from "../NotificationDropdownBox/NotificationBox/Noti
 import { ProductPrice } from "./ProductPrice/ProductPrice";
 import { Compare } from "./Compare/Compare";
 import { Rating } from "../Rating/Rating";
+import { CiHeart } from "react-icons/ci";
 export const ProductSummary = ({ product, onCompare }) => {
   const [shownNotification, setShownNotification] = useState(false);
-  const {rating } = product;
+  const { rating } = product;
   // const [compare, setCompare] = useState(false);
   const checkClicked = (state) => {
     console.log("clicked", product);
@@ -26,21 +27,24 @@ export const ProductSummary = ({ product, onCompare }) => {
           formatBadges={product.formatBadges}
         />
         {/* </div> */}
-        <div>
-          <h1>{product.title}</h1>
+        <div className="product-summary-content">
+          <a href="#" className="product-name-link">
+            <h1 className="product-title">{product.title}</h1>
+            <span className="heart-icon-wrapper">
+              <CiHeart className="heart-icon" />
+            </span>
+          </a>
+
           {/* <span>{product.rating}</span> */}
-          
-          {/* <div></div> */}
+
           <div className="product-rating">
-          <Rating value={rating.value} count={rating.count}></Rating>
-          <span className="product-rating-reviews">(47)</span>
-        </div>
+            <Rating value={rating.value} count={rating.count}></Rating>
+            <span className="product-rating-reviews">(47)</span>
+          </div>
           <div className="columns">
             <div className="column">
               <ProductDescription
-                // title={product.title}
                 productDescription={product.productDescription}
-                // rating={product.rating}
                 shownNotification={shownNotification}
                 setShownNotification={setShownNotification}
                 productOffers={product.productOffers}

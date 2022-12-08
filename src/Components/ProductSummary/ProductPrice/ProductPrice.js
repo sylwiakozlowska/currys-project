@@ -35,7 +35,7 @@ export const ProductPrice = ({
       <div className="cost-button">
         <button onClick={() => setshownCostCard(true)}>
           Spread the cost
-          <i className="glyph icon-info"></i>
+          <i className="glyph info-icon"></i>
         </button>
       </div>
       {shownCostCard && <CostCard onClose={closeCard} />}

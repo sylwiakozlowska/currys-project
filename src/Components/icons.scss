@@ -7,10 +7,6 @@ body {
   font-style: normal;
 }
 
-// .link-style-icon::before {
-//   content: "\e61c";
-//   font-size: 0.3em;
-// }
 .close-icon::before {
   content: "\e607";
   font-size: 1.5em;
@@ -35,7 +31,10 @@ body {
   content: "\e90a";
   font-size: 1.5em;
 }
-
+.info-icon::before {
+  content: "\e926";
+  font-size: 18px;
+}
 //card
 .deal-icon::before {
   content: "\e91d";
@@ -117,4 +116,10 @@ body {
 .smarttech-icon,
 .home-icon {
   font-size: large;
+}
+
+//react icons
+.heart-icon {
+  width: 24px;
+  height: 24px;
 }

@@ -23,88 +23,39 @@
   .product-summary {
     display: flex;
   }
-  // .product {
-  //   display: flex;
-  // }
-  .product-name-link {
-    color: #213038;
-    margin: 0;
-  }
-
-  .product-name {
-    width: 100%;
-    padding-left: 60px;
-    font-size: 13px;
-    color: #213038;
-  }
-
-  .product-info {
-    padding: 0 15px;
-    h1 {
+  .product-summary-content {
+    .product-name-link {
+      display: flex;
+      color: #213038;
+      margin: 0;
+    }
+    .product-title {
       font-size: 20px;
-    }
-    .img-guarantee {
-      display: flex;
-      justify-content: center;
-    }
-    .product-info-link {
-      display: flex;
-      align-items: center;
-      color: black;
-      font-size: 13px;
-      margin: 0 0 10px;
-    }
-    .product-info-link:hover {
-      color: #4c12a1;
-      text-decoration: none;
-    }
-    .product-item-description {
-      font-size: 13px;
-      color: #222222;
-      font-weight: 600;
-      li {
-        list-style: inside;
-        margin: 0 0 8px;
+      flex-grow: 1;
+      &:hover {
+        text-decoration: underline;
       }
     }
-    .product-rating {
-      display: flex;
-    }
-    .product-rating-reviews {
-      color: #4c12a1;
-    }
-    .content {
-      display: flex;
-      align-items: center;
-      color: #4c12a1;
-      border: none;
-      background: white;
-    }
   }
+  // .product-images {
+  //   border: 2px solid rgb(240, 24, 60);
+  //   margin-right: 30px;
+  //   .badges {
+  //     display: flex;
+  //     justify-content: center;
+  //     .badges-link {
+  //       display: flex;
+  //       align-items: center;
+  //       padding: 5px;
+  //     }
+  //   }
 }
 
-// .product-description {
-//   display: flex;
-//   border: 2px solid blue;
-// }
-.guaranteeText {
-  padding: 2px 5px;
-  font-size: 12px;
-  background: #ebe6f4;
-  border-left: 4px solid #4c12a1;
-  border-radius: 3px;
-  width: 170px;
+//Rating
+.product-rating {
+  display: flex;
+  margin: 10px 0 10px;
 }
-.product-images {
-  border: 2px solid rgb(240, 24, 60);
-  margin-right: 30px;
-  .badges {
-    display: flex;
-    justify-content: center;
-    .badges-link {
-      display: flex;
-      align-items: center;
-      padding: 5px;
-    }
-  }
+.product-rating-reviews {
+  color: #4c12a1;
 }

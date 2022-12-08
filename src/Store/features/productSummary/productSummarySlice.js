@@ -27,10 +27,11 @@ const initialState = [
     },
     productPrice: "1049.00",
     savedMoney: "300.00",
-    deliveries: [
-      { id: 0, type: "free-delivery" },
-      { id: 1, type: "noCollection" },
-    ],
+    // deliveries: [
+    //   { id: 0, type: "free-delivery" },
+    //   { id: 1, type: "noCollection" },
+    // ],
+    stock: ["Sorry, this item is currently out of stock."],
     selected: true,
   },
   {
@@ -59,10 +60,11 @@ const initialState = [
     },
     productPrice: "1049.00",
     savedMoney: "300.00",
-    deliveries: [
-      { id: 0, type: "free-delivery" },
-      { id: 1, type: "noCollection" },
-    ],
+    // deliveries: [
+    //   { id: 0, type: "free-delivery" },
+    //   { id: 1, type: "noCollection" },
+    // ],
+    stock: ["Sorry, this item is currently out of stock."],
     selected: true,
   },
   {
