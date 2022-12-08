@@ -12,44 +12,40 @@ export const ProductOffers = ({ offers, max }) => {
 
   let more;
   let icon = <i className="glyph deal-icon"></i>;
-  let moreInfo = <a href="#">More info</a>;
 
   let offersList = [];
   const offersToShow = max > offers.length ? offers.length : max;
-
-  for (let i = 0; i < offersToShow; i++) {
-    offersList.push(
-      <li key={i}>
-        {icon}
-        <span>{offers[i]}</span>
-      </li>
-    );
-  }
-  offersList = (
-    <ul>
-      {offersList}
-      {moreInfo}
-    </ul>
-  );
 
   if (offers.length > max) {
     let diff = offers.length - max;
 
     more = (
-      <a href="#">
-        <span className="info-offers">
-          + {diff} more offer{diff === 1 ? "" : "s"}
-        </span>
-      </a>
+      <span className="info-offers">
+        + {diff} more offer{diff === 1 ? "" : "s"}
+      </span>
+    );
+
+    for (let i = 0; i < offersToShow; i++) {
+      offersList.push(
+        // <li key={i} className="offers-list">
+        <a href="#" className="more-offers">
+          <span className="offers">{offers[i]}</span>
+          {more}
+        </a>
+      );
+    }
+
+    offersList = (
+      <div className="offers-list">
+        {icon}
+        {offersList}
+      </div>
     );
   }
 
   return (
     <CardComponent className="info">
-      <div className="offers-options">
-        <div>{offersList}</div>
-        {more}
-      </div>
+      {offersList}
     </CardComponent>
   );
 };

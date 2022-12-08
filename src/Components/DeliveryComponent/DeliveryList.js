@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
 export const DeliveryList = ({ deliveries }) => {
   const items = deliveries.map(({ id, type }) => {
     let icon;
@@ -18,15 +17,13 @@ export const DeliveryList = ({ deliveries }) => {
     }
 
     return (
-      <li key={id}>
-        <div className="delivery-content">
-          {icon} {text}
-        </div>
+      <li key={id} className="delivery-list">
+        {icon} {text}
       </li>
     );
   });
 
-  return <ul>{items}</ul>;
+  return <ul className="delivery-content">{items}</ul>;
 };
 
 DeliveryList.propTypes = {

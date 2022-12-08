@@ -1,11 +1,4 @@
-.card {
-  width: 250px;
-  box-shadow: none;
-}
-.delivery-content {
-  display: inline-flex;
-  align-items: center;
-  line-height: 5px;
+.delivery-component {
   h1 {
     font-weight: bold;
     padding-bottom: $delivery-component_padding-bottom;

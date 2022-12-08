@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import "../../styles.scss";
 import { ProductSummary } from "../ProductSummary/ProductSummary";
 // import { ComparePanel } from "../ProductSummary/ComparePanel/ComparePanel";
 import { useSelector } from "react-redux";
 import { selectProductSummary } from "../../Store/features/productSummary/productSummarySlice";
+
+
 export const ProductSummaryWithCompare = () => {
   const [productsToCompare, setProductsToCompare] = useState([]);
 
@@ -31,11 +34,11 @@ export const ProductSummaryWithCompare = () => {
     return <ProductSummary product={product} onCompare={onCompare} />;
   });
   return (
-    <div>
+    <section  className="product-summary-wrapper">
       {productSummaries}
       {/* {products.length && ( */}
         {/* // <ComparePanel products={productsToCompare} onClear={onCompare} /> */}
       {/* )} */}
-    </div>
+    </section >
   );
 };

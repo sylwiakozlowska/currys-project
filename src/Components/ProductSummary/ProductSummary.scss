@@ -1,46 +1,31 @@
-.glyph {
-  font-family: "dcg-icons";
-  font-style: normal;
-}
-.tv-icon::before {
-  content: "\e611";
-  font-size: 1.5em;
-}
-.deal-icon::before {
-  content: "\e91d";
-  font-size: 1.5em;
-}
-
-a {
-  margin: 0;
+.product-summary-wrapper {
+  background: #f2f2f2;
 }
 .product-summary-component {
+  background: white;
   border: 1px solid #cccccc;
   border-radius: 5px;
   padding: 20px;
+  margin: 20px;
   transition: border 0.2s ease 0s;
   &.product-summary-component:hover {
     border: 1px solid #4c12a1;
   }
-  i {
-    padding: 5px;
-  }
-  .sticker {
-    position: absolute;
-    border: 2px solid orangered;
-    height: 60px;
-    width: 60px;
-    margin: 0;
-    top: 0;
-    left: 0;
-  }
+  // .sticker {
+  //   position: absolute;
+  //   border: 2px solid orangered;
+  //   height: 60px;
+  //   width: 60px;
+  //   margin: 0;
+  //   top: 0;
+  //   left: 0;
+  // }
   .product-summary {
     display: flex;
   }
-  .product {
-    display: flex;
-    flex-direction: column;
-  }
+  // .product {
+  //   display: flex;
+  // }
   .product-name-link {
     color: #213038;
     margin: 0;
@@ -55,6 +40,9 @@ a {
 
   .product-info {
     padding: 0 15px;
+    h1 {
+      font-size: 20px;
+    }
     .img-guarantee {
       display: flex;
       justify-content: center;
@@ -76,6 +64,7 @@ a {
       font-weight: 600;
       li {
         list-style: inside;
+        margin: 0 0 8px;
       }
     }
     .product-rating {
@@ -83,9 +72,6 @@ a {
     }
     .product-rating-reviews {
       color: #4c12a1;
-    }
-    .product-price {
-      border: 2px solid green;
     }
     .content {
       display: flex;
@@ -96,21 +82,11 @@ a {
     }
   }
 }
-.info {
-  background: white;
-  border: 1px solid #cdd8df;
-  color: #213038;
-  padding: 8px;
-  margin: 10px 0;
-  .info-offers {
-    color: #e5006d;
-  }
-}
 
-.product-description {
-  display: flex;
-  border: 2px solid blue;
-}
+// .product-description {
+//   display: flex;
+//   border: 2px solid blue;
+// }
 .guaranteeText {
   padding: 2px 5px;
   font-size: 12px;

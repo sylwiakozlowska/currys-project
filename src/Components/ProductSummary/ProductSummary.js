@@ -6,10 +6,10 @@ import { ProductDescription } from "./ProductDescription/ProductDescription";
 import { NotificationBox } from "../NotificationDropdownBox/NotificationBox/NotificationBox";
 import { ProductPrice } from "./ProductPrice/ProductPrice";
 import { Compare } from "./Compare/Compare";
-
+import { Rating } from "../Rating/Rating";
 export const ProductSummary = ({ product, onCompare }) => {
   const [shownNotification, setShownNotification] = useState(false);
-
+  const {rating } = product;
   // const [compare, setCompare] = useState(false);
   const checkClicked = (state) => {
     console.log("clicked", product);
@@ -19,46 +19,45 @@ export const ProductSummary = ({ product, onCompare }) => {
   };
   return (
     <div className="product-summary-component">
-      {/* <div className="one-around"> */}
-      {/* <div className="sticker">
-        <img
-          src="https://brain-images-ssl.cdn.dixons.com/file/91/88/30/00/bwoffmarkedpricestickersale100-38819.png"
-          alt="sticker"
-        />
-      </div> */}
       <div className="product-summary">
-        <div className="product">
-          <div className="product-description">
-            <div>
-              <ProductImage
-                productImageUrl={product.productImageUrl}
-                formatBadges={product.formatBadges}
-              />
-            </div>
-
-            <div className="product-info">
+        {/* <div className=""> */}
+        <ProductImage
+          productImageUrl={product.productImageUrl}
+          formatBadges={product.formatBadges}
+        />
+        {/* </div> */}
+        <div>
+          <h1>{product.title}</h1>
+          {/* <span>{product.rating}</span> */}
+          
+          {/* <div></div> */}
+          <div className="product-rating">
+          <Rating value={rating.value} count={rating.count}></Rating>
+          <span className="product-rating-reviews">(47)</span>
+        </div>
+          <div className="columns">
+            <div className="column">
               <ProductDescription
-                title={product.title}
+                // title={product.title}
                 productDescription={product.productDescription}
-                rating={product.rating}
+                // rating={product.rating}
                 shownNotification={shownNotification}
                 setShownNotification={setShownNotification}
                 productOffers={product.productOffers}
-
+              />
+            </div>
+            <div className="column">
+              <ProductPrice
+                guarantee={product.guarantee}
+                deliveries={product.deliveries}
+                productOffers={product.productOffers}
+                selected={product.selected}
+                setCompare={checkClicked}
+                productPrice={product.productPrice}
+                savedMoney={product.savedMoney}
               />
             </div>
           </div>
-        </div>
-        <div className="product-price">
-          <ProductPrice
-            guarantee={product.guarantee}
-            deliveries={product.deliveries}
-            productOffers={product.productOffers}
-            selected={product.selected}
-            setCompare={checkClicked}
-            productPrice={product.productPrice}
-            savedMoney={product.savedMoney}
-          />
         </div>
       </div>
       <div>

@@ -1,6 +1,9 @@
-
-a {
+.delivery-content {
+  .delivery-list {
+    display: flex;
+    align-items: center;
+  }
+  a {
     color: #4c12a1;
+  }
 }
-
-

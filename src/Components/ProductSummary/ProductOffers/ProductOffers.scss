@@ -1,0 +1,27 @@
+// .product-offers-component {
+//     // width: 60%;
+// }
+.offers-list {
+  display: flex;
+  .more-offers {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+  }
+  i {
+    padding-right: 5px;
+  }
+}
+.offers {
+  text-align: left;
+}
+.info {
+  background: white;
+  border: 1px solid #cdd8df;
+  color: #213038;
+  padding: 8px;
+  margin: 10px 0;
+  .info-offers {
+    color: #e5006d;
+  }
+}

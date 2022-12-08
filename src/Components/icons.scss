@@ -35,11 +35,16 @@ body {
   content: "\e90a";
   font-size: 1.5em;
 }
+
+//card
+.deal-icon::before {
+  content: "\e91d";
+  font-size: 1.5em;
+}
 .search-icon::before {
   content: "\f002";
   font-size: 1.5em;
   color: white;
-
 }
 .expand-menu-right-icon::before {
   content: "\f054";
@@ -71,6 +76,22 @@ body {
 }
 .home-icon::before {
   content: "\e907";
+}
+.cross-icon::before {
+  content: "\e607";
+}
+.tick-icon::before {
+  content: "\e60f";
+  color: #255227;
+}
+
+.store-location-icon::before {
+  content: "\e90c";
+}
+
+.tick-icon::before,
+.cross-icon::before {
+  font-size: 1.5em;
 }
 
 .carousel-next::before {

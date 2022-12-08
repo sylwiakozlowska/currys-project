@@ -10,8 +10,8 @@ export const ProductDescription = ({
   shownNotification,
   setShownNotification,
   productDescription,
-  title,
-  rating,
+  // title,
+  // rating,
   productOffers,
 }) => {
   const productDescriptionList = productDescription.map((description) => {
@@ -29,11 +29,11 @@ export const ProductDescription = ({
   return (
     <div className="product-description-component">
       <div className="product-info">
-        <h1>{title}</h1>
-        <div className="product-rating">
+        {/* <h1>{title}</h1> */}
+        {/* <div className="product-rating">
           <Rating value={rating.value} count={rating.count}></Rating>
           <span className="product-rating-reviews">(47)</span>
-        </div>
+        </div> */}
         <ul className="product-item-description">{productDescriptionList}</ul>
         <button
           className="content"
@@ -42,7 +42,7 @@ export const ProductDescription = ({
           {text}
           {icon}
         </button>
-        <div>
+        <div className="product-offers-component">
           {productOffers?.length ? (
             <ProductOffers offers={productOffers} max={1} />
           ) : null}
