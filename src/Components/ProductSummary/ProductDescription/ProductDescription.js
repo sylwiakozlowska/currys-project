@@ -15,7 +15,11 @@ export const ProductDescription = ({
   productOffers,
 }) => {
   const productDescriptionList = productDescription.map((description) => {
-    return <li key={description}>{description}</li>;
+    return (
+      <li key={description} className="product-item-description">
+        {description}
+      </li>
+    );
   });
 
   const iconClass = classNames(
@@ -29,12 +33,7 @@ export const ProductDescription = ({
   return (
     <div className="product-description-component">
       <div className="product-info">
-        {/* <h1>{title}</h1> */}
-        {/* <div className="product-rating">
-          <Rating value={rating.value} count={rating.count}></Rating>
-          <span className="product-rating-reviews">(47)</span>
-        </div> */}
-        <ul className="product-item-description">{productDescriptionList}</ul>
+        <ul className="product-item-description-list">{productDescriptionList}</ul>
         <button
           className="content"
           onClick={() => setShownNotification((current) => !current)}

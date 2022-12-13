@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { DeliveryList } from "./DeliveryList";
-import {CardComponent} from "../CardComponent/CardComponent";
+import { CardComponent } from "../CardComponent/CardComponent";
 
 export const DeliveryComponent = ({ deliveries }) => {
   return (
     <div className="delivery-component">
-        <CardComponent className="primary">
-      <div className="delivery-options">
-        <DeliveryList deliveries={deliveries} />
-      </div>
+      <CardComponent className="primary">
+        <div className="delivery-options">
+          <DeliveryList deliveries={deliveries} />
+        </div>
       </CardComponent>
     </div>
   );

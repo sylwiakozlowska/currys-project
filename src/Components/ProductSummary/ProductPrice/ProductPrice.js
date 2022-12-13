@@ -5,6 +5,8 @@ import { CostCard } from "../../SpreadCostCard/CostCard/CostCard";
 import { DeliveryComponent } from "../../DeliveryComponent/DeliveryComponent";
 // import { CheckBox } from "../CheckBox/CheckBox";
 import { PriceStatus } from "./PriceStatus/PriceStatus";
+import { StockMessage } from "./StockMessage/StockMessage";
+import { CardComponent } from "../../CardComponent/CardComponent";
 
 export const ProductPrice = ({
   deliveries,
@@ -13,7 +15,9 @@ export const ProductPrice = ({
   productPrice,
   savedMoney,
   guarantee,
+  stock,
 }) => {
+  console.log("stock1", stock);
   let guaranteeTxt;
   if (guarantee) {
     guaranteeTxt = `${guarantee} year guarantee included`;
@@ -39,6 +43,10 @@ export const ProductPrice = ({
         </button>
       </div>
       {shownCostCard && <CostCard onClose={closeCard} />}
+      <CardComponent className="stock-info">
+        <StockMessage stock={stock} />
+      </CardComponent>
+
       <DeliveryComponent deliveries={deliveries} />
       {/* <CheckBox state={selected} onChange={setCompare} /> */}
     </div>

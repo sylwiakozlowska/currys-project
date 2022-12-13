@@ -10,7 +10,7 @@ import { Rating } from "../Rating/Rating";
 import { CiHeart } from "react-icons/ci";
 export const ProductSummary = ({ product, onCompare }) => {
   const [shownNotification, setShownNotification] = useState(false);
-  const { rating } = product;
+  const { rating} = product;
   // const [compare, setCompare] = useState(false);
   const checkClicked = (state) => {
     console.log("clicked", product);
@@ -18,6 +18,7 @@ export const ProductSummary = ({ product, onCompare }) => {
     // setCompare(state);
     onCompare(product, state);
   };
+  console.log("product1" , product)
   return (
     <div className="product-summary-component">
       <div className="product-summary">
@@ -59,6 +60,7 @@ export const ProductSummary = ({ product, onCompare }) => {
                 setCompare={checkClicked}
                 productPrice={product.productPrice}
                 savedMoney={product.savedMoney}
+                stock={product.stock}
               />
             </div>
           </div>
