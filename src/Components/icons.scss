@@ -117,7 +117,12 @@ body {
 .home-icon {
   font-size: large;
 }
-
+.stock-info-icon::before {
+  background-image: url(https://www.currys.co.uk/on/demandware.static/Sites-curryspcworlduk-Site/-/en_GB/images/alert-icon-info.svg);
+  width: 32px;
+  height: 32px;
+  content: " ";
+}
 //react icons
 .heart-icon {
   width: 24px;

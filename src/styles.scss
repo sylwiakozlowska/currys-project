@@ -11,6 +11,8 @@
 @import "./Components/MenuTablet/MenuNavTablet/MenuNavTablet.scss";
 @import "./Components/ServiceMenu/ServiceMenu.scss";
 @import "./Components/CardDeal/CardDeal.scss";
+@import "./Components/DeliveryComponent/DeliveryComponent.scss";
+@import "./Components/DeliveryComponent/DeliveryList.scss";
 @import "./Components/Overlay/Overlay.scss";
 @import "./Components/SearchBar/SearchBar.scss";
 @import "./Components/SearchBar/SimpleProductList/SimpleProductList.scss";
@@ -18,11 +20,13 @@
 @import "./Components/Rating/Rating.scss";
 @import "./Components/CardComponent/CardComponent.scss";
 @import "./Components/ProductSummary/ProductSummary.scss";
+@import "./Components/ProductSummary/ProductDescription/ProductDescription.scss";
 @import "./Components/ProductSummary/ProductPrice/ProductPrice.scss";
 @import "./Components/SpreadCostCard/SpreadCostCard.scss";
 @import "./Components/SpreadCostCard/CostCard/CostCard.scss";
 @import "./Components/NotificationDropdownBox/NotificationDropdownBox.scss";
 @import "./Components//ProductSummary/ProductOffers/ProductOffers.scss";
+@import "./Components/ProductSummary/ProductPrice/StockMessage/StockMessage.scss";
 // .App {
 //     background-color:grey;
 // }
