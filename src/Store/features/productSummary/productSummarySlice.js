@@ -8,7 +8,6 @@ const initialState = [
     productImageUrl:
       "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
     formatBadges: ["freewiew", "4kHDR"],
-    guarantee: 2,
     productDescription: [
       "Android 12",
       "6.6 Full HD+ LCD touchscreen",
@@ -31,6 +30,8 @@ const initialState = [
       { id: 0, type: "free-delivery" },
       { id: 1, type: "noCollection" },
     ],
+    extraInfo: [{text: "2 year guarantee", color:"primary", url:""},
+    {text: "3 months 0% intrest", color:"primary", url:""}],
     stock: [
       {
         text: "Sorry, this item is currently out of stock.",
@@ -45,7 +46,6 @@ const initialState = [
     productImageUrl:
       "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
     formatBadges: ["freewiew", "4kHDR"],
-    guarantee: 2,
     productDescription: [
       "Android 12",
       "6.6 Full HD+ LCD touchscreen",
@@ -68,6 +68,8 @@ const initialState = [
       { id: 0, type: "free-delivery" },
       { id: 1, type: "noCollection" },
     ],
+    extraInfo: [{text: "2 year guarantee", color:"special", url:""},
+    {text: "3 months 0% intrest", color:"primary", url:""}],
     stock: [
       {
         text: "Sorry, this item is currently out of stock.",
@@ -82,7 +84,6 @@ const initialState = [
     productImageUrl:
       "https://media.currys.biz/i/currysprod/M10197969_black?$g-small$&amp;fmt='auto'",
     formatBadges: ["freewiew", "4kHDR"],
-    guarantee: 2,
     productDescription: [
       "Android 12",
       "6.6 Full HD+ LCD touchscreen",
@@ -97,7 +98,7 @@ const initialState = [
     ],
     rating: {
       value: 3,
-      count: 5,
+      count: 5
     },
     productPrice: "1049.00",
     savedMoney: "300.00",
@@ -105,6 +106,8 @@ const initialState = [
       { id: 0, type: "free-delivery" },
       { id: 1, type: "noCollection" },
     ],
+    extraInfo: [{text: "Back Friday & Beyond", color:"special", url:""},
+    {text: "3 months 0% intrest", color:"primary", url:""}],
     stock: [
       {
         text: "Sorry, this item is currently out of stock.",

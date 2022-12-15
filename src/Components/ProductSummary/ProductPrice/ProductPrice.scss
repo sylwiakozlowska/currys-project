@@ -1,14 +1,5 @@
 .product-price-component {
-  padding-left: 20px;
-}
-.guaranteeText {
-  padding: 2px 5px;
-  font-size: 12px;
-  background: #ebe6f4;
-  border-left: 4px solid #4c12a1;
-  border-radius: 3px;
-  width: 170px;
-}
+  // padding-left: 20px;
 
 .cost-button {
   text-align: center;
@@ -25,14 +16,18 @@
 }
 
 //price status
-.new-price {
-  font-weight: bold;
-  font-size: 22px;
-  color: #222222;
+.price-status {
+  display: flex;
+  flex-direction: column;
+  .new-price {
+    font-weight: bold;
+    font-size: 20px;
+    color: #222222;
+  }
+  .saved-money {
+    font-weight: bold;
+    font-size: 14px;
+    color: #e5006d;
+  }
 }
-.saved-money {
-  font-weight: bold;
-  font-size: 14px;
-  color: #e5006d;
-  margin-left: 5px;
 }

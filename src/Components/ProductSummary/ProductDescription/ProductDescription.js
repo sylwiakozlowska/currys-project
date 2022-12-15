@@ -1,5 +1,4 @@
 import React from "react";
-import { Rating } from "../../Rating/Rating";
 import classNames from "classnames";
 import { ProductOffers } from "../ProductOffers/ProductOffers";
 

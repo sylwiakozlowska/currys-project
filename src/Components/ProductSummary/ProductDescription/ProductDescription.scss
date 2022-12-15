@@ -3,18 +3,19 @@
     .product-item-description-list {
       color: #222222;
       font-weight: 600;
+      padding: 10px 20px;
     }
     .product-item-description {
-      list-style: inside;
-      margin: 0 0 8px;
-    }
-
+      list-style: disc;
+      margin-bottom: 8px;
+   }
     .content {
       display: flex;
       align-items: center;
       color: #4c12a1;
       border: none;
       background: white;
+      margin: 0;
     }
   }
 }

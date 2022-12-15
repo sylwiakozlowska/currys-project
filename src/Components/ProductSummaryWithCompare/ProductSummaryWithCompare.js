@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../styles.scss";
 import { ProductSummary } from "../ProductSummary/ProductSummary";
+import { ProductSummaryMobile } from "../ProductSummaryMobile/ProductSummaryMobile";
 // import { ComparePanel } from "../ProductSummary/ComparePanel/ComparePanel";
 import { useSelector } from "react-redux";
 import { selectProductSummary } from "../../Store/features/productSummary/productSummarySlice";
@@ -8,6 +9,7 @@ import { selectProductSummary } from "../../Store/features/productSummary/produc
 
 export const ProductSummaryWithCompare = () => {
   const [productsToCompare, setProductsToCompare] = useState([]);
+
 
   const products = useSelector(selectProductSummary);
   console.log(products, "products");
@@ -33,12 +35,16 @@ export const ProductSummaryWithCompare = () => {
   const productSummaries = products.map((product) => {
     return <ProductSummary product={product} onCompare={onCompare} />;
   });
+  const productSummariesMobile = products.map((product) => {
+    return <ProductSummaryMobile product={product} onCompare={onCompare} />;
+  });
   return (
     <section  className="product-summary-wrapper">
       {productSummaries}
       {/* {products.length && ( */}
         {/* // <ComparePanel products={productsToCompare} onClear={onCompare} /> */}
       {/* )} */}
+     {productSummariesMobile}
     </section >
   );
 };

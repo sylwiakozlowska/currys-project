@@ -1,11 +1,8 @@
-.product-summary-wrapper {
-  background: #f2f2f2;
-}
 .product-summary-component {
   background: white;
   border: 1px solid #cccccc;
   border-radius: 5px;
-  padding: 20px;
+  padding: 40px 15px 20px;
   margin: 20px;
   transition: border 0.2s ease 0s;
   &.product-summary-component:hover {
@@ -24,6 +21,7 @@
     display: flex;
   }
   .product-summary-content {
+    padding-left: 20px;
     .product-name-link {
       display: flex;
       color: #213038;
@@ -35,6 +33,9 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+    .column {
+      padding: 10px 20px;
     }
   }
   // .product-images {

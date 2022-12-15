@@ -7,7 +7,6 @@ import { HeaderTablet } from "./Components/HeaderTablet/HeaderTablet";
 import { ServiceMenu } from "./Components/ServiceMenu/ServiceMenu";
 import { CardDeal } from "./Components/CardDeal/CardDeal";
 import { Overlay } from "./Components/Overlay/Overlay";
-
 import { useSelector } from "react-redux";
 import { selectMenuOpen } from "./Store/features/app/appSlice";
 import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTablet";

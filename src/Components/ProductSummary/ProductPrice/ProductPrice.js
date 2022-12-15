@@ -1,29 +1,22 @@
 import React, { useState, useCallback } from "react";
 // import PropTypes from "prop-types";
-// import classNames from "classnames";
+import classNames from "classnames";
 import { CostCard } from "../../SpreadCostCard/CostCard/CostCard";
 import { DeliveryComponent } from "../../DeliveryComponent/DeliveryComponent";
 // import { CheckBox } from "../CheckBox/CheckBox";
 import { PriceStatus } from "./PriceStatus/PriceStatus";
 import { StockMessage } from "./StockMessage/StockMessage";
 import { CardComponent } from "../../CardComponent/CardComponent";
-
+import {ExtraInfo} from "../../ProductSummary/ProductPrice/ExtraInfo/ExtraInfo";
 export const ProductPrice = ({
   deliveries,
   // selected,
   // setCompare,
   productPrice,
   savedMoney,
-  guarantee,
+  extraInfo,
   stock,
 }) => {
-  console.log("stock1", stock);
-  let guaranteeTxt;
-  if (guarantee) {
-    guaranteeTxt = `${guarantee} year guarantee included`;
-  } else {
-    guaranteeTxt = null;
-  }
 
   const [shownCostCard, setshownCostCard] = useState(false);
 
@@ -35,12 +28,14 @@ export const ProductPrice = ({
   return (
     <div className="product-price-component">
       <PriceStatus productPrices={productPrice} saved={savedMoney} />
-      <div className="guaranteeText">{guaranteeTxt}</div>
       <div className="cost-button">
         <button onClick={() => setshownCostCard(true)}>
           Spread the cost
           <i className="glyph info-icon"></i>
         </button>
+      </div>
+      <div className="extra-info-component">
+        <ExtraInfo extraInfo={extraInfo} />
       </div>
       {shownCostCard && <CostCard onClose={closeCard} />}
       <CardComponent className="stock-info">

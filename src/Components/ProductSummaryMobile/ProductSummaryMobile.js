@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 // import PropTypes from "prop-types";
 // import classNames from "classnames";
-import { ProductImage } from "./ProductImage/ProductImage";
-import { ProductDescription } from "./ProductDescription/ProductDescription";
+import { ProductImage } from "../ProductSummary/ProductImage/ProductImage";
+import { ProductDescription } from "../ProductSummary/ProductDescription/ProductDescription";
 import { NotificationBox } from "../NotificationDropdownBox/NotificationBox/NotificationBox";
-import { ProductPrice } from "./ProductPrice/ProductPrice";
-import { Compare } from "./Compare/Compare";
+import { ProductPrice } from "../ProductSummary/ProductPrice/ProductPrice";
+// import { Compare } from "./Compare/Compare";
 import { Rating } from "../Rating/Rating";
 import { CiHeart } from "react-icons/ci";
-export const ProductSummary = ({ product, onCompare }) => {
+import { DeliveryComponent } from "../DeliveryComponent/DeliveryComponent";
+
+export const ProductSummaryMobile = ({ product, onCompare }) => {
   const [shownNotification, setShownNotification] = useState(false);
   const { rating } = product;
   // const [compare, setCompare] = useState(false);
@@ -20,30 +22,22 @@ export const ProductSummary = ({ product, onCompare }) => {
   };
   console.log("product1", product);
   return (
-    <div className="product-summary-component">
-      <div className="product-summary">
-        {/* <div className=""> */}
-        <ProductImage
-          productImageUrl={product.productImageUrl}
-          formatBadges={product.formatBadges}
-        />
-        {/* </div> */}
-        <div className="product-summary-content">
-          <a href="#" className="product-name-link">
-            <h1 className="product-title">{product.title}</h1>
-              <CiHeart className="heart-icon" />
+    <div className="product-summary-component-mobile">
+      <div className="product-summary-mobile">
+        <div className="product-summary-content-mobile">
+          <a href="#" className="product-name-link-mobile">
+            <h1 className="product-title-mobile">{product.title}</h1>
+            <CiHeart className="heart-icon" />
           </a>
           <div className="product-rating">
             <Rating value={rating.value} count={rating.count}></Rating>
             <span className="product-rating-reviews">(47)</span>
           </div>
           <div className="columns">
-            <div className="column">
-              <ProductDescription
-                productDescription={product.productDescription}
-                shownNotification={shownNotification}
-                setShownNotification={setShownNotification}
-                productOffers={product.productOffers}
+            <div className="column is-one-third">
+              <ProductImage
+                productImageUrl={product.productImageUrl}
+                formatBadges={product.formatBadges}
               />
             </div>
             <div className="column">
@@ -59,12 +53,18 @@ export const ProductSummary = ({ product, onCompare }) => {
               />
             </div>
           </div>
+          <ProductDescription
+            productDescription={product.productDescription}
+            shownNotification={shownNotification}
+            setShownNotification={setShownNotification}
+            productOffers={product.productOffers}
+          />
+          <DeliveryComponent deliveries={product.deliveries} />
         </div>
       </div>
       <div>
         {/* <Compare selected={product.selected} setCompare={checkClicked} /> */}
       </div>
-      <div>{shownNotification && <NotificationBox />}</div>
     </div>
     // </div>
   );

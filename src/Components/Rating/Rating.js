@@ -15,21 +15,21 @@ export const Rating = ({ value, count }) => {
 
   for (let i = 0; i < count; i++) {
     underStars.push(
-      <span key={i} className="icon">
+      <span key={i} className="icon icon-rating">
         <TiStar />
       </span>
     );
   }
   for (let i = 0; i < integer; i++) {
     overStars.push(
-      <span key={i} className="icon">
+      <span key={i} className="icon icon-rating">
         <TiStar />
       </span>
     );
   }
   if (fraction >= 0.5) {
     overStars.push(
-      <span key={integer} className="icon">
+      <span key={integer} className="icon icon-rating">
         <TiStarHalf />
       </span>
     );

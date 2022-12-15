@@ -15,7 +15,7 @@ export const ProductImage = ({ productImageUrl, formatBadges }) => {
   //   <img key={image} src={productImageUrl} />
   // ));
   return (
-    <div className="product-images">
+    <div className="product-image-component">
       <img src={productImageUrl} />
       {/* <div className="badges">{badgesList}</div> */}
     </div>
