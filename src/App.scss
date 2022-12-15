@@ -7,7 +7,6 @@ body,
 }
 .App {
   overflow-y: scroll;
-
 }
 .hide-scroll {
   overflow-y: hidden;
@@ -19,3 +18,34 @@ body,
   z-index: 0 !important;
 }
 
+.help-links-wrapper,
+.header-wrapper,
+.card-deal-wrapper,
+.service-menu-wrapper,
+.product-summary-wrapper {
+  padding: 0 3%;
+}
+
+@include fullhd {
+  .header-wrapper,
+  .card-deal-wrapper {
+    margin:0 15%;
+  }
+}
+.header-wrapper {
+  .header-component,
+  .header-tablet-component {
+    margin: 16px 0;
+    @include mobile {
+      margin: 10px 0;
+    }
+  }
+  .header-icons {
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 10px;
+    }
+  }
+}

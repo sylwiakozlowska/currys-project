@@ -13,9 +13,9 @@ const settings = {
   slidesPerRow: 1,
   centerPadding: 90,
   arrows: false,
-  onResize: (e, x) => {
-    console.log(e, x, this);
-  },
+  // onResize: (e, x) => {
+  //   console.log(e, x, this);
+  // },
 };
 
 export const ServiceMenu = () => {

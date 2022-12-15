@@ -5,10 +5,15 @@ import { selectCardDeal } from "../../Store/features/cardDeal/cardDealSlice";
 import Slider from "infinite-react-carousel";
 
 const settings = {
-  autoplay: true,
+  // autoplay: true,
+  autoplay: false,
   autoplaySpeed: 3e3,
   wheelScroll: 3,
   centerPadding: 90,
+  rows: 1,
+  slidesToShow: 2,
+  // autoplayScroll: 1,
+  // slidesPerRow: 1,
   arrows: true,
 };
 export const CardDeal = () => {
