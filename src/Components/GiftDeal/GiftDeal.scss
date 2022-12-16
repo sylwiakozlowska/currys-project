@@ -1,0 +1,15 @@
+.gift-deal-component {
+  img {
+    display: block;
+  }
+  .gift-deal-content-tablet {
+    @include mobile {
+      display: none;
+    }
+  }
+  .gift-deal-content-mobile {
+    @include tablet {
+      display: none;
+    }
+  }
+}
