@@ -5,14 +5,14 @@ const allProducts = {
     { id: 0, text: "Samsung Deals" },
     { id: 1, text: "Samsung trade in" },
     { id: 2, text: "Samsung Galaxy Buds 2" },
-    { id: 3, text: "LG Deals" },
+    { id: 3, text: "Apple Iphone Deals" },
     { id: 4, text: "JVC Deals" },
   ],
 
   detailedProducts: [
     {
       id: 0,
-      text: 'SAMSUNG Galaxy A13 - 64 GB, Black',
+      text: "SAMSUNG Galaxy A13 - 64 GB, Black",
       price: "£129.00",
       rating: 4.5,
       src: "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
@@ -33,10 +33,10 @@ const allProducts = {
     },
     {
       id: 3,
-      text: 'JVC LT-40CA890 Android TV 40"',
-      price: "£229.99",
-      rating: 0.5,
-      src: "https://media.currys.biz/i/currysprod/M10234328_black?$g-small$&amp;fmt=auto",
+      text: "APPLE iPhone 14 - 128 GB, Midnight",
+      price: "£849.00",
+      rating: 4.5,
+      src: "https://media.currys.biz/i/currysprod/10242696?$g-small$&fmt=%27auto%27",
     },
     {
       id: 4,
@@ -66,12 +66,12 @@ export const searchBarSlice = createSlice({
       );
       console.log(state.simpleProducts);
 
-      state.detailedProducts = detailedProducts.filter(({ id, text, price, rating, imageUrl }) =>
-        new RegExp(payload, "i").test(text)
+      state.detailedProducts = detailedProducts.filter(
+        ({ id, text, price, rating, imageUrl }) =>
+          new RegExp(payload, "i").test(text)
       );
       console.log(state.detailedProducts);
     },
-    
   },
 });
 

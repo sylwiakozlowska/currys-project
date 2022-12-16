@@ -2,13 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import "../../styles.scss";
 import { SimpleProductList } from "./SimpleProductList/SimpleProductList";
 import { DetailedProductList } from "./DetailedProductList/DetailedProductList";
-import {AiOutlineSearch} from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
+import { RxCross1 } from "react-icons/rx";
 export const SearchBar = ({
   simpleProducts,
   detailedProducts,
   onChange,
   onSelected,
-  onSearch
+  onSearch,
 }) => {
   console.log(
     onChange,
@@ -54,7 +55,7 @@ export const SearchBar = ({
     //   setShown(false);
     // }
 
-    setShown(text.length > 0);
+    setShown(text.length > 1);
   }, [text]);
 
   useEffect(() => {
@@ -72,21 +73,6 @@ export const SearchBar = ({
       document.removeEventListener("click", onClick, false);
     };
   }, [ref, shown, onClose]);
-
-  useEffect(() => {
-    //if (the input has text)
-    //{then open the dropdown}
-    //else the input is empty
-    //{then dont open the dropdown}
-
-    // if (text.length > 0) {
-    //   setShown(true);
-    // } else {
-    //   setShown(false);
-    // }
-
-    setShown(text.length > 0);
-  }, [text]);
   return (
     <div ref={ref} className="search-bar-component">
       <div className="field has-addons">
@@ -102,15 +88,13 @@ export const SearchBar = ({
         {shown && (
           <div className="control">
             <button className="button close" onClick={onClose}>
-              <span className="icon">
-                <i className="glyph close-icon"></i>
-              </span>
+              <RxCross1 className="close-icon" />
             </button>
           </div>
         )}
         <div className="control">
           <button className="button is-primary" onClick={onClickSearch}>
-           <AiOutlineSearch className="icon"/>
+            <AiOutlineSearch className="icon" />
           </button>
         </div>
       </div>
