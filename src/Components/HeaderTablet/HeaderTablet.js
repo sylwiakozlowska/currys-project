@@ -5,6 +5,7 @@ import { HeaderIcons } from "../Header/HeaderIcons/HeaderIcons";
 import { useDispatch } from "react-redux";
 import { showMenu } from "../../Store/features/app/appSlice";
 import { SearchBarWrapper } from "../SearchBar/SearchBarWrapper";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 export const HeaderTablet = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ export const HeaderTablet = () => {
             dispatch(showMenu());
           }}
         >
-          <i className="glyph menu-icon"></i>
+          <RxHamburgerMenu className="menu-icon" />
           <p>Menu</p>
         </a>
       </div>

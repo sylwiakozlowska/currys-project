@@ -12,6 +12,8 @@ import { selectMenuOpen } from "./Store/features/app/appSlice";
 import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTablet";
 // import { Outlet, Link, Route, Routes } from "react-router-dom";
 import { ProductSummaryWithCompare } from "./Components/ProductSummaryWithCompare/ProductSummaryWithCompare";
+import { GiftDeal } from "./Components/GiftDeal/GiftDeal";
+import { BannerComponent } from "./Components/BannerComponent/BannerComponent";
 function App() {
   const openMenu = useSelector(selectMenuOpen);
   console.log("openMenu", openMenu);
@@ -27,9 +29,14 @@ function App() {
         <Header />
         <HeaderTablet />
       </header>
-      <section className="service-menu-wrapper">
-        <ServiceMenu />
+      <section className="benner-wrapper">
+        <BannerComponent>
+          <GiftDeal />
+        </BannerComponent>
       </section>
+      {/* <section className="service-menu-wrapper">
+        <ServiceMenu />
+      </section> */}
       <section className="card-deal-wrapper">
         <h1>Christmas at Currys</h1>
         <CardDeal />

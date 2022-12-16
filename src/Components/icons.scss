@@ -21,12 +21,12 @@ body {
 .basket-icon::before {
   content: "\e90e";
 }
-.search-icon::before {
-  content: "\e91D";
-}
-.menu-icon::before {
-  content: "\f0C9";
-}
+// .search-icon::before {
+//   content: "\e91D";
+// }
+// .menu-icon::before {
+//   content: "\f0C9";
+// }
 .deal-icon::before {
   content: "\e90a";
   font-size: 1.5em;
@@ -40,11 +40,11 @@ body {
   content: "\e91d";
   font-size: 1.5em;
 }
-.search-icon::before {
-  content: "\f002";
-  font-size: 1.5em;
-  color: white;
-}
+// .search-icon::before {
+//   content: "\f002";
+//   font-size: 1.5em;
+//   color: white;
+// }
 .expand-menu-right-icon::before {
   content: "\f054";
   font-size: 1em;
@@ -124,7 +124,14 @@ body {
   content: " ";
 }
 //react icons
+.heart-icon,
+.menu-icon,
+.basket-icon,
+.account-icon,
+.location-icon {
+  height: 24px;
+  font-size: medium;
+}
 .heart-icon {
   width: 24px;
-  height: 24px;
 }

@@ -18,6 +18,9 @@
   @include desktop {
     display: none;
   }
+  @include tablet {
+    flex-wrap: nowrap;
+  }
 
   .header-tablet-logo-wrapper {
     width: 16%;

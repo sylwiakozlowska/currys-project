@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "../../styles.scss";
 import { SimpleProductList } from "./SimpleProductList/SimpleProductList";
 import { DetailedProductList } from "./DetailedProductList/DetailedProductList";
-
+import {AiOutlineSearch} from "react-icons/ai";
 export const SearchBar = ({
   simpleProducts,
   detailedProducts,
@@ -110,7 +110,7 @@ export const SearchBar = ({
         )}
         <div className="control">
           <button className="button is-primary" onClick={onClickSearch}>
-            <i className="glyph search-icon"></i>
+           <AiOutlineSearch className="icon"/>
           </button>
         </div>
       </div>
