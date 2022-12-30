@@ -14,6 +14,7 @@ import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTabl
 import { ProductSummaryWithCompare } from "./Components/ProductSummaryWithCompare/ProductSummaryWithCompare";
 import { GiftDeal } from "./Components/GiftDeal/GiftDeal";
 import { BannerComponent } from "./Components/BannerComponent/BannerComponent";
+import {NonPureFilterComponent} from "./Components/FilterComponent/NonPureFilterComponent/NonPureFilterComponent";
 function App() {
   const openMenu = useSelector(selectMenuOpen);
   console.log("openMenu", openMenu);
@@ -40,6 +41,9 @@ function App() {
       <section className="card-deal-wrapper">
         <h1>Christmas at Currys</h1>
         <CardDeal />
+      </section>
+      <section className="filters-wrapper">
+       <NonPureFilterComponent/>
       </section>
       {openMenu && (
         <Overlay>

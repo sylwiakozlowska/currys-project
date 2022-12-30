@@ -1,0 +1,15 @@
+.active-filters-component {
+  border-bottom: 1px solid $active-filters_border;
+  padding: $active-filters_padding;
+  .active-filters-content {
+    display: flex;
+    .active-filters-title {
+      flex-grow: 1;
+      font-weight: bold;
+      padding-bottom: 16px;
+    }
+    .active-filters-reset {
+      margin: 0;
+    }
+  }
+}

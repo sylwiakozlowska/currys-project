@@ -1,0 +1,50 @@
+//filter component
+
+.filter-component {
+  background-color: $filter-component_background;
+  border-radius: $filter-component_radious;
+  border: 1px solid $filter-component_border;
+  border-bottom: none;
+  width: 400px;
+  
+
+  .filter-box-component {
+    padding: 10px 16px;
+    // padding: $filter-component_padding;
+    // border-bottom: 1px solid $filter-component_border;
+  }
+  .filter-header {
+    h1 {
+      font-weight: normal;
+      padding: 18px 16px;
+    }
+  }
+  .filter-box-component {
+    font-weight: bold;
+    border-top: 1px solid $filter-component_border-top;
+  }
+  .filter-boxes {
+    text-decoration: none;
+  }
+}
+
+//filterComp
+
+.filter-comp-component {
+  li {
+    list-style-type: none;
+  }
+  .filter-items {
+    display: inline-flex;
+    align-items: center;
+    a {
+      font-weight: normal;
+      color: $filter-comp_text;
+      margin: 5px;
+    }
+  }
+}
+.rating-component {
+  display: inline-block;
+  width: 120px;
+}

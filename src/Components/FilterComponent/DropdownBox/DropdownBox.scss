@@ -1,0 +1,21 @@
+  .glyph {
+    font-family: "dcg-icons";
+    font-style: normal;
+  }
+  
+  .arrow-up::before {
+    content: "\e924";
+  }
+  .arrow-down::before {
+      content: "\e925";
+  }
+
+
+.dropdown-box-component {
+  .dropdown-box-content {
+    display: flex;
+    .dropdown-box-title {
+      flex-grow: 1;
+    }
+  }
+}

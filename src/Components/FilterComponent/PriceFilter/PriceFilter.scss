@@ -1,0 +1,19 @@
+.price-filter-component {
+  display: inline-flex;
+  .control {
+    width: 100px;
+    input:focus {
+      border: 2px solid #4C12A1;
+    }
+    // input:active{
+    //   box-shadow: #4C12A1;
+    //   border: 1px solid #4C12A1;
+    // }
+  }
+  .button.is-primary.is-outlined {
+    border: 1px solid $price-filter_border;
+  }
+  span {
+    padding: $price-filter_padding;
+  }
+}
