@@ -4,6 +4,9 @@ import { SimpleProductList } from "./SimpleProductList/SimpleProductList";
 import { DetailedProductList } from "./DetailedProductList/DetailedProductList";
 import { AiOutlineSearch } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
+
+
+const MIN_LENGTH = 2;
 export const SearchBar = ({
   simpleProducts,
   detailedProducts,
@@ -30,7 +33,7 @@ export const SearchBar = ({
   const onChangeText = (e) => {
     const { value } = e.target;
     setText(value);
-    if (value.length > 2) {
+    if (value.length > MIN_LENGTH) {
       onChange(value);
     }
     console.log("value", value);
@@ -54,9 +57,9 @@ export const SearchBar = ({
     // } else {
     //   setShown(false);
     // }
-
-    setShown(text.length > 1);
-  }, [text]);
+    setShown(!!(simpleProducts.length || detailedProducts.length) && text.length > 2)
+    // setShown(text.length > MIN_LENGTH);
+  }, [simpleProducts, detailedProducts, text]);
 
   useEffect(() => {
     const node = ref.current;
@@ -87,7 +90,7 @@ export const SearchBar = ({
         </div>
         {shown && (
           <div className="control">
-            <button className="button close" onClick={onClose}>
+            <button className="button button-close" onClick={onClose}>
               <RxCross1 className="close-icon" />
             </button>
           </div>
@@ -99,8 +102,8 @@ export const SearchBar = ({
         </div>
       </div>
 
-      <div className="dropdown">
-        {shown && (
+      {shown && (
+        <div className="dropdown">
           <div className="dropdown-content">
             <SimpleProductList
               simpleProducts={simpleProducts}
@@ -111,8 +114,8 @@ export const SearchBar = ({
               onSelected={onSelected}
             />
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

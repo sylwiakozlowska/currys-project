@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductSummaryWithCompare } from "./ProductSummaryWithCompare";
+import { ProductSummaryWithCompare } from "./NonPureProductSummary";
 import { productSummaryComponentData } from "../ProductSummary/ProductSummaryData";
 
 // import "../../../styles.scss";

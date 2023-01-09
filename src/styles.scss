@@ -20,7 +20,7 @@
 @import "./Components/SearchBar/DetailedProductList/DetailedProductList.scss";
 @import "./Components/Rating/Rating.scss";
 @import "./Components/CardComponent/CardComponent.scss";
-@import "./Components/ProductSummaryWithCompare/ProductSummaryWithCompare.scss";
+@import "./Components/NonPureProductSummary/NonPureProductSummary.scss";
 @import "./Components/ProductSummary/ProductSummary.scss";
 @import "./Components/ProductSummary/ProductImage/ProductImage.scss";
 @import "./Components/ProductSummary/ProductPrice/ExtraInfo/ExtraInfo.scss";
@@ -39,6 +39,7 @@
 @import "./Components/FilterComponent/DropdownBox/DropdownBox.scss";
 @import "./Components/FilterComponent/PillBox/PillBox.scss";
 @import "./Components/FilterComponent/PriceFilter/PriceFilter.scss";
+@import "./Components/FiltersWithProducts/FiltersWithProducts.scss";
 
 
 
