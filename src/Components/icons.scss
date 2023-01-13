@@ -8,7 +8,9 @@ body {
 }
 
 .close-icon::before {
- color:  #495057;
+  content: "\e607";
+  font-size: 1.5em;
+  color: #495057;
 }
 .location-icon::before {
   content: "\e90c";

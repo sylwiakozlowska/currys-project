@@ -1,13 +1,13 @@
 import React from "react";
 
-export const PillBox = ({ id, children, onClear }) => {
+export const PillBox = ({ groupId, id, children, onClear }) => {
   return (
     <div className="pill-box-component">
       <div className="pill-box-content">
         {children}
-        <span onClick={() => onClear(id)}>
-          <i className="glyph cross-icon"></i>
-        </span>
+        <button onClick={() => onClear(groupId, id, false)}>
+          <i className="glyph close-icon"></i>
+        </button>
       </div>
     </div>
   );

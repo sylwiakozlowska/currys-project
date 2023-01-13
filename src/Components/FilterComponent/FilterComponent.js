@@ -1,37 +1,42 @@
 import React from "react";
+import "../../styles.scss";
 import { FilterBox } from "./FilterBox/FilterBox";
 import { ActiveFilters } from "./ActiveFilters/ActiveFilters";
-import "../../styles.scss";
-import { useSelector } from "react-redux";
-import { selectFilterSlice } from "../../Store/features/filterComponent/FilterSlice";
-
-export const FilterComponent = ({
-  filter,
-  // onClear,
-  onChange,
-}) => {
-  console.log("filter1",filter);
-
-  const {selectedFilterItems, groups}  = useSelector(selectFilterSlice);
-console.log("selectedFilterItems1",selectedFilterItems)
-  const filterBoxes = groups.map(({title, filterItems}) => {
-    const onChangeSelected = (filter) => {
-      onChange(groups);
-      console.log("filterBoxes1",filterBoxes)
-    };
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectFilterItems,
+  selectFilterGroups,
+} from "../../Store/features/filterComponent/FilterSlice";
+import { filterSelected } from "../../Store/features/filterComponent/FilterSlice";
+export const FilterComponent = (
+  {
+    // onClear,
+    // onChange,
+  }
+) => {
+  const groups = useSelector(selectFilterGroups);
+  const selectedFilterItems = useSelector(selectFilterItems);
+  console.log("selectedFilterItems", selectedFilterItems);
+  const dispatch = useDispatch();
+  // console.log("selectedFilterItems1", "groups1", selectedFilterItems, groups);
+  const onChangeSelected = (groupId, id, checked) => {
+    dispatch(filterSelected({ groupId, id, checked }));
+    console.log("groupId,id,checked", id, groupId, checked);
+  };
+  const filterBoxes = groups.map(({ id: groupId, title, filterItems }) => {
     return (
       <FilterBox
+        groupId={groupId}
         title={title}
         filterItems={filterItems}
         onChange={onChangeSelected}
       />
     );
   });
-
   return (
     <section className="filter-component">
       <ActiveFilters
-        // onClear={onClear}
+        onClear={onChangeSelected}
         selectedFilterItems={selectedFilterItems}
       />
       <header className="filter-header">

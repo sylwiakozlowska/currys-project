@@ -6,18 +6,23 @@ import { PriceFilter } from "../PriceFilter/PriceFilter";
 
 const COUNT = 5;
 
-export const FilterBox = ({ title, filterItems, onChange }) => {
+export const FilterBox = ({ groupId, title, filterItems, onChange }) => {
   let filterContent = filterItems.map((filter) => {
     const { id, type, text, count, value, selected } = filter;
-    const onChangeSelected = () => {
-      onChange(filter);
+    const onChangeSelected = (checked) => {
+      onChange(groupId,id,checked);
+      // console.log("id,groupId,checked", id,groupId,checked);
     };
     let comp;
     let ratingText;
     switch (type) {
       case "string":
         comp = (
-          <FilterComp count={count} onChange={onChangeSelected} selected={selected}>
+          <FilterComp
+            count={count}
+            onChange={onChangeSelected}
+            selected={selected}
+          >
             {text}
           </FilterComp>
         );
@@ -29,7 +34,11 @@ export const FilterBox = ({ title, filterItems, onChange }) => {
           ratingText = `${value}`;
         }
         comp = (
-          <FilterComp count={count} onChange={onChangeSelected} selected={selected}>
+          <FilterComp
+            count={count}
+            onChange={onChangeSelected}
+            selected={selected}
+          >
             <Rating value={value} count={COUNT} />
             <span className="rating-text">{ratingText}</span>
           </FilterComp>

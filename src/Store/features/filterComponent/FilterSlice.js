@@ -1,44 +1,82 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let groupId = 0;
+let itemId = 0;
 
 const initialState = {
   selectedFilterItems: [
-    { id: 0, type: "string", text: "SAMSUNG" },
+    // { id: 0, type: "string", text: "SAMSUNG" },
     // { id: 1, type: "string", text: "LG" },
     // { id: 2, type: "rating", value: 4 },
   ],
   groups: [
     // { title: "Active filters:", filters: [{ id: 0, type: "active" }] },
-    { id: groupId++, title: "Price", filterItems: [{ id: 0, type: "price" }] },
+    {
+      id: groupId++,
+      title: "Price",
+      filterItems: [{ id: itemId++, type: "price", selected: false }],
+    },
     {
       id: groupId++,
       title: "By Brand",
       filterItems: [
-        { id: 0, type: "string", text: "SAMSUNG", count: 138 },
-        { id: 1, type: "string", text: "LG", count: 13 },
-        { id: 2, type: "string", text: "SONY", count: 62 },
-        { id: 3, type: "string", text: "PHILIPS", count: 35 },
+        {
+          id: itemId++,
+          type: "string",
+          text: "SAMSUNG",
+          count: 138,
+          selected: false,
+        },
+        {
+          id: itemId++,
+          type: "string",
+          text: "LG",
+          count: 13,
+          selected: false,
+        },
+        {
+          id: itemId++,
+          type: "string",
+          text: "SONY",
+          count: 62,
+          selected: false,
+        },
+        {
+          id: itemId++,
+          type: "string",
+          text: "PHILIPS",
+          count: 3.5,
+          selected: false,
+        },
       ],
     },
     {
       id: groupId++,
       title: "Customer rating",
       filterItems: [
-        { id: 0, type: "rating", value: 5, ratingText: "", count: 46 },
         {
-          id: 0,
+          id: itemId++,
+          type: "rating",
+          value: 5,
+          ratingText: "",
+          count: 46,
+          selected: false,
+        },
+        {
+          id: itemId++,
           type: "rating",
           value: 4,
           ratingText: " or more ",
           count: 268,
+          selected: false,
         },
         {
-          id: 0,
+          id: itemId++,
           type: "rating",
           value: 3,
           ratingText: "3 or more ",
           count: 277,
+          selected: false,
         },
       ],
     },
@@ -46,29 +84,68 @@ const initialState = {
       id: groupId++,
       title: "Getting it to you",
       filterItems: [
-        { id: 0, type: "string", text: "To deliver", count: 82 },
         {
-          id: 1,
+          id: itemId++,
+          type: "string",
+          text: "To deliver",
+          count: 8,
+          selected: false,
+        },
+        {
+          id: itemId++,
           type: "string",
           text: "To collect within an hour",
           count: 15,
+          selected: false,
         },
-        { id: 2, type: "string", text: "To collect from next day", count: 9 },
+        {
+          id: itemId++,
+          type: "string",
+          text: "To collect from next day",
+          count: 9,
+          selected: false,
+        },
       ],
     },
     {
       id: groupId++,
       title: "Type",
       filterItems: [
-        { id: 0, type: "string", text: "8K TVs", count: 10 },
-        { id: 1, type: "string", text: "4K HDR TVs", count: 120 },
-        { id: 2, type: "string", text: "4K ultra HD TVs", count: 118 },
+        {
+          id: itemId++,
+          type: "string",
+          text: "8K TVs",
+          count: 10,
+          selected: false,
+        },
+        {
+          id: itemId++,
+          type: "string",
+          text: "4K HDR TVs",
+          count: 120,
+          selected: false,
+        },
+        {
+          id: itemId++,
+          type: "string",
+          text: "4K ultra HD TVs",
+          count: 118,
+          selected: false,
+        },
       ],
     },
     {
       id: groupId++,
       title: "Color",
-      filterItems: [{ id: 2, type: "color", color: "black", count: 2 }],
+      filterItems: [
+        {
+          id: itemId++,
+          type: "color",
+          color: "black",
+          count: 2,
+          selected: false,
+        },
+      ],
     },
   ],
 };
@@ -77,14 +154,47 @@ export const filterSlice = createSlice({
   name: "filter",
   initialState,
   reducers: {
+    filterSelected(state, { payload }) {
+      const groupItems = state.groups;
+      const { groupId, id, checked } = payload;
 
+      console.log("groupItems", groupItems);
+      console.log("payload", payload);
+      //   console.log("payload",payload, state)
+      const groupItem = groupItems.find((el) => el.id === groupId);
+      console.log(
+        "groupItem",
+        groupItem.id,
+        groupItem.title,
+        groupItem.filterItems
+      );
+
+      const item = groupItem.filterItems.find((el) => el.id === id);
+      // console.log("item", item.id, item.text);
+      item.selected = checked;
+    },
   },
 });
 
-// export const { setSearchTerm } = filterSlice.actions;
+export const { filterSelected, addfilterActive } = filterSlice.actions;
 
-export const selectFilterSlice = (state) => {
-  return state.filter;
+export const selectFilterItems = (state) => {
+  const selectedFilterItems = [];
+  // const findSelectedItems = 
+  state.filter.groups.forEach(({id:groupId, filterItems})=>{
+    console.log("idslice",groupId, filterItems)
+    filterItems.forEach((item)=>{
+      if(item.selected === true){
+        selectedFilterItems.push({...item, groupId })
+      }
+    })
+  })
+  // console.log("findSelectedItem",findSelectedItem)
+  // selectedFilterItems.push(findSelectedItem);
+  return selectedFilterItems;
+  console.log("selectedFilterItems",selectedFilterItems)
 };
-
+export const selectFilterGroups = (state) => {
+  return state.filter.groups;
+};
 export default filterSlice.reducer;

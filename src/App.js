@@ -11,10 +11,8 @@ import { useSelector } from "react-redux";
 import { selectMenuOpen } from "./Store/features/app/appSlice";
 import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTablet";
 // import { Outlet, Link, Route, Routes } from "react-router-dom";
-import { NonPureProductSummary } from "./Components/NonPureProductSummary/NonPureProductSummary";
 import { GiftDeal } from "./Components/GiftDeal/GiftDeal";
 import { BannerComponent } from "./Components/BannerComponent/BannerComponent";
-import {NonPureFilterComponent} from "./Components/FilterComponent/NonPureFilterComponent/NonPureFilterComponent";
 import { FiltersWithProducts } from "./Components/FiltersWithProducts/FiltersWithProducts";
 function App() {
   const openMenu = useSelector(selectMenuOpen);
@@ -45,7 +43,6 @@ function App() {
       </section>
       <section className="filters-wrapper">
         <FiltersWithProducts/>
-       {/* <NonPureFilterComponent/> */}
       </section>
       {openMenu && (
         <Overlay>
@@ -53,7 +50,6 @@ function App() {
         </Overlay>
       )}
 
-      {/* <NonPureProductSummary /> */}
       {/* <Route path="contact" element={<CardDeal />}></Route> */}
     </div>
   );
