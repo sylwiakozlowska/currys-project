@@ -38,7 +38,6 @@ export const ActiveFilters = ({ selectedFilterItems, onClear }) => {
     <div className="active-filters-component">
       <div className="active-filters-content">
         <h2 className="active-filters-title">Active Filters:</h2>
-        <a className="active-filters-reset">Reset filters</a>
       </div>
       {activeFiltersContent}
     </div>

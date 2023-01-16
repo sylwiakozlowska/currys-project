@@ -35,6 +35,13 @@ body {
   content: "\e926";
   font-size: 18px;
 }
+.arrow-up::before {
+  content: "\e924";
+}
+.arrow-down::before {
+    content: "\e925";
+}
+
 //card
 .deal-icon::before {
   content: "\e91d";

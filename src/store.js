@@ -6,7 +6,7 @@ import menuReducer from "./Store/features/menu/menuSlice";
 import serviceMenuReducer from "./Store/features/serviceMenu/serviceMenuSlice";
 import cardDealReducer from "./Store/features/cardDeal/cardDealSlice";
 import productSummaryReducer from "./Store/features/productSummary/productSummarySlice";
-import FilterReducer from "./Store/features/filterComponent/FilterSlice";
+import filterReducer from "./Store/features/filterComponent/FilterSlice";
 
 
 
@@ -19,7 +19,7 @@ export const store = configureStore({
     serviceMenu: serviceMenuReducer,
     cardDeal: cardDealReducer,
     productSummary: productSummaryReducer,
-    filter: FilterReducer,
+    filter: filterReducer,
   },
 });
 export default store;

@@ -1,22 +1,23 @@
 //filter component
 
 .filter-component {
-  background-color: $filter-component_background;
   border-radius: $filter-component_radious;
   border: 1px solid $filter-component_border;
-  border-bottom: none;
   width: 400px;
-  
-
   .filter-box-component {
     padding: 10px 16px;
     // padding: $filter-component_padding;
     // border-bottom: 1px solid $filter-component_border;
   }
   .filter-header {
-    h1 {
-      font-weight: normal;
-      padding: 18px 16px;
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid $filter-component_border-bottom;
+    .title {
+      flex-grow: 1;
+    }
+    a {
+      text-decoration: underline;
     }
   }
   .filter-box-component {

@@ -17,7 +17,7 @@ export const DropdownBox = ({ title, children }) => {
   return (
     <div className="dropdown-box-component">
       <div className="dropdown-box-content">
-        <span className="dropdown-box-title">{title}</span>
+        <h3 className="dropdown-box-title title is-3">{title}</h3>
         <span
           className="dropdownIcon"
           onClick={() => {

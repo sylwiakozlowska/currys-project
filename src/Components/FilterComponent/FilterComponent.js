@@ -35,13 +35,14 @@ export const FilterComponent = (
   });
   return (
     <section className="filter-component">
+      <header className="filter-header">
+        <h2 className="title is-2">Filters</h2>
+        <a href="#" type="button">Clear all</a>
+      </header>
       <ActiveFilters
         onClear={onChangeSelected}
         selectedFilterItems={selectedFilterItems}
       />
-      <header className="filter-header">
-        <h1>Filters</h1>
-      </header>
       <ul className="filter-boxes">{filterBoxes}</ul>
     </section>
   );
