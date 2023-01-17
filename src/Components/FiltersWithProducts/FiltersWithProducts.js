@@ -2,8 +2,8 @@ import React from "react";
 import { FilterComponent } from "../FilterComponent/FilterComponent";
 // import { intersectionWith, remove } from "lodash";
 import { NonPureProductSummary } from "../ProductSummary/NonPureProductSummary/NonPureProductSummary";
-// import {
-// setSearchTerm} from "../../Store/features/searchBar/searchBarSlice";
+
+
 export const FiltersWithProducts = () => {
   // const productSummaries = products.map((product) => {
   //   return <ProductSummary product={product} onCompare={onCompare} />;
