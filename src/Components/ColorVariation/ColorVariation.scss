@@ -1,0 +1,38 @@
+.color-variation-component {
+  display: flex;
+  flex-direction: column;
+  span {
+    font-weight: bold;
+  }
+  ul {
+    display: flex;
+    padding-top: 12px;
+  }
+  .color-variation-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #fff;
+    width: 56px;
+    height: 56px;
+    border: 2px solid #fff;
+    padding: 2px;
+    margin: 0 4px;
+  }
+  .color-variation-list.selected {
+    border: 2px solid #4c12a1;
+    padding: 2px;
+    border-radius: 50%;
+    p {
+      font-weight: bold;
+    }
+  }
+  img {
+    border: 1px solid #cdd8df;
+    border-radius: 50%;
+  }
+  input {
+    display: none;
+  }
+}

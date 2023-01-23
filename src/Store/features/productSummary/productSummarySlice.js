@@ -20,6 +20,10 @@ const initialState = [
       "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
       "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
     ],
+    pricingOptions: [
+      { id: 0, price: "159", text: "One-off payment", selected: false },
+      { id: 1, price: "6.10", text: "per month*", selected: false },
+    ],
     rating: {
       value: 3,
       count: 5,
@@ -30,14 +34,42 @@ const initialState = [
       { id: 0, type: "free-delivery" },
       { id: 1, type: "noCollection" },
     ],
-    extraInfo: [{text: "2 year guarantee", color:"primary", url:""},
-    {text: "3 months 0% intrest", color:"primary", url:""}],
+    extraInfo: [
+      { text: "2 year guarantee", color: "primary", url: "" },
+      { text: "3 months 0% intrest", color: "primary", url: "" },
+    ],
     stock: [
       {
         text: "Sorry, this item is currently out of stock.",
       },
     ],
     selected: true,
+    colorVariation: [
+      {
+        id: 0,
+        src: "https://media.currys.biz/i/currysprod/M10237191_black_SWATCH?$swatch$&fmt=auto",
+        text: "black",
+        selected: true,
+      },
+      {
+        id: 1,
+        src: "https://media.currys.biz/i/currysprod/M10237191_blue_SWATCH?$swatch$&fmt=auto",
+        text: "blue",
+        selected: false,
+      },
+      {
+        id: 2,
+        src: "https://media.currys.biz/i/currysprod/M10237191_orange_SWATCH?$swatch$&fmt=auto",
+        text: "orange",
+        selected: false,
+      },
+      {
+        id: 3,
+        src: "https://media.currys.biz/i/currysprod/M10237191_white_SWATCH?$swatch$&fmt=auto",
+        text: "white",
+        selected: false,
+      },
+    ],
   },
   {
     id: 1,
@@ -58,6 +90,10 @@ const initialState = [
       "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
       "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
     ],
+    pricingOptions: [
+      { id: 0, price: "159", text: "One-off payment", selected: false },
+      { id: 1, price: "6.10", text: "per month*", selected: false },
+    ],
     rating: {
       value: 3,
       count: 5,
@@ -68,14 +104,42 @@ const initialState = [
       { id: 0, type: "free-delivery" },
       { id: 1, type: "noCollection" },
     ],
-    extraInfo: [{text: "2 year guarantee", color:"special", url:""},
-    {text: "3 months 0% intrest", color:"primary", url:""}],
+    extraInfo: [
+      { text: "2 year guarantee", color: "special", url: "" },
+      { text: "3 months 0% intrest", color: "primary", url: "" },
+    ],
     stock: [
       {
         text: "Sorry, this item is currently out of stock.",
       },
     ],
     selected: true,
+    colorVariation: [
+      {
+        id: 0,
+        src: "https://media.currys.biz/i/currysprod/M10237191_black_SWATCH?$swatch$&fmt=auto",
+        text: "black",
+        selected: false,
+      },
+      {
+        id: 1,
+        src: "https://media.currys.biz/i/currysprod/M10237191_blue_SWATCH?$swatch$&fmt=auto",
+        text: "blue",
+        selected: false,
+      },
+      {
+        id: 2,
+        src: "https://media.currys.biz/i/currysprod/M10237191_orange_SWATCH?$swatch$&fmt=auto",
+        text: "orange",
+        selected: false,
+      },
+      {
+        id: 3,
+        src: "https://media.currys.biz/i/currysprod/M10237191_white_SWATCH?$swatch$&fmt=auto",
+        text: "white",
+        selected: false,
+      },
+    ],
   },
   {
     id: 2,
@@ -96,9 +160,13 @@ const initialState = [
       "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
       "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
     ],
+    pricingOptions: [
+      { id: 0, price: "159", text: "One-off payment", selected: false },
+      { id: 1, price: "6.10", text: "per month*", selected: false },
+    ],
     rating: {
       value: 3,
-      count: 5
+      count: 5,
     },
     productPrice: "1049.00",
     savedMoney: "300.00",
@@ -106,14 +174,42 @@ const initialState = [
       { id: 0, type: "free-delivery" },
       { id: 1, type: "noCollection" },
     ],
-    extraInfo: [{text: "Back Friday & Beyond", color:"special", url:""},
-    {text: "3 months 0% intrest", color:"primary", url:""}],
+    extraInfo: [
+      { text: "Back Friday & Beyond", color: "special", url: "" },
+      { text: "3 months 0% intrest", color: "primary", url: "" },
+    ],
     stock: [
       {
         text: "Sorry, this item is currently out of stock.",
       },
     ],
     selected: true,
+    colorVariation: [
+      {
+        id: 0,
+        src: "https://media.currys.biz/i/currysprod/M10237191_black_SWATCH?$swatch$&fmt=auto",
+        text: "black",
+        selected: false,
+      },
+      {
+        id: 1,
+        src: "https://media.currys.biz/i/currysprod/M10237191_blue_SWATCH?$swatch$&fmt=auto",
+        text: "blue",
+        selected: false,
+      },
+      {
+        id: 2,
+        src: "https://media.currys.biz/i/currysprod/M10237191_orange_SWATCH?$swatch$&fmt=auto",
+        text: "orange",
+        selected: false,
+      },
+      {
+        id: 3,
+        src: "https://media.currys.biz/i/currysprod/M10237191_white_SWATCH?$swatch$&fmt=auto",
+        text: "white",
+        selected: false,
+      },
+    ],
   },
   //   {
   //     id: 1,
@@ -188,11 +284,22 @@ const initialState = [
 export const productSummarySlice = createSlice({
   name: "productSummary",
   initialState,
-  reducers: {},
+  reducers: {
+    // colorSelected(state, { payload }) {
+    //   const {id, checked} =payload;
+    //   console.log("state,payload",state,payload)
+    //   const item = state.find((el) => el.id === payload.id);
+    //   console.log("item1",item)
+    //   item.selected = !item.selected;
+    // },
+  },
 });
 
-export const { setSearchTerm } = productSummarySlice.actions;
+export const { setSearchTerm, colorSelected } = productSummarySlice.actions;
 
+export const selectProductSummary2 = (state, id) => {
+  return state.productSummary.find((summary) => summary.id === Number(id));
+};
 export const selectProductSummary = (state) => {
   return state.productSummary;
 };

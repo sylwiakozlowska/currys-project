@@ -8,7 +8,9 @@ import { selectProductSummary } from "../../../Store/features/productSummary/pro
 
 export const NonPureProductSummary = () => {
   const products = useSelector(selectProductSummary);
-   console.log(products, "products");
+  console.log(products, "products");
+
+
   const productSummaries = products.map((product) => {
     return <ProductSummary product={product} />;
   });

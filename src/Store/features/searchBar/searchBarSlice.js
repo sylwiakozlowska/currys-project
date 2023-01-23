@@ -66,16 +66,19 @@ export const searchBarSlice = createSlice({
       );
       console.log(state.simpleProducts);
 
-      state.detailedProducts = detailedProducts.filter(
+      const matchingProducts = state.detailedProducts = detailedProducts.filter(
         ({ id, text, price, rating, imageUrl }) =>
           new RegExp(payload, "i").test(text)
       );
-      console.log(state.detailedProducts);
+      console.log("matchingProducts",matchingProducts);
     },
+    // setSelectedProduct:(state,{payload})=>{
+   
+    // }
   },
 });
 
-export const { setSearchTerm } = searchBarSlice.actions;
+export const { setSearchTerm, setSelectedProduct } = searchBarSlice.actions;
 
 export const selectSimpleProducts = (state) => {
   return state.searchBar.simpleProducts;

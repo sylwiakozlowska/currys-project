@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import "../../../styles.scss"
-import {Rating} from "../../Rating/Rating";
+import "../../../styles.scss";
+import { Rating } from "../../Rating/Rating";
 
 const COUNT = 5;
 
@@ -10,6 +10,7 @@ export const DetailedProductList = ({ detailedProducts, onSelected }) => {
     e.preventDefault();
     console.log(e, id, detailedProducts);
     const detailedProduct = detailedProducts.find((el) => el.id === id);
+    console.log("detailedProduct", detailedProduct);
     onSelected(detailedProduct);
   };
   return (
@@ -22,10 +23,7 @@ export const DetailedProductList = ({ detailedProducts, onSelected }) => {
             onClick={(e) => onClickDetailedProduct(e, id, detailedProducts)}
           >
             <div className="columns product-group">
-              <img
-                src={src}
-                alt="product image"
-              />
+              <img src={src} alt="product image" />
               <div className="column is-one-third text-rating-group">
                 <span className="column">{text}</span>
                 <Rating value={rating} count={COUNT} />

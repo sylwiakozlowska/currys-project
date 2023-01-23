@@ -4,6 +4,10 @@ import { SimpleProductList } from "./SimpleProductList/SimpleProductList";
 import { DetailedProductList } from "./DetailedProductList/DetailedProductList";
 import { AiOutlineSearch } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
+import {
+  setSelectedProduct,
+} from "../../Store/features/searchBar/searchBarSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 
 const MIN_LENGTH = 2;
@@ -26,6 +30,13 @@ export const SearchBar = ({
   const [shown, setShown] = useState(false);
   const ref = useRef();
 
+  const dispatch = useDispatch();
+
+  const onSelectedProduct = () => {
+    // dispatch(setSelectedProduct());
+    console.log("hello")
+    // console.log("onSelectedProduct", onSelectedProduct);
+  };
   // const searchText = useSelector(selectSearchTerm);
   // const dispatch = useDispatch();
 
@@ -43,6 +54,7 @@ export const SearchBar = ({
   };
   const onClickSearch = () => {
     onSearch(text);
+    console.log("text",text)
     setText("");
   };
 
@@ -107,11 +119,11 @@ export const SearchBar = ({
           <div className="dropdown-content">
             <SimpleProductList
               simpleProducts={simpleProducts}
-              onSelected={onSelected}
+              onSelected={onSelectedProduct}
             />
             <DetailedProductList
               detailedProducts={detailedProducts}
-              onSelected={onSelected}
+              onSelected={onSelectedProduct}
             />
           </div>
         </div>

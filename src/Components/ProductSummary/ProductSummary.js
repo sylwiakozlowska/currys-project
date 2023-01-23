@@ -30,7 +30,7 @@ export const ProductSummary = ({ product, onCompare }) => {
         {/* </div> */}
         <div className="product-summary-content">
           <a href="#" className="product-name-link">
-            <h1 className="product-title">{product.title}</h1>
+            <h1 className="product-title title is-1">{product.title}</h1>
               <CiHeart className="heart-icon" />
           </a>
           <div className="product-rating">

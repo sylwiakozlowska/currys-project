@@ -7,6 +7,8 @@ import {
   selectDetailedProducts,
   setSearchTerm,
 } from "../../Store/features/searchBar/searchBarSlice";
+import { BrowserRouter as Link } from "react-router-dom";
+
 export const SearchBarWrapper = () => {
   const simpleProducts = useSelector(selectSimpleProducts);
   const detailedProducts = useSelector(selectDetailedProducts);
@@ -17,7 +19,7 @@ export const SearchBarWrapper = () => {
     console.log("value", value);
     // onChange(value);
 
- 
+  
   };
   return (
     <div className="search-bar-wrapper">
