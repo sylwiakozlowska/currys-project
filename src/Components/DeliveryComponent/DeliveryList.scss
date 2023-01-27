@@ -2,6 +2,10 @@
   .delivery-list {
     display: flex;
     align-items: center;
+    .icon {
+      margin-right: 6px;
+      color: #008827;
+    }
   }
   a {
     color: #4c12a1;

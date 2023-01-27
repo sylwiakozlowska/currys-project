@@ -4,11 +4,8 @@ import { SimpleProductList } from "./SimpleProductList/SimpleProductList";
 import { DetailedProductList } from "./DetailedProductList/DetailedProductList";
 import { AiOutlineSearch } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
-import {
-  setSelectedProduct,
-} from "../../Store/features/searchBar/searchBarSlice";
+import { setSelectedProduct } from "../../Store/features/searchBar/searchBarSlice";
 import { useSelector, useDispatch } from "react-redux";
-
 
 const MIN_LENGTH = 2;
 export const SearchBar = ({
@@ -34,7 +31,7 @@ export const SearchBar = ({
 
   const onSelectedProduct = () => {
     // dispatch(setSelectedProduct());
-    console.log("hello")
+    console.log("hello");
     // console.log("onSelectedProduct", onSelectedProduct);
   };
   // const searchText = useSelector(selectSearchTerm);
@@ -44,17 +41,17 @@ export const SearchBar = ({
   const onChangeText = (e) => {
     const { value } = e.target;
     setText(value);
+    console.log("value", value);
     if (value.length > MIN_LENGTH) {
       onChange(value);
     }
-    console.log("value", value);
   };
   const onClose = () => {
     setText("");
   };
   const onClickSearch = () => {
     onSearch(text);
-    console.log("text",text)
+    console.log("text", text);
     setText("");
   };
 
@@ -69,7 +66,9 @@ export const SearchBar = ({
     // } else {
     //   setShown(false);
     // }
-    setShown(!!(simpleProducts.length || detailedProducts.length) && text.length > 2)
+    setShown(
+      !!(simpleProducts.length || detailedProducts.length) && text.length > 2
+    );
     // setShown(text.length > MIN_LENGTH);
   }, [simpleProducts, detailedProducts, text]);
 

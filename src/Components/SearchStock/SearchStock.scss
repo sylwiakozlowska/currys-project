@@ -1,0 +1,27 @@
+.search-stock-wrapper {
+  // width: 70%;
+  .search-stock-component {
+    .dropdown {
+      position: relative;
+      width: 100%;
+      z-index: 1;
+      top: -8px;
+      .dropdown-content {
+        flex-direction: column;
+        border: 1px solid $search-stock_border;
+        position: absolute;
+        box-shadow: rgb(33 48 56 / 20%) 0px 0px 6px 0px;
+        border-radius: $search-stock_border-radius-dropdown;
+      }
+      li {
+        padding: 10px;
+        &:hover {
+          background: $search-stock-list_background__hover;
+        }
+      }
+    }
+    .search-button {
+      border-left: none;
+    }
+  }
+}

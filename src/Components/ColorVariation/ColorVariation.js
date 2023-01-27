@@ -40,9 +40,9 @@ export const ColorVariation = ({ colorOption, setColorOption, colorVariation }) 
     );
   });
   return (
-    <section className="color-variation-component">
+    <div className="color-variation-component">
       <div>Colour: <span>{capitalize(selectedColor.text)}</span> </div>
       <ul>{colorList}</ul>
-    </section>
+    </div>
   );
 };

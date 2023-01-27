@@ -9,11 +9,13 @@ import { PricingOptions } from "../ProductPrice/PricingOptions/PricingOptions";
 import { ProductOffers } from "../ProductOffers/ProductOffers";
 import { ColorVariation } from "../../ColorVariation/ColorVariation";
 import { Button } from "../../Button/Button";
+import { SearchStockWrapper } from "../../SearchStock/SearchStockWrapper";
 export const Product = () => {
   const { id } = useParams();
   const product = useSelector((state) => selectProductSummary2(state, id));
 
-  const { rating, pricingOptions, productOffers, colorVariation } = product;
+  const { rating, pricingOptions, productOffers, colorVariation, deliveries } =
+    product;
   const [priceOption, setPriceOption] = useState(pricingOptions[0].id);
   const [colorOption, setColorOption] = useState(colorVariation[0].id);
 
@@ -33,7 +35,6 @@ export const Product = () => {
             />
           </div>
         </div>
-        {/* hello {JSON.stringify(product)} */}
         <div className="column">
           <PricingOptions
             priceOption={priceOption}
@@ -46,16 +47,19 @@ export const Product = () => {
               <ProductOffers offers={productOffers} max={1} />
             ) : null}
           </div>
-          <ColorVariation
-            colorOption={colorOption}
-            setColorOption={setColorOption}
-            colorVariation={colorVariation}
-          />
-          <div>
-            {" "}
-            <Button className="is-primary">
-              <i class="glyph basket-icon"></i> Add to Basket
-            </Button>
+          <div className="color-variation-wrapper">
+            <ColorVariation
+              colorOption={colorOption}
+              setColorOption={setColorOption}
+              colorVariation={colorVariation}
+            />
+          </div>
+
+          <Button className="is-primary">
+            <i class="glyph basket-icon"></i> Add to Basket
+          </Button>
+          <div className="stock-wrapper">
+            <SearchStockWrapper deliveries={deliveries} />
           </div>
         </div>
       </div>

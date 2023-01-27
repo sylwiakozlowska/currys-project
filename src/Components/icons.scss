@@ -1,7 +1,6 @@
 body {
   font-family: "currys";
 }
-
 .glyph {
   font-family: "dcg-icons";
   font-style: normal;
@@ -21,12 +20,6 @@ body {
 .basket-icon::before {
   content: "\e90e";
 }
-// .search-icon::before {
-//   content: "\e91D";
-// }
-// .menu-icon::before {
-//   content: "\f0C9";
-// }
 .deal-icon::before {
   content: "\e90a";
   font-size: 1.5em;
@@ -39,7 +32,7 @@ body {
   content: "\e924";
 }
 .arrow-down::before {
-    content: "\e925";
+  content: "\e925";
 }
 
 //card
@@ -86,10 +79,10 @@ body {
 .cross-icon::before {
   content: "\e607";
 }
-.tick-icon::before {
-  content: "\e60f";
-  color: #255227;
-}
+// .tick-icon::before {
+//   content: "\e60f";
+//   color: #255227;
+// }
 
 .store-location-icon::before {
   content: "\e90c";

@@ -1,18 +1,42 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import { BsTruck, BsShopWindow } from "react-icons/bs";
 export const DeliveryList = ({ deliveries }) => {
   const items = deliveries.map(({ id, type }) => {
     let icon;
     let text;
     switch (type) {
       case "free-delivery":
-        icon = <i className="glyph tick-icon" />;
-        text = "Fast, free delivery";
+        icon = (
+          <i className="icon">
+            <BsTruck />
+          </i>
+        );
+        text = "FREE FAST delivery on orders over £40";
         break;
       case "noCollection":
-        icon = <i className="glyph cross-icon" />;
+        icon = (
+          <i className="icon">
+            <BsShopWindow />
+          </i>
+        );
         text = "Collection not available";
+        break;
+      case "free-collection":
+        icon = (
+          <i className="icon">
+            <BsShopWindow />
+          </i>
+        );
+        text = "Free collection from Store";
+        break;
+      case "free-collection-stock-availability":
+        icon = (
+          <i className="icon">
+            <BsShopWindow />
+          </i>
+        );
+        text = "FREE collection from Store subject to Stock availability";
         break;
     }
 
