@@ -3,15 +3,27 @@ import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { CardComponent } from "../CardComponent/CardComponent";
 import { DeliveryList } from "../DeliveryComponent/DeliveryList";
-
 const MIN_LENGTH = 0;
-export const SearchStock = ({ locations, deliveries, onClick, onChange }) => {
+export const SearchStock = ({ locations, deliveries, onClick, onChange,onSelected }) => {
   const [text, setText] = useState("");
   const [shown, setShown] = useState(false);
   const ref = useRef();
+
+  const onClickSelectedLocation = (e, id, locations) => {
+    e.preventDefault();
+    const location = locations.find((el) => el.id === id);
+    console.log("location",location);
+    onSelected(location)
+    setText("")
+  };
   const list = locations.map(({ id, text }) => {
-    return <li key={id}>{text}</li>;
+    return (
+      <li key={id} onClick={(e) => onClickSelectedLocation(e, id, locations)}>
+        {text}
+      </li>
+    );
   });
+
   const onChangeText = (e) => {
     const { value } = e.target;
     setText(value);

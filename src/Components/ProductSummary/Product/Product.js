@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { colorSelected } from "../../../Store/features/productSummary/productSummarySlice";
-import { selectProductSummary2 } from "../../../Store/features/productSummary/productSummarySlice";
+import { selectSingleProductSummary } from "../../../Store/features/productSummary/productSummarySlice";
 import { ProductImage } from "../ProductImage/ProductImage";
 import { Rating } from "../../Rating/Rating";
 import { PricingOptions } from "../ProductPrice/PricingOptions/PricingOptions";
@@ -10,14 +9,18 @@ import { ProductOffers } from "../ProductOffers/ProductOffers";
 import { ColorVariation } from "../../ColorVariation/ColorVariation";
 import { Button } from "../../Button/Button";
 import { SearchStockWrapper } from "../../SearchStock/SearchStockWrapper";
+
 export const Product = () => {
   const { id } = useParams();
-  const product = useSelector((state) => selectProductSummary2(state, id));
+  const product = useSelector((state) => selectSingleProductSummary(state, id));
+  //   const deliveryOptions = useSelector((state) => selectDelivery2(state, id));
+  //   console.log("deliveryOptions", deliveryOptions);
 
   const { rating, pricingOptions, productOffers, colorVariation, deliveries } =
     product;
   const [priceOption, setPriceOption] = useState(pricingOptions[0].id);
   const [colorOption, setColorOption] = useState(colorVariation[0].id);
+  //   const [deliveryOption, setDeliveryOption] = useState(deliveryOptions);
 
   return (
     <section className="product-component">
@@ -54,13 +57,12 @@ export const Product = () => {
               colorVariation={colorVariation}
             />
           </div>
-
-          <Button className="is-primary">
-            <i class="glyph basket-icon"></i> Add to Basket
-          </Button>
           <div className="stock-wrapper">
             <SearchStockWrapper deliveries={deliveries} />
           </div>
+          <Button className="is-primary">
+            <i className="glyph basket-icon"></i> Add to Basket
+          </Button>
         </div>
       </div>
     </section>

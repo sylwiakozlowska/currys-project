@@ -1,0 +1,38 @@
+.delivery-component {
+  padding: 8px 16px;
+
+  .delivery-tabs {
+    display: flex;
+    padding: 15px;
+    .delivery {
+      flex-grow: 1;
+    }
+  }
+  .delivery-location {
+    border-radius: 6px;
+    background: #faf5ff;
+    font-size: 14px;
+    color: #213038;
+    span {
+      font-weight: bold;
+      padding: 5px;
+    }
+  }
+  .change-location-link {
+    text-decoration: underline;
+  }
+  li {
+    display: flex;
+    text-align: left;
+    p {
+      text-align: left;
+      padding: 5px;
+    }
+    .slot-label {
+      flex-grow: 1;
+    }
+    .price {
+      color: #e5006d;
+    }
+  }
+}

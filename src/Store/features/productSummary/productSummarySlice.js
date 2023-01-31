@@ -235,7 +235,7 @@ export const productSummarySlice = createSlice({
 
 export const { setSearchTerm, colorSelected } = productSummarySlice.actions;
 
-export const selectProductSummary2 = (state, id) => {
+export const selectSingleProductSummary = (state, id) => {
   return state.productSummary.find((summary) => summary.id === Number(id));
 };
 export const selectProductSummary = (state) => {

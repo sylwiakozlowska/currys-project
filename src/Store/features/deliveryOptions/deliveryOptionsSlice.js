@@ -1,42 +1,51 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const deliveryOptions = {
+export const options = {
   delivery: [
     {
       id: 0,
       date: "2023-01-25",
-      fullSlotId: "2DNN",
       isFreeDelivery: false,
-      price: "£7.00",
+      price: "Free",
       slotId: "2DNN",
-      slotLabel: "All day delivery 8am to 8pm",
+      slotLabel: "Standard delivery in 3-5 working days",
+      selected: true,
     },
     {
       id: 1,
       date: "2023-01-25",
-      fullSlotId: "2DPM",
       isFreeDelivery: false,
-      price: "£10.00",
-      slotId: "2DPM",
-      slotLabel: "Afternoon 12pm to 5pm",
+      price: "£7.00",
+      slotId: "2DNN",
+      slotLabel: "All day delivery 8am to 8pm",
+      selected: false,
     },
     {
       id: 2,
       date: "2023-01-25",
-      fullSlotId: "2DAM",
       isFreeDelivery: false,
       price: "£10.00",
-      slotId: "2DAM",
-      slotLabel: "Morning before 12 noon",
+      slotId: "2DPM",
+      slotLabel: "Afternoon 12pm to 5pm",
+      selected: false,
     },
     {
       id: 3,
       date: "2023-01-25",
-      fullSlotId: "2DEV",
+      isFreeDelivery: false,
+      price: "£10.00",
+      slotId: "2DAM",
+      slotLabel: "Morning before 12 noon",
+      selected: false,
+    },
+    {
+      id: 4,
+      date: "2023-01-25",
       isFreeDelivery: false,
       price: "£10.00",
       slotId: "2DEV",
       slotLabel: "Evening from 5pm to 10pm",
+      selected: false,
     },
   ],
   collection: [
@@ -60,7 +69,30 @@ export const deliveryOptions = {
 };
 export const deliveryOptionsSlice = createSlice({
   name: "deliveryOptions",
-  initialState: { delivery: [], collection: [] },
-  reducers: {},
+  initialState: { delivery: [], collection: [], location: null },
+  reducers: {
+    selectDeliveryLocation: (state, { payload }) => {
+      console.log("payload", payload);
+      if (payload.id === 0) {
+        state.delivery = [...options.delivery];
+        console.log("state.delivery", state.delivery);
+      }
+      state.location = payload;
+    },
+  },
 });
+
+export const { selectDeliveryLocation } = deliveryOptionsSlice.actions;
+
+export const selectDeliveryOptions = (state) => {
+  console.log("state", state.deliveryOptions.delivery);
+  return state.deliveryOptions.delivery;
+};
+export const selectDeliveryArea = (state) => {
+  return state.deliveryOptions.location?.text;
+};
+// return state.deliveryOptions.location
+//   ? state.deliveryOptions.location.text
+//   : null;
+
 export default deliveryOptionsSlice.reducer;
