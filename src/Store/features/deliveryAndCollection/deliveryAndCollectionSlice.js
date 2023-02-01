@@ -67,8 +67,8 @@ export const options = {
     },
   ],
 };
-export const deliveryOptionsSlice = createSlice({
-  name: "deliveryOptions",
+export const deliveryAndCollectionSlice = createSlice({
+  name: "deliveryAndCollection",
   initialState: { delivery: [], collection: [], location: null },
   reducers: {
     selectDeliveryLocation: (state, { payload }) => {
@@ -79,20 +79,32 @@ export const deliveryOptionsSlice = createSlice({
       }
       state.location = payload;
     },
+    selectCollectionLocation: (state, { payload }) => {
+      console.log("payload", payload);
+      if (payload.id === 0) {
+        state.collection = [...options.collection];
+        console.log("state.collection", state.collection);
+      }
+      state.location = payload;
+    },
   },
 });
 
-export const { selectDeliveryLocation } = deliveryOptionsSlice.actions;
+export const { selectDeliveryLocation, selectCollectionLocation } = deliveryAndCollectionSlice.actions;
 
 export const selectDeliveryOptions = (state) => {
-  console.log("state", state.deliveryOptions.delivery);
-  return state.deliveryOptions.delivery;
+  // console.log("state", state.deliveryOptions.delivery);
+  return state.deliveryAndCollection.delivery;
 };
 export const selectDeliveryArea = (state) => {
-  return state.deliveryOptions.location?.text;
+  return state.deliveryAndCollection.location?.text;
+};
+export const selectCollectionOptions = (state) => {
+  // console.log("state", state.deliveryOptions.delivery);
+  return state.deliveryAndCollection.collection;
 };
 // return state.deliveryOptions.location
 //   ? state.deliveryOptions.location.text
 //   : null;
 
-export default deliveryOptionsSlice.reducer;
+export default deliveryAndCollectionSlice.reducer;

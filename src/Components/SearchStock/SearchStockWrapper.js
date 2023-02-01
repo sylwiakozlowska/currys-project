@@ -10,16 +10,27 @@ import {
   selectDeliveryOptions,
   selectDeliveryLocation,
   selectDeliveryArea,
-} from "../../Store/features/deliveryOptions/deliveryOptionsSlice";
+  selectCollectionOptions,
+  selectCollectionLocation,
+} from "../../Store/features/deliveryAndCollection/deliveryAndCollectionSlice";
 import { SearchStock } from "./SearchStock";
+import { Tabs } from "../Tabs/Tabs";
 import { Delivery } from "../Delivery/Delivery";
+import { Collection } from "../Collection/Collection";
 export const SearchStockWrapper = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const product = useSelector((state) => selectSingleProductSummary(state, id));
   console.log("product", product);
-  const options = useSelector(selectDeliveryOptions);
+  const deliveryOptions = useSelector(selectDeliveryOptions);
+  const collectionOptions = useSelector(selectCollectionOptions);
+  console.log(
+    deliveryOptions,
+    collectionOptions,
+    "deliveryOptions, collectionOptions"
+  );
   const location = useSelector(selectDeliveryArea);
+  console.log("deliveryLocation", location);
   const locations = useSelector(selectLocation);
 
   const [shown, setShown] = useState(true);
@@ -37,6 +48,7 @@ export const SearchStockWrapper = () => {
   const onSelectedLocation = (location) => {
     console.log("select");
     dispatch(selectDeliveryLocation(location));
+    dispatch(selectCollectionLocation(location));
     setShown((state) => !state);
   };
   const onChangeLocation = () => {
@@ -54,11 +66,34 @@ export const SearchStockWrapper = () => {
         />
       )}
       {!shown && (
-        <Delivery
-          options={options}
+        <Tabs
+          deliveryOptions={deliveryOptions}
+          collectionOptions={collectionOptions}
           onClick={onChangeLocation}
           location={location}
-        />
+          items={[
+            {
+              title: "Deliveries",
+              comp: (
+                <Delivery
+                  deliveryOptions={deliveryOptions}
+                  onClick={onChangeLocation}
+                  location={location}
+                ></Delivery>
+              ),
+            },
+            {
+              title: "Collection",
+              comp: (
+                <Collection
+                  collectionOptions={collectionOptions}
+                  onClick={onChangeLocation}
+                  location={location}
+                ></Collection>
+              ),
+            },
+          ]}
+        ></Tabs>
       )}
     </div>
   );

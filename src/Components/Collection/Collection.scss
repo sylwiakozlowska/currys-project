@@ -1,6 +1,6 @@
-.delivery-component {
+.collection-component {
   padding: 15px;
-  .delivery-location {
+  .collection-location {
     padding: 8px 16px;
     border-radius: 6px;
     background: #faf5ff;
@@ -17,17 +17,6 @@
     margin-top: 8px;
   }
   li {
-    display: flex;
-    text-align: left;
-    p {
-      text-align: left;
-      padding: 5px;
-    }
-    .slot-label {
-      flex-grow: 1;
-    }
-    .price {
-      color: #e5006d;
-    }
+    display: inline-flex;
   }
 }

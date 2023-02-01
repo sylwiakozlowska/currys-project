@@ -1,6 +1,8 @@
 .search-stock-wrapper {
-  // width: 70%;
   .search-stock-component {
+    background: $card_background_primary;
+    border-radius: 10px;
+    padding: 16px;
     .dropdown {
       position: relative;
       width: 100%;

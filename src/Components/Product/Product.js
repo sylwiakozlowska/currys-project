@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { selectSingleProductSummary } from "../../../Store/features/productSummary/productSummarySlice";
-import { ProductImage } from "../ProductImage/ProductImage";
-import { Rating } from "../../Rating/Rating";
-import { PricingOptions } from "../ProductPrice/PricingOptions/PricingOptions";
-import { ProductOffers } from "../ProductOffers/ProductOffers";
-import { ColorVariation } from "../../ColorVariation/ColorVariation";
-import { Button } from "../../Button/Button";
-import { SearchStockWrapper } from "../../SearchStock/SearchStockWrapper";
+import { selectSingleProductSummary } from "../../Store/features/productSummary/productSummarySlice";
+import { ProductImage } from "../ProductSummary/ProductImage/ProductImage";
+import { Rating } from "../Rating/Rating";
+import { PricingOptions } from "../ProductSummary/ProductPrice/PricingOptions/PricingOptions";
+import { ProductOffers } from "../ProductSummary/ProductOffers/ProductOffers";
+import { ColorVariation } from "../ColorVariation/ColorVariation";
+import { Button } from "../Button/Button";
+import { SearchStockWrapper } from "../SearchStock/SearchStockWrapper";
+import { CardComponent } from "../CardComponent/CardComponent";
 
 export const Product = () => {
   const { id } = useParams();
@@ -57,8 +58,11 @@ export const Product = () => {
               colorVariation={colorVariation}
             />
           </div>
+
           <div className="stock-wrapper">
-            <SearchStockWrapper deliveries={deliveries} />
+            <CardComponent>
+              <SearchStockWrapper deliveries={deliveries} />
+            </CardComponent>
           </div>
           <Button className="is-primary">
             <i className="glyph basket-icon"></i> Add to Basket

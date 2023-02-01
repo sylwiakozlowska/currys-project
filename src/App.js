@@ -11,7 +11,7 @@ import { Overlay } from "./Components/Overlay/Overlay";
 import { useSelector } from "react-redux";
 import { selectMenuOpen } from "./Store/features/app/appSlice";
 import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTablet";
-import { Product } from "./Components/ProductSummary/Product/Product";
+import { Product } from "./Components/Product/Product";
 import {
   BrowserRouter as Router,
   Switch,

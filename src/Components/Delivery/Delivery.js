@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../../styles.scss";
-import { CardComponent } from "../CardComponent/CardComponent";
 
-export const Delivery = ({ options, onClick, location }) => {
-  const [selectedSlot, setSelectedSlot] = useState(options[0].id);
+export const Delivery = ({ deliveryOptions, onClick, location }) => {
+  const [selectedSlot, setSelectedSlot] = useState(deliveryOptions[0].id);
   console.log("location", location);
 
-  const deliveryOptionList = options.map((deliveryOption) => {
+  const deliveryOptionList = deliveryOptions.map((deliveryOption) => {
     const { id, price, slotLabel } = deliveryOption;
 
     const onChangeDeliverySlot = (e) => {
@@ -30,13 +29,6 @@ export const Delivery = ({ options, onClick, location }) => {
   });
   return (
     <div className="delivery-component">
-      <CardComponent className="info">
-        <div className="delivery-tabs">
-          <a href="#" className="delivery">
-            Delivery
-          </a>
-          <a href="#">Collection</a>
-        </div>
         <div className="delivery-location">
           Delivery to:
           <span>{location} </span>
@@ -45,7 +37,6 @@ export const Delivery = ({ options, onClick, location }) => {
           Change your location
         </a>
         <ul>{deliveryOptionList}</ul>
-      </CardComponent>
     </div>
   );
 };

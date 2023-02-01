@@ -8,7 +8,7 @@ import cardDealReducer from "./Store/features/cardDeal/cardDealSlice";
 import productSummaryReducer from "./Store/features/productSummary/productSummarySlice";
 import filterReducer from "./Store/features/filterComponent/FilterSlice";
 import locationReducer from "./Store/features/location/locationSlice";
-import deliveryOptionsReducer from "./Store/features/deliveryOptions/deliveryOptionsSlice";
+import deliveryAndCollectionReducer from "./Store/features/deliveryAndCollection/deliveryAndCollectionSlice";
 export const store = configureStore({
   reducer: {
     app: appReducer,
@@ -20,7 +20,7 @@ export const store = configureStore({
     productSummary: productSummaryReducer,
     filter: filterReducer,
     location: locationReducer,
-    deliveryOptions: deliveryOptionsReducer,
+    deliveryAndCollection: deliveryAndCollectionReducer,
   },
 });
 export default store;
