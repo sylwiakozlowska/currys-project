@@ -2,12 +2,12 @@ import React, { useState, useCallback } from "react";
 // import PropTypes from "prop-types";
 import classNames from "classnames";
 import { CostCard } from "../../SpreadCostCard/CostCard/CostCard";
-import { DeliveryComponent } from "../../DeliveryComponent/DeliveryComponent";
+import { DeliveryOptions } from "../../DeliveryOptions/DeliveryOptions";
 // import { CheckBox } from "../CheckBox/CheckBox";
 import { PriceStatus } from "./PriceStatus/PriceStatus";
 import { StockMessage } from "./StockMessage/StockMessage";
 import { CardComponent } from "../../CardComponent/CardComponent";
-import {ExtraInfo} from "../../ProductSummary/ProductPrice/ExtraInfo/ExtraInfo";
+import { ExtraInfo } from "../../ProductSummary/ProductPrice/ExtraInfo/ExtraInfo";
 export const ProductPrice = ({
   deliveries,
   // selected,
@@ -17,7 +17,6 @@ export const ProductPrice = ({
   extraInfo,
   stock,
 }) => {
-
   const [shownCostCard, setshownCostCard] = useState(false);
 
   console.log("productPrice", productPrice);
@@ -42,7 +41,7 @@ export const ProductPrice = ({
         <StockMessage stock={stock} />
       </CardComponent>
 
-      <DeliveryComponent deliveries={deliveries} />
+      <DeliveryOptions deliveries={deliveries} />
       {/* <CheckBox state={selected} onChange={setCompare} /> */}
     </div>
   );

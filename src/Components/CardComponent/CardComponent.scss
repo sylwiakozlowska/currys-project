@@ -3,14 +3,14 @@
   padding: 15px;
   box-shadow: none;
   border: 1px solid #cdd8df;
-}
-.primary {
-  background: $card_background_primary;
-}
-.info {
-  background: $card_background_info;
-}
-.stock-info {
-  border: 2px solid #4c12a1;
-  margin: 10px 0;
+  &.primary {
+    background: $card_background_primary;
+  }
+  &.info {
+    background: $card_background_info;
+  }
+  &.stock-info {
+    border: 2px solid #4c12a1;
+    margin: 10px 0;
+  }
 }

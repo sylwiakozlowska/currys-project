@@ -8,7 +8,7 @@ import { ProductPrice } from "../ProductSummary/ProductPrice/ProductPrice";
 // import { Compare } from "./Compare/Compare";
 import { Rating } from "../Rating/Rating";
 import { CiHeart } from "react-icons/ci";
-import { DeliveryComponent } from "../DeliveryComponent/DeliveryComponent";
+import { DeliveryOptions } from "../DeliveryOptions/DeliveryOptions";
 
 export const ProductSummaryMobile = ({ product, onCompare }) => {
   const [shownNotification, setShownNotification] = useState(false);
@@ -59,7 +59,7 @@ export const ProductSummaryMobile = ({ product, onCompare }) => {
             setShownNotification={setShownNotification}
             productOffers={product.productOffers}
           />
-          <DeliveryComponent deliveries={product.deliveries} />
+          <DeliveryOptions deliveries={product.deliveries} />
         </div>
       </div>
       <div>

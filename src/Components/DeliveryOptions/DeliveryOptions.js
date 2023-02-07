@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { DeliveryList } from "./DeliveryList";
 import { CardComponent } from "../CardComponent/CardComponent";
 
-export const DeliveryComponent = ({ deliveries }) => {
+export const DeliveryOptions = ({ deliveries }) => {
   return (
-    <div className="delivery-component">
+    <div className="delivery-options-component">
       <CardComponent className="primary">
         <div className="delivery-options">
           <DeliveryList deliveries={deliveries} />
@@ -15,7 +15,7 @@ export const DeliveryComponent = ({ deliveries }) => {
   );
 };
 
-DeliveryComponent.propTypes = {
+DeliveryOptions.propTypes = {
   deliveries: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.number,

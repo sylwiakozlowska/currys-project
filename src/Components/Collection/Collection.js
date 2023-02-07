@@ -2,53 +2,67 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../../styles.scss";
 import { CardComponent } from "../CardComponent/CardComponent";
+import { BsChevronDown } from "react-icons/bs";
 
 export const Collection = ({ collectionOptions, onClick, location }) => {
   console.log("collectionOptions", collectionOptions);
+
   const [collectionStore, setCollectionStore] = useState(
     collectionOptions[0].id
   );
-  const collectionOptionList = collectionOptions.map((collectionOption) => {
-    const { id, location, address, postCode, distance, text } =
-      collectionOption;
+  const [locationShownCount, setLocationShownCount] = useState(3);
 
-    const onChangeCollectionStore = (e) => {
-      setCollectionStore(id);
-      console.log("clicked", id, text);
-    };
-    return (
-      <CardComponent className="card info">
+  const onClickShowMoreStores = () => {
+    setLocationShownCount((previous) => previous + 2);
+  };
+  const storeLocations = collectionOptions
+    .slice(0, locationShownCount)
+    .map((collectionOption) => {
+      const { id, location, address, postCode, distance, text } =
+        collectionOption;
+
+      const onChangeCollectionStore = (e) => {
+        setCollectionStore(id);
+        console.log("clicked", id, location);
+      };
+      return (
         <li>
-          <div>
+          <CardComponent>
             <input
+              className="custom-radio-btn"
               type="radio"
               name="collection"
               value={collectionStore}
               checked={collectionStore === id}
               onChange={onChangeCollectionStore}
             />
-          </div>
-          <div>
-            <p>{location}</p>
-            <p>{address}</p>
-            <p>{postCode}</p>
-            <p>{distance}</p>
-            <p>{text}</p>
-          </div>
+            <div className="store-location-info">
+              <p>{location}</p>
+              <p>{address}</p>
+              <p>{postCode}</p>
+              <p>{distance} miles away</p>
+              <p>{text}</p>
+            </div>
+          </CardComponent>
         </li>
-      </CardComponent>
-    );
-  });
+      );
+    });
   return (
     <div className="collection-component">
       <div className="collection-location">
-        Collection available: {location}
-        <span></span>
+        Collection available:
+        <span>{location}</span>
       </div>
       <a href="#" className="change-location-link" onClick={onClick}>
         Change your location
       </a>
-      <ul>{collectionOptionList}</ul>
+      <ul>{storeLocations}</ul>
+      <div className="view-more-stores" onClick={onClickShowMoreStores}>
+        <a href="#">View more stores</a>
+        <button>
+          <BsChevronDown />
+        </button>
+      </div>
     </div>
   );
 };

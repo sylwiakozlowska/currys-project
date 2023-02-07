@@ -6,6 +6,7 @@
     background: #faf5ff;
     font-size: 14px;
     color: #213038;
+    margin-bottom: 10px;
     span {
       font-weight: bold;
       padding: 5px;
@@ -14,7 +15,10 @@
   .change-location-link {
     color: $anchor_text_primary;
     text-decoration: underline;
-    margin-top: 8px;
+    padding: 10px 0;
+  }
+  ul {
+    padding-top: 10px;
   }
   li {
     display: flex;

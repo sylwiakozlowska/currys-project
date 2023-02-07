@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../../styles.scss";
 import classnames from "classnames";
-import { CardComponent } from "../CardComponent/CardComponent";
 
 export const Tabs = ({ items }) => {
   //   console.log("items", items);

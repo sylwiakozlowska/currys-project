@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 import { AiOutlineSearch } from "react-icons/ai";
-import { DeliveryList } from "../DeliveryComponent/DeliveryList";
+import { DeliveryList } from "../DeliveryOptions/DeliveryList";
 const MIN_LENGTH = 0;
 export const SearchStock = ({ locations, deliveries, onClick, onChange,onSelected }) => {
   const [text, setText] = useState("");
@@ -55,7 +55,7 @@ export const SearchStock = ({ locations, deliveries, onClick, onChange,onSelecte
   }, [ref, shown, onClose]);
   return (
     <div ref={ref} className="search-stock-component">
-        <h3 className="title size-3">Check stock in your area</h3>
+        <h3 className="title size-3 search-stock-component-title">Check stock in your area</h3>
         <div className="field has-addons">
           <div className="control">
             <input

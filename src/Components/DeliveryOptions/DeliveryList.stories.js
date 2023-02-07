@@ -3,7 +3,7 @@ import { DeliveryList } from "./DeliveryList";
 import "../../styles.scss";
 
 export default {
-  title: "Component/DeliveryComponent/DeliveryList",
+  title: "Component/DeliveryOptions/DeliveryList",
   component: DeliveryList,
   argTypes: {
     onChange: { action: "changed" },

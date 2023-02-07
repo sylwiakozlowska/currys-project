@@ -1,8 +1,13 @@
 .tabs-component {
-  .info {
-    padding: 0 20px;
-  }
   .tabs {
     margin: 0;
+    a {
+      color: #56707a;
+    }
+    .is-active a {
+      border-bottom-color: #4c12a1;
+      border-bottom-width: 3px;
+      color: #4c12a1;
+    }
   }
 }

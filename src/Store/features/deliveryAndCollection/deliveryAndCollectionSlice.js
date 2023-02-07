@@ -59,38 +59,92 @@ export const options = {
     },
     {
       id: 1,
+      location: "Old Kent Road",
+      address: "585/589 Old Kent Road, Southwark London",
+      postCode: "SE15 1LA",
+      distance: "2.4",
+      text: "Free collection today from store",
+    },
+    {
+      id: 2,
       location: "Tottenham Court Road",
       address: "145 - 149 Tottenham Court Road London",
       postCode: "W1T 7NE",
-      distance: "1.7",
+      distance: "1.8",
       text: "Free collection today from store",
+    },
+    {
+      id: 3,
+      location: "Barbican",
+      address: "14-20 Chiswell Street Barbican London",
+      postCode: "EC1Y 4TW",
+      distance: "1.6",
+      text: "Stock delivered to store",
+    },
+    {
+      id: 4,
+      location: "Mile End Road",
+      address: "Unit 2-3 Anchor House 123 Mile End Road London",
+      postCode: "E1 4UJ",
+      distance: "2.9",
+      text: "Stock delivered to store",
+    },
+    {
+      id: 5,
+      location: "Mile End Road",
+      address: "Unit 2-3 Anchor House 123 Mile End Road London",
+      postCode: "E1 4UJ",
+      distance: "2.9",
+      text: "Stock delivered to store",
+    },
+     {
+      id: 6,
+      location: "Mile End Road",
+      address: "Unit 2-3 Anchor House 123 Mile End Road London",
+      postCode: "E1 4UJ",
+      distance: "2.9",
+      text: "Stock delivered to store",
     },
   ],
 };
 export const deliveryAndCollectionSlice = createSlice({
   name: "deliveryAndCollection",
-  initialState: { delivery: [], collection: [], location: null },
+  initialState: {
+    delivery: [],
+    // collection: { local: null, other: [] },
+    collection: [],
+
+    location: null,
+  },
   reducers: {
-    selectDeliveryLocation: (state, { payload }) => {
+    chooseLocation: (state, { payload }) => {
       console.log("payload", payload);
       if (payload.id === 0) {
         state.delivery = [...options.delivery];
         console.log("state.delivery", state.delivery);
-      }
-      state.location = payload;
-    },
-    selectCollectionLocation: (state, { payload }) => {
-      console.log("payload", payload);
-      if (payload.id === 0) {
-        state.collection = [...options.collection];
         console.log("state.collection", state.collection);
       }
       state.location = payload;
+
+      const sorted = [...options.collection].sort(
+        (a, b) => Number(a.distance) - Number(b.distance)
+      );
+      console.log("sorted", sorted);
+      state.collection = sorted;
+      // const closest = sorted.shift();
+
+      // console.log("closest", closest);
+
+      // state.collection.local = closest;
+      // console.log("state.collection.local", state.collection.local);
+
+      // state.collection.other = sorted;
+      // console.log("otherStores", otherStores);
     },
   },
 });
 
-export const { selectDeliveryLocation, selectCollectionLocation } = deliveryAndCollectionSlice.actions;
+export const { chooseLocation } = deliveryAndCollectionSlice.actions;
 
 export const selectDeliveryOptions = (state) => {
   // console.log("state", state.deliveryOptions.delivery);

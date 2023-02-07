@@ -6,6 +6,7 @@
     background: #faf5ff;
     font-size: 14px;
     color: #213038;
+    margin-bottom: 10px;
     span {
       font-weight: bold;
       padding: 5px;
@@ -14,9 +15,59 @@
   .change-location-link {
     color: $anchor_text_primary;
     text-decoration: underline;
-    margin-top: 8px;
+    padding: 10px 0;
+  }
+  .card {
+    padding: 20px;
+    display: flex;
+  }
+  ul {
+    padding-top: 10px;
   }
   li {
-    display: inline-flex;
+    padding: 10px 0;
+    &:first-child::before,
+    &:nth-child(2)::before {
+      display: block;
+      padding: 10px 0;
+    }
+    &:first-child::before {
+      content: "Your local store:";
+    }
+    &:nth-child(2)::before {
+      content: "Other nearby stores:";
+    }
+    .store-location-info {
+      margin-left: 5px;
+      p:first-child {
+        font-weight: bold;
+      }
+      p:last-child {
+        color: #4c12a1;
+        font-weight: bold;
+      }
+    }
+    .custom-radio-btn {
+      display: inline-block;
+      margin: 0 6px 0 0;
+      width: 24px;
+      height: 24px;
+      border: 1px solid #56707a;
+      background: #fff;
+      // -webkit-appearance: none;
+      border-radius: 32px;
+      cursor: pointer;
+    }
+  }
+  .view-more-stores {
+    display: flex;
+    a {
+      flex-grow: 1;
+      color: $anchor_text_primary;
+    }
+    button {
+      border: none;
+      background: none;
+    }
   }
 }

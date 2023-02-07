@@ -8,10 +8,9 @@ import {
 } from "../../Store/features/location/locationSlice";
 import {
   selectDeliveryOptions,
-  selectDeliveryLocation,
+  chooseLocation,
   selectDeliveryArea,
   selectCollectionOptions,
-  selectCollectionLocation,
 } from "../../Store/features/deliveryAndCollection/deliveryAndCollectionSlice";
 import { SearchStock } from "./SearchStock";
 import { Tabs } from "../Tabs/Tabs";
@@ -47,8 +46,7 @@ export const SearchStockWrapper = () => {
   };
   const onSelectedLocation = (location) => {
     console.log("select");
-    dispatch(selectDeliveryLocation(location));
-    dispatch(selectCollectionLocation(location));
+    dispatch(chooseLocation(location));
     setShown((state) => !state);
   };
   const onChangeLocation = () => {
