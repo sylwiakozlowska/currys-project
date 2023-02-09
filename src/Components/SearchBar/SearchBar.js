@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef} from "react";
+import { useHistory } from "react-router-dom";
 import "../../styles.scss";
 import { SimpleProductList } from "./SimpleProductList/SimpleProductList";
 import { DetailedProductList } from "./DetailedProductList/DetailedProductList";
@@ -23,15 +24,16 @@ export const SearchBar = ({
     onSelected,
     "onSelected"
   );
+  const history = useHistory();
   const [text, setText] = useState("");
   const [shown, setShown] = useState(false);
   const ref = useRef();
 
   const dispatch = useDispatch();
 
-  const onSelectedProduct = () => {
-    // dispatch(setSelectedProduct());
-    console.log("hello");
+  const onSelectedProduct = (item) => {
+    history.push(`/products?q=${text}`, { selected: item});
+    setText("");
     // console.log("onSelectedProduct", onSelectedProduct);
   };
   // const searchText = useSelector(selectSearchTerm);

@@ -17,6 +17,18 @@
     text-decoration: underline;
     padding: 10px 0;
   }
+  .delivery-date {
+    padding: 10px 0;
+    p {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input {
+      border: 2px solid #4c12a1;
+      border-radius: 5px;
+      padding: 8px;
+    }
+  }
   ul {
     padding-top: 10px;
   }

@@ -15,6 +15,14 @@ export const Collection = ({ collectionOptions, onClick, location }) => {
   const onClickShowMoreStores = () => {
     setLocationShownCount((previous) => previous + 2);
   };
+  //other option
+  //   const sL = [];
+  //   for (let i = 0; i < locationShownCount; i ++) {
+  //     const { id, location, address, postCode, distance, text } =
+  //     collectionOptions[i];
+  //     sL.push(<li>{id}</li>)
+  //   }
+
   const storeLocations = collectionOptions
     .slice(0, locationShownCount)
     .map((collectionOption) => {

@@ -1,8 +1,12 @@
 .tabs-component {
   .tabs {
     margin: 0;
+    width: 100%;
     a {
       color: #56707a;
+    }
+    li {
+      width: 100%;
     }
     .is-active a {
       border-bottom-color: #4c12a1;

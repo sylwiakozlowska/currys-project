@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { selectSingleProductSummary } from "../../Store/features/productSummary/productSummarySlice";
 import { ProductImage } from "../ProductSummary/ProductImage/ProductImage";
@@ -22,6 +22,7 @@ export const Product = () => {
   const [priceOption, setPriceOption] = useState(pricingOptions[0].id);
   const [colorOption, setColorOption] = useState(colorVariation[0].id);
   //   const [deliveryOption, setDeliveryOption] = useState(deliveryOptions);
+// console.log(222,id)
 
   return (
     <section className="product-component">

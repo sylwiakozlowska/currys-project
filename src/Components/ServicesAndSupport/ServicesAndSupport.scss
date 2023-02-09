@@ -1,0 +1,29 @@
+.services-and-support-component {
+  margin-top: 40px;
+  background: white;
+  border-radius: 20px;
+  ul {
+    padding: 0 20px;
+  }
+  .services-and-support-info {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #cdd8df;
+    padding: 20px 0;
+  }
+  li:last-child {
+    border-bottom: none;
+  }
+  a {
+    flex-grow: 1;
+  }
+  p {
+    display: block;
+    &:first-child {
+      font-weight: bold;
+    }
+    &:last-child {
+      margin-top: 15px;
+    }
+  }
+}

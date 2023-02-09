@@ -44,7 +44,7 @@ function App() {
           </Breadcrumb>
         </section>
         <Switch>
-          <Route exact path="/home">
+          <Route path="/home">
             <Home />
           </Route>
           <Route path="/product/:id">

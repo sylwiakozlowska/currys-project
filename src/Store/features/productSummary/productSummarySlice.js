@@ -176,9 +176,9 @@ const initialState = [
     savedMoney: "300.00",
     deliveries: [
       { id: 0, type: "free-delivery" },
-      { id: 1, type: "noCollection" },
+      // { id: 1, type: "noCollection" },
       { id: 2, type: "free-collection-stock-availability" },
-      { id: 3, type: "free-collection" },
+      // { id: 3, type: "free-collection" },
     ],
     extraInfo: [
       { text: "Back Friday & Beyond", color: "special", url: "" },
