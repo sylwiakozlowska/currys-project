@@ -77,6 +77,7 @@ export const searchBarSlice = createSlice({
       const detailedProduct = detailedProducts.find((el) => el.id === payload.id);
       console.log("detailedProduct1",detailedProduct )
     }
+    
   },
 });
 

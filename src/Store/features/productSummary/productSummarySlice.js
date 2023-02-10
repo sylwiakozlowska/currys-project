@@ -223,13 +223,9 @@ export const productSummarySlice = createSlice({
   name: "productSummary",
   initialState,
   reducers: {
-    // colorSelected(state, { payload }) {
-    //   const {id, checked} =payload;
-    //   console.log("state,payload",state,payload)
-    //   const item = state.find((el) => el.id === payload.id);
-    //   console.log("item1",item)
-    //   item.selected = !item.selected;
-    // },
+    setListOfMatchingProducts: (state, { payload }) => {
+      console.log("payload1", payload);
+    },
   },
 });
 
@@ -238,8 +234,10 @@ export const { setSearchTerm, colorSelected } = productSummarySlice.actions;
 export const selectSingleProductSummary = (state, id) => {
   return state.productSummary.find((summary) => summary.id === Number(id));
 };
-export const selectProductSummary = (state) => {
-  return state.productSummary;
+export const selectProductSummary = (state, searchTerm) => {
+  return state.productSummary.filter(({ title }) =>
+    new RegExp(searchTerm, "i").test(title)
+  );
 };
 
 export default productSummarySlice.reducer;

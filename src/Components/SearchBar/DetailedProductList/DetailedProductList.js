@@ -4,8 +4,9 @@ import "../../../styles.scss";
 import { Rating } from "../../Rating/Rating";
 
 const COUNT = 5;
-
 export const DetailedProductList = ({ detailedProducts, onSelected }) => {
+  const shownProductListCount = 3;
+  const shownProductList = detailedProducts.slice(0, shownProductListCount);
   const onClickDetailedProduct = (e, id, detailedProducts) => {
     e.preventDefault();
     console.log(e, id, detailedProducts);
@@ -15,7 +16,7 @@ export const DetailedProductList = ({ detailedProducts, onSelected }) => {
   };
   return (
     <ul className="detailed-products">
-      {detailedProducts.map(({ id, text, price, rating, src }) => (
+      {shownProductList.map(({ id, text, price, rating, src }) => (
         <li key={id} className="detailed-products-list">
           <a
             className="product-link"

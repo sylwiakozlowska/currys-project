@@ -5,7 +5,6 @@ import { SimpleProductList } from "./SimpleProductList/SimpleProductList";
 import { DetailedProductList } from "./DetailedProductList/DetailedProductList";
 import { AiOutlineSearch } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
-import { setSelectedProduct } from "../../Store/features/searchBar/searchBarSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 const MIN_LENGTH = 2;
