@@ -1,11 +1,8 @@
-//filter component
-
 .filter-component {
   border-radius: $filter-component_radious;
-  border: 1px solid $filter-component_border;
   width: 400px;
   background: white;
-  margin: 20px;
+  height: max-content;
   .filter-box-component {
     padding: 10px 16px;
     // padding: $filter-component_padding;
@@ -14,9 +11,11 @@
   .filter-header {
     display: flex;
     padding: 10px;
-    border-bottom: 1px solid $filter-component_border-bottom;
+
     .title {
       flex-grow: 1;
+      padding: 10px;
+      border-bottom: 1px solid $filter-component_border-bottom;
     }
     a {
       text-decoration: underline;
@@ -28,6 +27,7 @@
   }
   .filter-boxes {
     text-decoration: none;
+    padding: 10px;
   }
 }
 
