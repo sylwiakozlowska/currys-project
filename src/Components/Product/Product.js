@@ -19,6 +19,7 @@ export const Product = () => {
 
   const { rating, pricingOptions, productOffers, colorVariation, deliveries } =
     product;
+    console.log("product", product)
   const [priceOption, setPriceOption] = useState(pricingOptions[0].id);
   const [colorOption, setColorOption] = useState(colorVariation[0].id);
   //   const [deliveryOption, setDeliveryOption] = useState(deliveryOptions);

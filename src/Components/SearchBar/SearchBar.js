@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef} from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
 import "../../styles.scss";
 import { SimpleProductList } from "./SimpleProductList/SimpleProductList";
 import { DetailedProductList } from "./DetailedProductList/DetailedProductList";
@@ -12,28 +11,24 @@ export const SearchBar = ({
   simpleProducts,
   detailedProducts,
   onChange,
-  onSelected,
   onSearch,
+  onSelectedSimpleProduct,
+  onSelectedDetailedProduct,
 }) => {
-  console.log(
-    onChange,
-    "onChange",
-    onSearch,
-    "onSearch",
-    onSelected,
-    "onSelected"
-  );
-  const history = useHistory();
+  console.log(onChange, "onChange", onSearch, "onSearch");
   const [text, setText] = useState("");
   const [shown, setShown] = useState(false);
   const ref = useRef();
 
-  const dispatch = useDispatch();
-
-  const onSelectedProduct = (item) => {
-    history.push(`/products?q=${text}`, { selected: item});
+  const onSimpleProductSelected = (item) => {
     setText("");
+    onSelectedSimpleProduct(item);
     // console.log("onSelectedProduct", onSelectedProduct);
+  };
+  const onDetailedProductSelected = (item) => {
+    setText("");
+    onSelectedDetailedProduct(item);
+    console.log("onSelectedProduct", item);
   };
   // const searchText = useSelector(selectSearchTerm);
   // const dispatch = useDispatch();
@@ -119,11 +114,11 @@ export const SearchBar = ({
           <div className="dropdown-content">
             <SimpleProductList
               simpleProducts={simpleProducts}
-              onSelected={onSelectedProduct}
+              onSelected={onSimpleProductSelected}
             />
             <DetailedProductList
               detailedProducts={detailedProducts}
-              onSelected={onSelectedProduct}
+              onSelected={onDetailedProductSelected}
             />
           </div>
         </div>

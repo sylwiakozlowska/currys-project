@@ -2,27 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../../../styles.scss";
 
-
 export const SimpleProductList = ({ simpleProducts, onSelected }) => {
-  const onClickSimpleProduct = (e, id) => {
-  e.preventDefault();
-  const simpleProduct = simpleProducts.find((el) => el.id === id);
-  onSelected(simpleProduct);
-};
+  const onClickSimpleProduct = (e, simpleProduct) => {
+    e.preventDefault();
+    onSelected(simpleProduct);
+  };
   return (
-  <ul className="simple-products">
-    {simpleProducts.map(({ id, text }) => (
-      <li key={id}>
-        <a
-          className="product-link"
-          href="#"
-          onClick={(e) => onClickSimpleProduct(e, id)}
-        >
-          <div className="product-group">{text}</div>
-        </a>
-      </li>
-    ))}
-  </ul>
+    <ul className="simple-products">
+      {simpleProducts.map((simpleProduct) => (
+        <li key={simpleProduct.id}>
+          <a
+            className="product-link"
+            href="#"
+            onClick={(e) => onClickSimpleProduct(e, simpleProduct)}
+          >
+            <div className="product-group">{simpleProduct.text}</div>
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 };
 
