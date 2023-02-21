@@ -1,0 +1,8 @@
+.filter-options-component {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .all::after {
+    content: "products per page";
+  }
+}

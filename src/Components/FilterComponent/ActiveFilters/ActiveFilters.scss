@@ -1,11 +1,10 @@
 .active-filters-component {
-  padding: $active-filters_padding;
+  padding: $active-filters_padding 20px;
   .active-filters-content {
     display: flex;
     .active-filters-title {
       flex-grow: 1;
       font-weight: bold;
-      padding-bottom: 16px;
     }
     .active-filters-reset {
       margin: 0;
