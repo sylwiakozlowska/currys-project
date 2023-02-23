@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Components/icons.scss";
 import "./styles.scss";
 import { Home } from "./Pages/Home/Home";
@@ -24,7 +24,13 @@ import {
 function App() {
   const openMenu = useSelector(selectMenuOpen);
   console.log("openMenu", openMenu);
+  const [data, setData] = useState(null);
 
+  useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
   const scrollBarStyle = openMenu ? "hide-scroll" : "";
   return (
     <Router>
@@ -62,7 +68,8 @@ function App() {
           <Overlay>
             <MenuNavTablet />
           </Overlay>
-        )}
+        )}{" "}
+        <p>{!data ? "Loading..." : data}</p>
       </div>
     </Router>
   );
