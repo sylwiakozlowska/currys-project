@@ -1,8 +1,14 @@
 .filter-options-component {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  .all::after {
+  .select {
+    padding-right: 5px;
+  }
+  .select-page {
+    flex-grow: 1;
+  }
+  .select-page::after {
+    padding: 5px;
     content: "products per page";
   }
 }

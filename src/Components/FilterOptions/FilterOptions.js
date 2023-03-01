@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BsSliders } from "react-icons/bs";
+import { BsListUl, BsGrid } from "react-icons/bs";
 export const FilterOptions = () => {
   const [sortBy, selectSortBy] = useState("Sort by: Relevance");
   const [showPage, setShowPage] = useState("20");
@@ -33,6 +34,7 @@ export const FilterOptions = () => {
           <option value="Customer rating">Sort by: Customer rating</option>
         </select>
       </div>
+      <div className="select-page">
         <div className="select">
           <select className="show-pages" onChange={onChangePage}>
             <option value={showPage}>Show: 20</option>
@@ -40,10 +42,21 @@ export const FilterOptions = () => {
             <option value="Show: 50">Show: 50</option>
           </select>
         </div>
-      <button className="button">
-        <BsSliders />
-        Filters
-      </button>
+      </div>
+      <div class="field has-addons">
+        <p class="control">
+          <button class="button">
+            <BsListUl />
+            <span>List</span>
+          </button>
+        </p>
+        <p class="control">
+          <button class="button">
+           <BsGrid/>
+            <span>Grid</span>
+          </button>
+        </p>
+      </div>
     </div>
   );
 };
