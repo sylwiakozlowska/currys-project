@@ -10,7 +10,6 @@ import {
   selectStatus,
 } from "../../../Store/features/productSummary/productSummarySlice";
 import { FilterOptions } from "../../FilterOptions/FilterOptions";
-import { AiOutlineLoading } from "react-icons/ai";
 
 export const NonPureProductSummary = () => {
   // const products = useSelector(selectProductSummary);

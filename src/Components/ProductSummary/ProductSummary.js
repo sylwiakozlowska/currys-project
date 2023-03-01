@@ -31,14 +31,15 @@ export const ProductSummary = ({ product, onCompare }) => {
         <div className="product-summary-content">
           <a href="#" className="product-name-link">
             <h1 className="product-title title is-1">{product.title}</h1>
-              <CiHeart className="heart-icon" />
+            <CiHeart className="heart-icon" />
           </a>
-          <div className="product-rating">
-            <Rating value={rating.value} count={rating.count}></Rating>
-            <span className="product-rating-reviews">(47)</span>
-          </div>
+
           <div className="columns">
             <div className="column">
+              <div className="product-rating">
+                <Rating value={rating.value} count={rating.count}></Rating>
+                <span className="product-rating-reviews">(47)</span>
+              </div>
               <ProductDescription
                 productDescription={product.productDescription}
                 shownNotification={shownNotification}

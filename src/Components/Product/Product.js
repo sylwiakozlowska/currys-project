@@ -14,6 +14,8 @@ import { CardComponent } from "../CardComponent/CardComponent";
 export const Product = () => {
   const { id } = useParams();
   const product = useSelector((state) => selectSingleProductSummary(state, id));
+  console.log("product", product)
+
   //   const deliveryOptions = useSelector((state) => selectDelivery2(state, id));
   //   console.log("deliveryOptions", deliveryOptions);
 
