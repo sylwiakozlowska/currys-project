@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import "../../../styles.scss";
 
 export const SimpleProductList = ({ simpleProducts, onSelected }) => {
+  debugger
   const onClickSimpleProduct = (e, simpleProduct) => {
     e.preventDefault();
     onSelected(simpleProduct);
+    debugger
   };
   return (
     <ul className="simple-products">

@@ -15,10 +15,46 @@ export const SearchBar = ({
   onSelectedSimpleProduct,
   onSelectedDetailedProduct,
 }) => {
+  
   console.log(onChange, "onChange", onSearch, "onSearch");
   const [text, setText] = useState("");
   const [shown, setShown] = useState(false);
   const ref = useRef();
+
+  useEffect(() => {
+    //if (the input has text)
+    //{then open the dropdown}
+    //else the input is empty
+    //{then dont open the dropdown}
+
+    // if (text.length > 0) {
+    //   setShown(true);
+    // } else {
+    //   setShown(false);
+    // }
+    setShown(
+      !!(simpleProducts.length || detailedProducts.length) && text.length > 2
+    );
+    
+    // setShown(text.length > MIN_LENGTH);
+  }, [simpleProducts, detailedProducts, text]);
+  
+
+  useEffect(() => {
+    const node = ref.current;
+    const onClick = (e) => {
+      if (!node.contains(e.target)) {
+        onClose();
+      }
+    };
+    if (shown) {
+      document.addEventListener("click", onClick, false);
+    }
+
+    return () => {
+      document.removeEventListener("click", onClick, false);
+    };
+  }, [ref, shown, onClose]);
 
   const onSimpleProductSelected = (item) => {
     setText("");
@@ -51,38 +87,7 @@ export const SearchBar = ({
     setText("");
   };
 
-  useEffect(() => {
-    //if (the input has text)
-    //{then open the dropdown}
-    //else the input is empty
-    //{then dont open the dropdown}
-
-    // if (text.length > 0) {
-    //   setShown(true);
-    // } else {
-    //   setShown(false);
-    // }
-    setShown(
-      !!(simpleProducts.length || detailedProducts.length) && text.length > 2
-    );
-    // setShown(text.length > MIN_LENGTH);
-  }, [simpleProducts, detailedProducts, text]);
-
-  useEffect(() => {
-    const node = ref.current;
-    const onClick = (e) => {
-      if (!node.contains(e.target)) {
-        onClose();
-      }
-    };
-    if (shown) {
-      document.addEventListener("click", onClick, false);
-    }
-
-    return () => {
-      document.removeEventListener("click", onClick, false);
-    };
-  }, [ref, shown, onClose]);
+  debugger;
   return (
     <div ref={ref} className="search-bar-component">
       <div className="field has-addons">
@@ -108,7 +113,6 @@ export const SearchBar = ({
           </button>
         </div>
       </div>
-
       {shown && (
         <div className="dropdown">
           <div className="dropdown-content">
