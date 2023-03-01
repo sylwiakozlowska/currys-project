@@ -1,0 +1,12 @@
+.product-summary-wrapper {
+  @include mobile {
+    .product-summary-component {
+      display: none;
+    }
+  }
+  @include tablet {
+    .product-summary-component-mobile {
+      display: none;
+    }
+  }
+}
