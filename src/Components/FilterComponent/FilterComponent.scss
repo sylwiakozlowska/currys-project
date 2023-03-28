@@ -1,12 +1,15 @@
 .filter-component {
+  position: sticky;
+  top: 24px;
+  bottom: 24px;
   border-radius: $filter-component_radious;
   width: 400px;
   background: white;
   height: max-content;
+  margin-right: 30px;
+
   .filter-box-component {
     padding: 10px 16px;
-    // padding: $filter-component_padding;
-    // border-bottom: 1px solid $filter-component_border;
   }
   .filter-header {
     display: flex;
