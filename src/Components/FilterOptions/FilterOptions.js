@@ -16,7 +16,7 @@ export const FilterOptions = () => {
   };
   return (
     <div className="filter-options-component">
-      <div class="select">
+      <div className="select">
         <select
           className="sort-by"
           value={sortBy}
@@ -43,16 +43,16 @@ export const FilterOptions = () => {
           </select>
         </div>
       </div>
-      <div class="field has-addons">
-        <p class="control">
-          <button class="button">
+      <div className="field has-addons">
+        <p className="control">
+          <button className="button">
             <BsListUl />
             <span>List</span>
           </button>
         </p>
-        <p class="control">
-          <button class="button">
-           <BsGrid/>
+        <p className="control">
+          <button className="button">
+            <BsGrid />
             <span>Grid</span>
           </button>
         </p>

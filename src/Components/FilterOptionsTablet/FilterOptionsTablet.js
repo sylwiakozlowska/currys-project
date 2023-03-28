@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { BsSliders } from "react-icons/bs";
 export const FilterOptionsTablet = () => {
   const [sortBy, selectSortBy] = useState("Sort by: Relevance");
 
@@ -11,7 +10,7 @@ export const FilterOptionsTablet = () => {
 
   return (
     <div className="filter-options-component-tablet">
-      <div class="select">
+      <div className="select">
         <select
           className="sort-by"
           value={sortBy}
@@ -27,10 +26,6 @@ export const FilterOptionsTablet = () => {
           <option value="Customer rating">Sort by: Customer rating</option>
         </select>
       </div>
-      <button className="button">
-        <BsSliders />
-        Filters
-      </button>
     </div>
   );
 };
