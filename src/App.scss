@@ -4,6 +4,7 @@ body,
 #root {
   height: 100%;
   box-sizing: border-box;
+  font-family: "currys";
 }
 .App {
   overflow-y: scroll;
@@ -17,25 +18,30 @@ body,
 .carousel {
   z-index: 0 !important;
 }
-
-.help-links-wrapper,
-.header-wrapper,
-.card-deal-wrapper,
-.service-menu-wrapper,
-.product-summary-wrapper,
-.product-wrapper {
-  padding: 0 3%;
+@include until-widescreen {
+  .header-wrapper,
+  .help-links-wrapper,
+  .breadcrumb-wrapper,
+  .card-deal-wrapper,
+  .service-menu-wrapper,
+  .filters-wrapper,
+  .product-wrapper {
+    padding: 0 3%;
+  }
 }
+
 .breadcrumb-wrapper {
   border: 1px solid #cdd8df;
 }
 .filters-wrapper {
-  padding: 20px 3%;
+  padding-top: 20px;
   background: #f2f2f2;
 }
 @include fullhd {
   .header-wrapper,
-  .card-deal-wrapper {
+  .breadcrumb-component,
+  .card-deal-wrapper,
+  .search-products-component {
     margin: 0 15%;
   }
 }

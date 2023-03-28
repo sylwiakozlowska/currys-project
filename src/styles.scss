@@ -21,6 +21,7 @@
 @import "./Components/Rating/Rating.scss";
 @import "./Components/CardComponent/CardComponent.scss";
 @import "./Components/ProductSummaryWrapper/ProductSummaryWrapper.scss";
+@import "./Components/ProductSummaryWrapperTablet/ProductSummaryWrapperTablet.scss";
 @import "./Components/ProductSummary/ProductSummary.scss";
 @import "./Components/ProductSummary/ProductImage/ProductImage.scss";
 @import "./Components/ProductSummary/ProductPrice/ExtraInfo/ExtraInfo.scss";
@@ -35,21 +36,23 @@
 @import "./Components/BannerComponent/BannerComponent.scss";
 @import "./Components/GiftDeal/GiftDeal.scss";
 @import "./Components/FilterComponent/FilterComponent.scss";
+@import "./Components/FilterComponentTablet/FilterComponentTablet.scss";
 @import "./Components/FilterComponent/ActiveFilters/ActiveFilters.scss";
 @import "./Components/FilterComponent/DropdownBox/DropdownBox.scss";
 @import "./Components/FilterComponent/PillBox/PillBox.scss";
 @import "./Components/FilterComponent/PriceFilter/PriceFilter.scss";
 @import "./Components/FiltersWithProducts/FiltersWithProducts.scss";
 @import "./Components/ColorVariation/ColorVariation.scss";
-@import "./Components//ProductSummary//ProductPrice//PricingOptions//PricingOptions.scss";
+@import "./Components//ProductSummary/ProductPrice/PricingOptions/PricingOptions.scss";
 @import "./Components/Product/Product.scss";
 @import "./Components/SearchStock/SearchStock.scss";
 @import "./Components/Tabs/Tabs.scss";
 @import "./Components/Delivery/Delivery.scss";
 @import "./Components/Collection/Collection.scss";
-@import "./Pages/SearchProducts/SearchProducts.scss";
 @import "./Components/ServicesAndSupport/ServicesAndSupport.scss";
 @import "./Components/FilterOptions/FilterOptions.scss";
+@import "./Pages/SearchProducts/SearchProducts.scss";
+
 // .App {
 //     background-color:grey;
 // }
