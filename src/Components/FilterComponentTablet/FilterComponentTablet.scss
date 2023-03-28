@@ -1,0 +1,50 @@
+.filter-component-tablet {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1;
+  background: #f2f2f2;
+  width: 400px;
+
+  .filter-header {
+    display: flex;
+    padding: 10px;
+    background: white;
+
+    .title {
+      flex-grow: 1;
+      margin: 0;
+    }
+    a {
+      text-decoration: underline;
+    }
+    button {
+        border: none;
+        background: none;
+    }
+  }
+
+  .filter-component-tablet-content {
+    background: #f2f2f2;
+    padding: 20px;
+    .active-filters-component {
+      background: white;
+      padding: 20px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+    .filter-box-component {
+        padding: 20px 15px;
+
+      background: white;
+      font-weight: bold;
+      border-top: 1px solid $filter-component_border-top;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .filter-boxes {
+      text-decoration: none;
+    }
+  }
+}
