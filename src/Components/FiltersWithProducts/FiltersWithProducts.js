@@ -7,11 +7,11 @@ import { ProductSummaryWrapperTablet } from "../ProductSummaryWrapperTablet/Prod
 export const FiltersWithProducts = () => {
   return (
     <div className="filters-with-products-component">
-      <div className="filters-with-products-content">
+      <div className="filters-with-products-content is-hidden-touch">
         <FilterComponent />
         <ProductSummaryWrapper />
       </div>
-      <div className="filters-with-products-content-tablet">
+      <div className="filters-with-products-content-tablet is-hidden-desktop">
         <ProductSummaryWrapperTablet />
       </div>
     </div>
