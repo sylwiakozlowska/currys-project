@@ -10,9 +10,13 @@ import {
   selectStatus,
 } from "../../Store/features/productSummary/productSummarySlice";
 import { FilterOptionsTablet } from "../FilterOptionsTablet/FilterOptionsTablet";
+import { FilterComponentTablet } from "../FilterComponentTablet/FilterComponentTablet";
+import { BsSliders } from "react-icons/bs";
+import { Overlay } from "../Overlay/Overlay";
 
 export const ProductSummaryWrapperTablet = () => {
   // const products = useSelector(selectProductSummary);
+  const [showFilterComponent, setShowFilterComponent] = useState(false);
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const dispatch = useDispatch();
@@ -43,10 +47,21 @@ export const ProductSummaryWrapperTablet = () => {
     return <ProductSummaryMobile product={product} />;
   });
   return (
-    <section className="product-summary-wrapper">
-      <FilterOptionsTablet /> 
-      {productSummaries}
-      {productSummariesMobile}
+    <section className="product-summary-tablet-wrapper">
+      <div className="filter-options-tablet-wrapper">
+        <FilterOptionsTablet />
+        <button
+          className="button filters-component-button"
+          // onClick={() => setShowFilterComponent((current) => !current)}
+          onClick={() => setShowFilterComponent(true)}
+        >
+          <BsSliders />
+          Filters
+        </button>
+        {showFilterComponent && <Overlay><FilterComponentTablet setShowFilterComponent={setShowFilterComponent} /></Overlay>}
+      </div>
+      <div className="is-hidden-mobile">{productSummaries}</div>
+      <div className="is-hidden-tablet">{productSummariesMobile}</div>
     </section>
   );
 };

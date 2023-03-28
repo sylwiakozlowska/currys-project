@@ -62,10 +62,10 @@ export const ProductSummary = ({ product, onCompare }) => {
           </div>
         </div>
       </div>
-      <div>
-        {/* <Compare selected={product.selected} setCompare={checkClicked} /> */}
-      </div>
-      <div>{shownNotification && <NotificationBox />}</div>
+      {/* <div> */}
+      {/* <Compare selected={product.selected} setCompare={checkClicked} /> */}
+      {/* </div> */}
+      {/* <div>{shownNotification && <NotificationBox />}</div> */}
     </div>
     // </div>
   );

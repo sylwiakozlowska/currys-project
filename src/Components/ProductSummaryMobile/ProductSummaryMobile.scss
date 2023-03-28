@@ -1,68 +1,67 @@
-  .product-summary-component-mobile {
-    background: white;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 20px;
-    transition: border 0.2s ease 0s;
-    &.product-summary-component:hover {
-      border: 1px solid #4c12a1;
-    }
-    .product-summary-mobile {
+.product-summary-component-mobile {
+  background: white;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px 0;
+  transition: border 0.2s ease 0s;
+  &.product-summary-component:hover {
+    border: 1px solid #4c12a1;
+  }
+  .product-summary-mobile {
+    display: flex;
+  }
+  .product-summary-content-mobile {
+    .product-name-link-mobile {
       display: flex;
+      color: #213038;
+      margin: 0;
     }
-    .product-summary-content-mobile {
-      .product-name-link-mobile {
-        display: flex;
-        color: #213038;
-        margin: 0;
+    .product-title-mobile {
+      font-size: 20px;
+      flex-grow: 1;
+      &:hover {
+        text-decoration: underline;
       }
-      .product-title-mobile {
-        font-size: 20px;
-        flex-grow: 1;
-        &:hover {
-          text-decoration: underline;
-        }
+    }
+    .columns {
+      display: flex;
+      .column {
+        padding: 0;
       }
-      .columns {
-        display: flex;
-        .column {
-          padding: 0;
-        }
-      }
-      .product-image-component {
-        max-width: 144px;
-      }
+    }
+    .product-image-component {
+      max-width: 144px;
     }
   }
+}
 
-  .product-price-component {
-    @include mobile {
-      .cost-button {
-        display: none;
-      }
-      .delivery-component {
-        display: none;
-      }
+.product-price-component {
+  @include mobile {
+    .cost-button {
+      display: none;
+    }
+    .delivery-component {
+      display: none;
     }
   }
-  .product-description-component {
-    @include mobile {
-      .product-item-description-list {
-        display: none;
-      }
-    }
-    @include mobile {
-      .content {
-        display: none;
-      }
+}
+.product-description-component {
+  @include mobile {
+    .product-item-description-list {
+      display: none;
     }
   }
-  .product-price-component {
-    @include mobile {
-      .stock-info {
-        display: none;
-      }
+  @include mobile {
+    .content {
+      display: none;
     }
   }
-
+}
+.product-price-component {
+  @include mobile {
+    .stock-info {
+      display: none;
+    }
+  }
+}

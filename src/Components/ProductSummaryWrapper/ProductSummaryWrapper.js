@@ -38,15 +38,14 @@ export const ProductSummaryWrapper = () => {
   const productSummaries = products.map((product) => {
     return <ProductSummary product={product} />;
   });
-  const productSummariesMobile = products.map((product) => {
-    return <ProductSummaryMobile product={product} />;
-  });
+  // const productSummariesMobile = products.map((product) => {
+  //   return <ProductSummaryMobile product={product} />;
+  // });
   return (
     <section className="product-summary-wrapper">
       <FilterOptions />
       {productSummaries}
-
-      {productSummariesMobile}
+      {/* {productSummariesMobile} */}
     </section>
   );
 };
