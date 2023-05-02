@@ -4,13 +4,9 @@
 .header-component {
   border: 1px solid red;
   display: flex;
-  @include mobile {
+  @include until-widescreen {
     display: none;
   }
-  @include touch {
-    display: none;
-  }
-
   .header-content-wrapper {
     display: flex;
     flex-direction: column;
@@ -25,21 +21,24 @@
     align-items: center;
   }
   .header-menu-nav-wrapper {
-    @include touch {
+    @include until-widescreen {
       display: none;
     }
   }
 }
 
+//LOGO
 .header-logo-wrapper {
   border: 1px solid red;
 }
+//SEARCH BAR
 .header-search-wrapper {
   border: 1px solid green;
   @include touch {
     width: 20%;
   }
 }
+//ICONS
 .header-icons-wrapper {
   border: 1px solid orangered;
 }
