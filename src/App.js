@@ -8,10 +8,12 @@ import { HelpLinks } from "./Components/HelpLinks/HelpLinks";
 import { Header } from "./Components/Header/Header";
 import { HeaderTablet } from "./Components/HeaderTablet/HeaderTablet";
 import { Overlay } from "./Components/Overlay/Overlay";
-import { useSelector } from "react-redux";
-import { selectMenuOpen } from "./Store/features/app/appSlice";
+import { selectMenuOpen, selectIsLoading } from "./Store/features/app/appSlice";
 import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTablet";
 import { Product } from "./Components/Product/Product";
+import { useSelector, useDispatch } from "react-redux";
+
+// import { selectSingleProductSummary } from "./Store/features/productSummary/productSummarySlice";
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,9 +22,19 @@ import {
   useParams,
   useRouteMatch,
 } from "react-router-dom";
+import RingLoader from "react-spinners/RingLoader";
+
+
+const props = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+  color: "#4C12A1",
+};
 
 function App() {
   const openMenu = useSelector(selectMenuOpen);
+  const isLoading = useSelector(selectIsLoading);
   console.log("openMenu", openMenu);
   const [data, setData] = useState(null);
 
@@ -71,6 +83,18 @@ function App() {
         )}{" "}
         <p>{!data ? "Loading..." : data}</p>
       </div>
+      {isLoading && (
+        <div className="loading">
+          <RingLoader
+            color={props.color}
+            loading={props.loading}
+            props={props}
+            size={60}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
+      )}
     </Router>
   );
 }
