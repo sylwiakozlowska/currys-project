@@ -5,6 +5,7 @@ import searchBarReducer from "./Store/features/searchBar/searchBarSlice";
 import menuReducer from "./Store/features/menu/menuSlice";
 import serviceMenuReducer from "./Store/features/serviceMenu/serviceMenuSlice";
 import cardDealReducer from "./Store/features/cardDeal/cardDealSlice";
+import productReducer from "./Store/features/product/productSlice";
 import productSummaryReducer from "./Store/features/productSummary/productSummarySlice";
 import filterReducer from "./Store/features/filterComponent/FilterSlice";
 import locationReducer from "./Store/features/location/locationSlice";
@@ -17,6 +18,7 @@ export const store = configureStore({
     menu: menuReducer,
     serviceMenu: serviceMenuReducer,
     cardDeal: cardDealReducer,
+    product: productReducer,
     productSummary: productSummaryReducer,
     filter: filterReducer,
     location: locationReducer,

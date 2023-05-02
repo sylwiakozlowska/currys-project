@@ -6,8 +6,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { BsChevronDown } from "react-icons/bs";
 
 export const Delivery = ({ deliveryOptions, onClick, location }) => {
-  const [selectedSlot, setSelectedSlot] = useState(deliveryOptions[0].id);
-  console.log("location", location);
+  const [selectedSlot, setSelectedSlot] = useState(deliveryOptions);
+  console.log("location","deliveryOptions", location, deliveryOptions);
   const [startDate, setStartDate] = useState(new Date());
 
   const deliveryOptionList = deliveryOptions.map((deliveryOption) => {

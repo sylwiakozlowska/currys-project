@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { selectSingleProductSummary } from "../../Store/features/productSummary/productSummarySlice";
+// import { selectSingleProductSummary } from "../../Store/features/productSummary/productSummarySlice";
 import {
   selectLocation,
   setSearchLocation,
@@ -11,18 +11,21 @@ import {
   chooseLocation,
   selectDeliveryArea,
   selectCollectionOptions,
+  selectStatus
 } from "../../Store/features/deliveryAndCollection/deliveryAndCollectionSlice";
 import { SearchStock } from "./SearchStock";
 import { Tabs } from "../Tabs/Tabs";
 import { Delivery } from "../Delivery/Delivery";
 import { Collection } from "../Collection/Collection";
-export const SearchStockWrapper = () => {
+export const SearchStockWrapper = ({deliveries}) => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const product = useSelector((state) => selectSingleProductSummary(state, id));
-  console.log("product", product);
+  // const product = useSelector((state) => selectSingleProductSummary(state, id));
+  // console.log("product", product);
   const deliveryOptions = useSelector(selectDeliveryOptions);
   const collectionOptions = useSelector(selectCollectionOptions);
+  const status = useSelector(selectStatus);
+
   console.log(
     deliveryOptions,
     collectionOptions,
@@ -34,7 +37,7 @@ export const SearchStockWrapper = () => {
 
   const [shown, setShown] = useState(true);
 
-  const { deliveries } = product;
+  // const { deliveries } = product;
   console.log("locations", locations);
 
   const onChangeText = (value) => {
