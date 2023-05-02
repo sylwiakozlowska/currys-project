@@ -1,26 +1,52 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "../../styles.scss";
 import { SimpleProductList } from "./SimpleProductList/SimpleProductList";
 import { DetailedProductList } from "./DetailedProductList/DetailedProductList";
 import { AiOutlineSearch } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
-import { useSelector, useDispatch } from "react-redux";
 
 const MIN_LENGTH = 2;
+
 export const SearchBar = ({
   simpleProducts,
   detailedProducts,
+  status,
   onChange,
   onSearch,
   onSelectedSimpleProduct,
   onSelectedDetailedProduct,
 }) => {
-  
-  console.log(onChange, "onChange", onSearch, "onSearch");
   const [text, setText] = useState("");
   const [shown, setShown] = useState(false);
   const ref = useRef();
 
+  const onSimpleProductSelected = (item) => {
+    setText("");
+    onSelectedSimpleProduct(item);
+  };
+  const onDetailedProductSelected = (item) => {
+    setText("");
+    onSelectedDetailedProduct(item);
+    console.log("onSelectedProduct", item);
+  };
+
+  const onChangeText = (e) => {
+    const { value } = e.target;
+    setText(value);
+    if (value.length > MIN_LENGTH) {
+      console.log("open");
+      onChange(value);
+    }
+  };
+  const onClose = useCallback(() => {
+    setText("");
+  }, [text]);
+
+  const onClickSearch = () => {
+    onSearch(text);
+    console.log("text", text);
+    setText("");
+  };
   useEffect(() => {
     //if (the input has text)
     //{then open the dropdown}
@@ -33,12 +59,11 @@ export const SearchBar = ({
     //   setShown(false);
     // }
     setShown(
-      !!(simpleProducts.length || detailedProducts.length) && text.length > 2
+      !!(simpleProducts.length || detailedProducts.length) &&
+        text.length > MIN_LENGTH
     );
-    
     // setShown(text.length > MIN_LENGTH);
-  }, [simpleProducts, detailedProducts, text]);
-  
+  }, [text, simpleProducts, detailedProducts]);
 
   useEffect(() => {
     const node = ref.current;
@@ -56,38 +81,6 @@ export const SearchBar = ({
     };
   }, [ref, shown, onClose]);
 
-  const onSimpleProductSelected = (item) => {
-    setText("");
-    onSelectedSimpleProduct(item);
-    // console.log("onSelectedProduct", onSelectedProduct);
-  };
-  const onDetailedProductSelected = (item) => {
-    setText("");
-    onSelectedDetailedProduct(item);
-    console.log("onSelectedProduct", item);
-  };
-  // const searchText = useSelector(selectSearchTerm);
-  // const dispatch = useDispatch();
-
-  // const shown = !!text.length;
-  const onChangeText = (e) => {
-    const { value } = e.target;
-    setText(value);
-    console.log("value", value);
-    if (value.length > MIN_LENGTH) {
-      onChange(value);
-    }
-  };
-  const onClose = () => {
-    setText("");
-  };
-  const onClickSearch = () => {
-    onSearch(text);
-    console.log("text", text);
-    setText("");
-  };
-
-  debugger;
   return (
     <div ref={ref} className="search-bar-component">
       <div className="field has-addons">
@@ -116,14 +109,20 @@ export const SearchBar = ({
       {shown && (
         <div className="dropdown">
           <div className="dropdown-content">
-            <SimpleProductList
-              simpleProducts={simpleProducts}
-              onSelected={onSimpleProductSelected}
-            />
-            <DetailedProductList
-              detailedProducts={detailedProducts}
-              onSelected={onDetailedProductSelected}
-            />
+            {/* {status === "loading" && "loading..."}
+            {status === "failed" && "Oops..."} */}
+            <>
+              <SimpleProductList
+                status={status}
+                simpleProducts={simpleProducts}
+                onSelected={onSimpleProductSelected}
+              />
+              <DetailedProductList
+                status={status}
+                detailedProducts={detailedProducts}
+                onSelected={onDetailedProductSelected}
+              />
+            </>
           </div>
         </div>
       )}

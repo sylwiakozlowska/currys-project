@@ -4,7 +4,11 @@ import "../../../styles.scss";
 import { Rating } from "../../Rating/Rating";
 
 const COUNT = 5;
-export const DetailedProductList = ({ detailedProducts, onSelected }) => {
+export const DetailedProductList = ({
+  detailedProducts,
+  onSelected,
+  status,
+}) => {
   const shownProductListCount = 3;
   const shownProductList = detailedProducts.slice(0, shownProductListCount);
   const onClickDetailedProduct = (e, id, detailedProducts) => {
@@ -15,29 +19,33 @@ export const DetailedProductList = ({ detailedProducts, onSelected }) => {
     onSelected(detailedProduct);
   };
   return (
-    <ul className="detailed-products">
-      {shownProductList.map(({ id, text, price, rating, src }) => (
-        <li key={id} className="detailed-products-list">
-          <a
-            className="product-link"
-            href="#"
-            onClick={(e) => onClickDetailedProduct(e, id, detailedProducts)}
-          >
-            <div className="columns product-group">
-              <img src={src} alt="product image" />
-              <div className="column is-one-third text-rating-group">
-                <span className="column">{text}</span>
-                <Rating value={rating} count={COUNT} />
-              </div>
-              <div className="column product-price">{price}</div>
-            </div>
-          </a>
-        </li>
-      ))}
-    </ul>
+    <>
+      {detailedProducts.length > 0 && (
+        <ul className="detailed-products">
+          {shownProductList.map(({ id, text, price, rating, src }) => (
+            <li key={id} className="detailed-products-list">
+              <a
+                className="product-link"
+                href="#"
+                onClick={(e) => onClickDetailedProduct(e, id, detailedProducts)}
+              >
+                <div className="columns product-group">
+                  <img src={src} alt="product image" />
+                  <div className="column is-one-third text-rating-group">
+                    <span className="column">{text}</span>
+                    <Rating value={rating} count={COUNT} />
+                  </div>
+                  <div className="column product-price">{price}</div>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+      {/* {status === "succedded" && detailedProducts.length > 0 && "no products"} */}
+    </>
   );
 };
-
 DetailedProductList.propTypes = {
   detailedProducts: PropTypes.arrayOf(
     PropTypes.exact({

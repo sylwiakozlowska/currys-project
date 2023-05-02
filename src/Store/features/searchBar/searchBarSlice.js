@@ -1,13 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { showLoading } from "../app/appSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 
 export const fetchProductsList = createAsyncThunk(
   "searchBar/fetchProductsList",
-  async () => {
-    const res = await fetch("/product")
-    const data = await res.json()
-    debugger
+  async (value, {dispatch}) => {
+    dispatch(showLoading(true));
+    const res = await fetch(`/search/?q=${value}`);
+    const data = await res.json();
+    dispatch(showLoading(false));
     return data;
   }
 );
@@ -17,7 +20,7 @@ export const fetchProductsList = createAsyncThunk(
 //   async (id) => {
 //     const res = await fetch(`/product/${id}`);
 //     const data = await res.json();
-//  
+//
 //     return data;
 //   }
 // );
@@ -74,47 +77,39 @@ export const searchBarSlice = createSlice({
   initialState: {
     simpleProducts: [],
     detailedProducts: [],
-    status: "idle", error: null
+    status: "idle",
+    error: null,
   },
   reducers: {
-    setSearchTerm: (state, { payload }) => {
-        state.searchTerm = payload;
-
-      // const { simpleProducts, detailedProducts } = state.allProducts;
-      // console.log(state.allProducts,"state.allProducts")
-      
-      
-      // state.simpleProducts = simpleProducts.filter(({ text }) =>
-      //   new RegExp(payload, "i").test(text)
-      // );
-      // console.log(state.simpleProducts);
-
-      // state.detailedProducts = detailedProducts.filter(
-      //   ({ id, text, price, rating, imageUrl }) =>
-      //     new RegExp(payload, "i").test(text)
-      // );
-      // console.log(state.detailedProducts);
-    },
-    // setSelectedProduct:(state,{payload})=>{
-    //   const { detailedProducts } = state.allProducts;
-    //   const detailedProduct = detailedProducts.find((el) => el.id === payload.id);
-    //   console.log("detailedProduct1",detailedProduct )
-    // }
-    
+    // setSearchTerm: (state, { payload }) => {
+    // state.searchTerm = payload;
+    // const { simpleProducts, detailedProducts } = state.allProducts;
+    // console.log(state.allProducts,"state.allProducts")
+    // state.simpleProducts = simpleProducts.filter(({ text }) =>
+    //   new RegExp(payload, "i").test(text)
+    // );
+    // console.log(state.simpleProducts);
+    // state.detailedProducts = detailedProducts.filter(
+    //   ({ id, text, price, rating, imageUrl }) =>
+    //     new RegExp(payload, "i").test(text)
+    // );
+    // console.log(state.detailedProducts);
   },
+  // setSelectedProduct:(state,{payload})=>{
+  //   const { detailedProducts } = state.allProducts;
+  //   const detailedProduct = detailedProducts.find((el) => el.id === payload.id);
+  //   console.log("detailedProduct1",detailedProduct )
+  // }
+
   extraReducers: (builder) => {
     builder
       .addCase(fetchProductsList.pending, (state) => {
-        debugger
         state.status = "loading";
       })
       .addCase(fetchProductsList.fulfilled, (state, action) => {
         state.status = "succeeded";
-        debugger
         state.simpleProducts = action.payload.simpleProducts;
         state.detailedProducts = action.payload.detailedProducts;
-
-        debugger
       })
       .addCase(fetchProductsList.rejected, (state, action) => {
         state.status = "failed";
