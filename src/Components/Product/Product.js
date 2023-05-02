@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { selectSingleProductSummary } from "../../Store/features/productSummary/productSummarySlice";
+import {
+  fetchProduct,
+  selectProduct,
+  selectStatus,
+} from "../../Store/features/product/productSlice";
 import { ProductImage } from "../ProductSummary/ProductImage/ProductImage";
 import { Rating } from "../Rating/Rating";
 import { PricingOptions } from "../ProductSummary/ProductPrice/PricingOptions/PricingOptions";
@@ -13,19 +17,30 @@ import { CardComponent } from "../CardComponent/CardComponent";
 
 export const Product = () => {
   const { id } = useParams();
-  const product = useSelector((state) => selectSingleProductSummary(state, id));
-  console.log("product", product)
+  const dispatch = useDispatch();
+  const product = useSelector(selectProduct);
+  console.log("product", product);
+  const status = useSelector(selectStatus);
+  console.log("status", status);
 
-  //   const deliveryOptions = useSelector((state) => selectDelivery2(state, id));
-  //   console.log("deliveryOptions", deliveryOptions);
+  const [priceOption, setPriceOption] = useState(0);
+  const [colorOption, setColorOption] = useState(0);
+
+  useEffect(() => {
+    dispatch(fetchProduct(id));
+  }, [dispatch, fetchProduct, id]);
+
+  if (status === "loading") {
+    return "loading";
+  }
 
   const { rating, pricingOptions, productOffers, colorVariation, deliveries } =
     product;
-    console.log("product", product)
-  const [priceOption, setPriceOption] = useState(pricingOptions[0].id);
-  const [colorOption, setColorOption] = useState(colorVariation[0].id);
+  //   const deliveryOptions = useSelector((state) => selectDelivery2(state, id));
+  //   console.log("deliveryOptions", deliveryOptions);
+
   //   const [deliveryOption, setDeliveryOption] = useState(deliveryOptions);
-// console.log(222,id)
+  // console.log(222,id)
 
   return (
     <section className="product-component">
