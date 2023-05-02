@@ -232,9 +232,9 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchData = createAsyncThunk(
   "productSummary/fetchData",
-  async () => {
-    const res = await fetch("/products")
-    const data = await res.json()
+  async (searchTerm) => {
+    const res = await fetch(`/products?q=${searchTerm}`);
+    const data = await res.json();
     return data;
   }
 );
@@ -242,8 +242,7 @@ export const fetchData = createAsyncThunk(
 export const productSummarySlice = createSlice({
   name: "productSummary",
   initialState: { productSummary: [], status: "idle", error: null },
-  reducers: {
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchData.pending, (state, action) => {
       state.status = "loading";
@@ -264,7 +263,9 @@ export const productSummarySlice = createSlice({
 export const { setSearchTerm, setListOfProducts } = productSummarySlice.actions;
 
 export const selectSingleProductSummary = (state, id) => {
-  return state.productSummary.productSummary.find((summary) => summary.id === Number(id));
+  return state.productSummary.productSummary.find(
+    (summary) => summary.id === Number(id)
+  );
 };
 
 export const selectProductSummary = (state, searchTerm) => {

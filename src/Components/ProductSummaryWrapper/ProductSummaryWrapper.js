@@ -10,6 +10,14 @@ import {
   selectStatus,
 } from "../../Store/features/productSummary/productSummarySlice";
 import { FilterOptions } from "../FilterOptions/FilterOptions";
+import RingLoader from "react-spinners/RingLoader";
+
+const props = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+  color: "#4C12A1",
+};
 
 export const ProductSummaryWrapper = () => {
   // const products = useSelector(selectProductSummary);
@@ -17,9 +25,10 @@ export const ProductSummaryWrapper = () => {
   const params = new URLSearchParams(search);
   const dispatch = useDispatch();
 
-  // const products = useSelector((state) =>
-  //   selectProductSummary(state, params.get("q"))
-  // );
+  useEffect(() => {
+    dispatch(fetchData(params.get("q")));
+  }, [dispatch, fetchData, params.get("q")]);
+
   const products = useSelector((state) =>
     selectProductSummary(state, params.get("q"))
   );
@@ -30,10 +39,6 @@ export const ProductSummaryWrapper = () => {
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch, fetchData]);
-
-  if (status === "loading") {
-    return "loading";
-  }
 
   const productSummaries = products.map((product) => {
     return <ProductSummary product={product} />;
