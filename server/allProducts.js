@@ -1,49 +1,437 @@
-const allProducts = {
-    simpleProducts: [
-      { id: 0, text: "Samsung Deals" },
-      { id: 1, text: "Samsung trade in" },
-      { id: 2, text: "Samsung Galaxy Buds 2" },
-      { id: 3, text: "Apple Iphone Deals" },
-      { id: 4, text: "JVC Deals" },
+const allProducts = [
+  {
+    id: 0,
+    // manufactorId: "SAMSUNG",
+    title: " SAMSUNG Galaxy A13 - 64 GB, Black",
+    productImageUrl:
+      "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
+    formatBadges: ["freewiew", "4kHDR"],
+    productDescription: [
+      "Android 12",
+      "6.6 Full HD+ LCD touchscreen",
+      "8 MP front camera",
+      "Battery capacity: 5000 mAh",
     ],
-  
-    detailedProducts: [
+    productOffers: [
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "another offer",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+    ],
+    pricingOptions: [
+      { id: 0, price: "159", text: "One-off payment", selected: false },
+      { id: 1, price: "6.10", text: "per month*", selected: false },
+    ],
+    rating: {
+      value: 3,
+      count: 5,
+    },
+    productPrice: "1049.00",
+    savedMoney: "300.00",
+    deliveries: [
+      { id: 0, type: "free-delivery" },
+      // { id: 1, type: "noCollection" },
+      { id: 2, type: "free-collection-stock-availability" },
+      // { id: 3, type: "free-collection" },
+    ],
+    extraInfo: [
+      { text: "2 year guarantee", color: "primary", url: "" },
+      { text: "3 months 0% intrest", color: "primary", url: "" },
+    ],
+    stock: [
+      {
+        text: "Sorry, this item is currently out of stock.",
+      },
+    ],
+    selected: true,
+    colorVariation: [
       {
         id: 0,
-        text: "SAMSUNG Galaxy A13 - 64 GB, Black",
-        price: "£129.00",
-        rating: 4.5,
-        src: "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
+        src: "https://media.currys.biz/i/currysprod/M10237191_black_SWATCH?$swatch$&fmt=auto",
+        text: "black",
+        selected: true,
       },
       {
         id: 1,
-        text: 'SAMSUNG Galaxy Tab A8 10.5" Tablet - 32 GB, Graphite',
-        price: "£211.99",
-        rating: 4.5,
-        src: "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
+        src: "https://media.currys.biz/i/currysprod/M10237191_blue_SWATCH?$swatch$&fmt=auto",
+        text: "blue",
+        selected: false,
       },
       {
         id: 2,
-        text: 'Samsung UE32t4300AkXXU 32"',
-        price: "£199",
-        rating: 2.5,
-        src: "https://media.currys.biz/i/currysprod/M10234328_black?$g-small$&amp;fmt=auto",
+        src: "https://media.currys.biz/i/currysprod/M10237191_orange_SWATCH?$swatch$&fmt=auto",
+        text: "orange",
+        selected: false,
       },
       {
         id: 3,
-        text: "APPLE iPhone 14 - 128 GB, Midnight",
-        price: "£849.00",
-        rating: 4.5,
-        src: "https://media.currys.biz/i/currysprod/10242696?$g-small$&fmt=%27auto%27",
-      },
-      {
-        id: 4,
-        text: 'SAMSUNG Galaxy Tab A8 10.5" Tablet - 32 GB, Graphite',
-        price: "£429",
-        rating: 3.5,
-        src: "https://media.currys.biz/i/currysprod/M10234328_black?$g-small$&amp;fmt=auto",
+        src: "https://media.currys.biz/i/currysprod/M10237191_white_SWATCH?$swatch$&fmt=auto",
+        text: "white",
+        selected: false,
       },
     ],
-  };
+  },
+  {
+    id: 1,
+    // manufactorId: "SAMSUNG",
+    title: " SAMSUNG Galaxy A13 - 128 GB, Black",
+    productImageUrl:
+      "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
+    formatBadges: ["freewiew", "4kHDR"],
+    productDescription: [
+      "Android 12",
+      "6.6 Full HD+ LCD touchscreen",
+      "8 MP front camera",
+      "Battery capacity: 5000 mAh",
+    ],
+    productOffers: [
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "another offer",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+    ],
+    pricingOptions: [
+      { id: 0, price: "159", text: "One-off payment", selected: false },
+      { id: 1, price: "6.10", text: "per month*", selected: false },
+    ],
+    rating: {
+      value: 3,
+      count: 5,
+    },
+    productPrice: "1049.00",
+    savedMoney: "300.00",
+    deliveries: [
+      { id: 0, type: "free-delivery" },
+      // { id: 1, type: "noCollection" },
+      // { id: 2, type: "free-collection-stock-availability" },
+      { id: 3, type: "free-collection" },
+    ],
+    extraInfo: [
+      { text: "2 year guarantee", color: "special", url: "" },
+      { text: "3 months 0% intrest", color: "primary", url: "" },
+    ],
+    stock: [
+      {
+        text: "Sorry, this item is currently out of stock.",
+      },
+    ],
+    selected: true,
+    colorVariation: [
+      {
+        id: 0,
+        src: "https://media.currys.biz/i/currysprod/M10237191_black_SWATCH?$swatch$&fmt=auto",
+        text: "black",
+        selected: false,
+      },
+      {
+        id: 1,
+        src: "https://media.currys.biz/i/currysprod/M10237191_blue_SWATCH?$swatch$&fmt=auto",
+        text: "blue",
+        selected: false,
+      },
+      {
+        id: 2,
+        src: "https://media.currys.biz/i/currysprod/M10237191_orange_SWATCH?$swatch$&fmt=auto",
+        text: "orange",
+        selected: false,
+      },
+      {
+        id: 3,
+        src: "https://media.currys.biz/i/currysprod/M10237191_white_SWATCH?$swatch$&fmt=auto",
+        text: "white",
+        selected: false,
+      },
+    ],
+  },
+  {
+    id: 2,
+    // manufactorId: "APPLE iPhone",
+    title: "APPLE iPhone 11 - 64 GB, Black",
+    productImageUrl:
+      "https://media.currys.biz/i/currysprod/M10197969_black?$g-small$&amp;fmt='auto'",
+    formatBadges: ["freewiew", "4kHDR"],
+    productDescription: [
+      "Android 12",
+      "6.6 Full HD+ LCD touchscreen",
+      "8 MP front camera",
+      "Battery capacity: 5000 mAh",
+    ],
+    productOffers: [
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "another offer",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+    ],
+    pricingOptions: [
+      { id: 0, price: "159", text: "One-off payment", selected: false },
+      { id: 1, price: "6.10", text: "per month*", selected: false },
+    ],
+    rating: {
+      value: 3,
+      count: 5,
+    },
+    productPrice: "1049.00",
+    savedMoney: "300.00",
+    deliveries: [
+      { id: 0, type: "free-delivery" },
+      // { id: 1, type: "noCollection" },
+      { id: 2, type: "free-collection-stock-availability" },
+      // { id: 3, type: "free-collection" },
+    ],
+    extraInfo: [
+      { text: "Back Friday & Beyond", color: "special", url: "" },
+      { text: "3 months 0% intrest", color: "primary", url: "" },
+    ],
+    stock: [
+      {
+        text: "Sorry, this item is currently out of stock.",
+      },
+    ],
+    selected: true,
+    colorVariation: [
+      {
+        id: 0,
+        src: "https://media.currys.biz/i/currysprod/M10237191_black_SWATCH?$swatch$&fmt=auto",
+        text: "black",
+        selected: false,
+      },
+      {
+        id: 1,
+        src: "https://media.currys.biz/i/currysprod/M10237191_blue_SWATCH?$swatch$&fmt=auto",
+        text: "blue",
+        selected: false,
+      },
+      {
+        id: 2,
+        src: "https://media.currys.biz/i/currysprod/M10237191_orange_SWATCH?$swatch$&fmt=auto",
+        text: "orange",
+        selected: false,
+      },
+      {
+        id: 3,
+        src: "https://media.currys.biz/i/currysprod/M10237191_white_SWATCH?$swatch$&fmt=auto",
+        text: "white",
+        selected: false,
+      },
+    ],
+  },
+  {
+    id: 3,
+    // manufactorId: "APPLE iPhone",
+    title: "APPLE iPhone 11 - 64 GB, Black",
+    productImageUrl:
+      "https://media.currys.biz/i/currysprod/M10197969_black?$g-small$&amp;fmt='auto'",
+    formatBadges: ["freewiew", "4kHDR"],
+    productDescription: [
+      "Android 12",
+      "6.6 Full HD+ LCD touchscreen",
+      "8 MP front camera",
+      "Battery capacity: 5000 mAh",
+    ],
+    productOffers: [
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "another offer",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+    ],
+    pricingOptions: [
+      { id: 0, price: "159", text: "One-off payment", selected: false },
+      { id: 1, price: "6.10", text: "per month*", selected: false },
+    ],
+    rating: {
+      value: 3,
+      count: 5,
+    },
+    productPrice: "1049.00",
+    savedMoney: "300.00",
+    deliveries: [
+      { id: 0, type: "free-delivery" },
+      // { id: 1, type: "noCollection" },
+      { id: 2, type: "free-collection-stock-availability" },
+      // { id: 3, type: "free-collection" },
+    ],
+    extraInfo: [
+      { text: "Back Friday & Beyond", color: "special", url: "" },
+      { text: "3 months 0% intrest", color: "primary", url: "" },
+    ],
+    stock: [
+      {
+        text: "Sorry, this item is currently out of stock.",
+      },
+    ],
+    selected: true,
+    colorVariation: [
+      {
+        id: 0,
+        src: "https://media.currys.biz/i/currysprod/M10237191_black_SWATCH?$swatch$&fmt=auto",
+        text: "black",
+        selected: false,
+      },
+      {
+        id: 1,
+        src: "https://media.currys.biz/i/currysprod/M10237191_blue_SWATCH?$swatch$&fmt=auto",
+        text: "blue",
+        selected: false,
+      },
+      {
+        id: 2,
+        src: "https://media.currys.biz/i/currysprod/M10237191_orange_SWATCH?$swatch$&fmt=auto",
+        text: "orange",
+        selected: false,
+      },
+      {
+        id: 3,
+        src: "https://media.currys.biz/i/currysprod/M10237191_white_SWATCH?$swatch$&fmt=auto",
+        text: "white",
+        selected: false,
+      },
+    ],
+  },
+  {
+    id: 4,
+    // manufactorId: "APPLE iPhone",
+    title: "APPLE iPhone 11 - 64 GB, Black",
+    productImageUrl:
+      "https://media.currys.biz/i/currysprod/M10197969_black?$g-small$&amp;fmt='auto'",
+    formatBadges: ["freewiew", "4kHDR"],
+    productDescription: [
+      "Android 12",
+      "6.6 Full HD+ LCD touchscreen",
+      "8 MP front camera",
+      "Battery capacity: 5000 mAh",
+    ],
+    productOffers: [
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "another offer",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+    ],
+    pricingOptions: [
+      { id: 0, price: "159", text: "One-off payment", selected: false },
+      { id: 1, price: "6.10", text: "per month*", selected: false },
+    ],
+    rating: {
+      value: 3,
+      count: 5,
+    },
+    productPrice: "1049.00",
+    savedMoney: "300.00",
+    deliveries: [
+      { id: 0, type: "free-delivery" },
+      // { id: 1, type: "noCollection" },
+      { id: 2, type: "free-collection-stock-availability" },
+      // { id: 3, type: "free-collection" },
+    ],
+    extraInfo: [
+      { text: "Back Friday & Beyond", color: "special", url: "" },
+      { text: "3 months 0% intrest", color: "primary", url: "" },
+    ],
+    stock: [
+      {
+        text: "Sorry, this item is currently out of stock.",
+      },
+    ],
+    selected: true,
+    colorVariation: [
+      {
+        id: 0,
+        src: "https://media.currys.biz/i/currysprod/M10237191_black_SWATCH?$swatch$&fmt=auto",
+        text: "black",
+        selected: false,
+      },
+      {
+        id: 1,
+        src: "https://media.currys.biz/i/currysprod/M10237191_blue_SWATCH?$swatch$&fmt=auto",
+        text: "blue",
+        selected: false,
+      },
+      {
+        id: 2,
+        src: "https://media.currys.biz/i/currysprod/M10237191_orange_SWATCH?$swatch$&fmt=auto",
+        text: "orange",
+        selected: false,
+      },
+      {
+        id: 3,
+        src: "https://media.currys.biz/i/currysprod/M10237191_white_SWATCH?$swatch$&fmt=auto",
+        text: "white",
+        selected: false,
+      },
+    ],
+  },
+  {
+    id: 5,
+    // manufactorId: "APPLE iPhone",
+    title: "APPLE iPhone 11 - 64 GB, Black",
+    productImageUrl:
+      "https://media.currys.biz/i/currysprod/M10197969_black?$g-small$&amp;fmt='auto'",
+    formatBadges: ["freewiew", "4kHDR"],
+    productDescription: [
+      "Android 12",
+      "6.6 Full HD+ LCD touchscreen",
+      "8 MP front camera",
+      "Battery capacity: 5000 mAh",
+    ],
+    productOffers: [
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "another offer",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+      "Pay nothing for 9 months. 24.9% APR representative. (variable)*",
+    ],
+    pricingOptions: [
+      { id: 0, price: "159", text: "One-off payment", selected: false },
+      { id: 1, price: "6.10", text: "per month*", selected: false },
+    ],
+    rating: {
+      value: 3,
+      count: 5,
+    },
+    productPrice: "1049.00",
+    savedMoney: "300.00",
+    deliveries: [
+      { id: 0, type: "free-delivery" },
+      // { id: 1, type: "noCollection" },
+      { id: 2, type: "free-collection-stock-availability" },
+      // { id: 3, type: "free-collection" },
+    ],
+    extraInfo: [
+      { text: "Back Friday & Beyond", color: "special", url: "" },
+      { text: "3 months 0% intrest", color: "primary", url: "" },
+    ],
+    stock: [
+      {
+        text: "Sorry, this item is currently out of stock.",
+      },
+    ],
+    selected: true,
+    colorVariation: [
+      {
+        id: 0,
+        src: "https://media.currys.biz/i/currysprod/M10237191_black_SWATCH?$swatch$&fmt=auto",
+        text: "black",
+        selected: false,
+      },
+      {
+        id: 1,
+        src: "https://media.currys.biz/i/currysprod/M10237191_blue_SWATCH?$swatch$&fmt=auto",
+        text: "blue",
+        selected: false,
+      },
+      {
+        id: 2,
+        src: "https://media.currys.biz/i/currysprod/M10237191_orange_SWATCH?$swatch$&fmt=auto",
+        text: "orange",
+        selected: false,
+      },
+      {
+        id: 3,
+        src: "https://media.currys.biz/i/currysprod/M10237191_white_SWATCH?$swatch$&fmt=auto",
+        text: "white",
+        selected: false,
+      },
+    ],
+  },
+];
 
-  module.exports = allProducts;
+
+module.exports = allProducts;
