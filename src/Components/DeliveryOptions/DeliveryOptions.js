@@ -3,13 +3,12 @@ import PropTypes from "prop-types";
 import { DeliveryList } from "./DeliveryList";
 import { CardComponent } from "../CardComponent/CardComponent";
 
-export const DeliveryOptions = ({ deliveries }) => {
+export const DeliveryOptions = ({ className, deliveries }) => {
   return (
     <div className="delivery-options-component">
-      <CardComponent className="primary">
-        <div className="delivery-options">
-          <DeliveryList deliveries={deliveries} />
-        </div>
+      <CardComponent className={className}>
+        <p>You can choose your delivery or collection preferences at checkout</p>
+        <DeliveryList deliveries={deliveries} />
       </CardComponent>
     </div>
   );
