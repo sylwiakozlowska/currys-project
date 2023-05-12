@@ -18,6 +18,19 @@ body,
 .carousel {
   z-index: 0 !important;
 }
+
+.breadcrumb-wrapper {
+  border: 1px solid #cdd8df;
+}
+.filters-wrapper,
+.product-wrapper {
+  padding-top: 20px;
+}
+.filters-wrapper,
+.cart-wrapper {
+  height: inherit;
+  background: #f2f2f2;
+}
 @include until-widescreen {
   .header-wrapper,
   .help-links-wrapper,
@@ -25,23 +38,18 @@ body,
   .card-deal-wrapper,
   .service-menu-wrapper,
   .filters-wrapper,
-  .product-wrapper {
+  .product-wrapper,
+  .cart-wrapper {
     padding: 0 3%;
   }
-}
-
-.breadcrumb-wrapper {
-  border: 1px solid #cdd8df;
-}
-.filters-wrapper {
-  padding-top: 20px;
-  background: #f2f2f2;
 }
 @include fullhd {
   .header-wrapper,
   .breadcrumb-component,
   .card-deal-wrapper,
-  .search-products-component {
+  .search-products-component,
+  .product-wrapper,
+  .cart-component {
     margin: 0 15%;
   }
 }

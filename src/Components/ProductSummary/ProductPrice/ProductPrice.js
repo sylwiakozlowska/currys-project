@@ -41,7 +41,7 @@ export const ProductPrice = ({
         <StockMessage stock={stock} />
       </CardComponent>
 
-      <DeliveryOptions deliveries={deliveries} />
+      <DeliveryOptions className="primary" deliveries={deliveries} />
       {/* <CheckBox state={selected} onChange={setCompare} /> */}
     </div>
   );

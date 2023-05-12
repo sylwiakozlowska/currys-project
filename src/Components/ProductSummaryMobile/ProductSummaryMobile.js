@@ -51,7 +51,7 @@ export const ProductSummaryMobile = ({ product, onCompare }) => {
               <ProductOffers offers={productOffers} max={1} />
             ) : null}
           </div>
-          <DeliveryOptions deliveries={product.deliveries} />
+          <DeliveryOptions className="primary" deliveries={product.deliveries} />
         </div>
       </div>
       <div>

@@ -29,10 +29,19 @@ app.get("/products", (req, res) => {
   }, 2000);
 });
 
-// app.get("/products", (req, res) => {
-//   const { searchTerm } = req.query;
-//   res.send(`?q=${searchTerm}`);
-// });
+app.get("/cart", (req, res) => {
+  console.log(allProducts, "allProducts");
+  res.json(allProducts);
+  // setTimeout(() => {
+  //   res.json(
+  //     allProducts.filter(({ title }) => new RegExp(query, "i").test(title))
+  //   );
+  // }, 2000);
+});
+app.get("/wishlist", (req, res) => {
+  console.log(allProducts, "allProducts");
+  res.json(allProducts);
+});
 app.get("/search", (req, res) => {
   const query = req.query.q;
   console.log(query);

@@ -1,5 +1,4 @@
 import React from "react";
-// import "../styles.scss";
 import { Tabs } from "../../Components/Tabs/Tabs";
 import { FiltersWithProducts } from "../../Components/FiltersWithProducts/FiltersWithProducts";
 import { ServicesAndSupport } from "../../Components/ServicesAndSupport/ServicesAndSupport";

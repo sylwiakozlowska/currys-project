@@ -135,3 +135,16 @@ body {
 .heart-icon {
   width: 24px;
 }
+
+.basket-icon.has-count::after {
+  content: attr(value);
+  background: #e5006d;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 50%;
+  padding: 3px 6px;
+  position: relative;
+  left: -8px;
+  top: -10px;
+}

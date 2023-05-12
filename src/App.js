@@ -11,6 +11,7 @@ import { Overlay } from "./Components/Overlay/Overlay";
 import { selectMenuOpen, selectIsLoading } from "./Store/features/app/appSlice";
 import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTablet";
 import { Product } from "./Components/Product/Product";
+import { Cart } from "./Pages/Cart/Cart";
 import { useSelector, useDispatch } from "react-redux";
 
 // import { selectSingleProductSummary } from "./Store/features/productSummary/productSummarySlice";
@@ -23,7 +24,6 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 import RingLoader from "react-spinners/RingLoader";
-
 
 const props = {
   display: "block",
@@ -73,6 +73,11 @@ function App() {
           <Route path="/products">
             <section className="filters-wrapper">
               <SearchProducts />
+            </section>
+          </Route>
+          <Route path="/cart">
+            <section className="cart-wrapper">
+              <Cart/>
             </section>
           </Route>
         </Switch>

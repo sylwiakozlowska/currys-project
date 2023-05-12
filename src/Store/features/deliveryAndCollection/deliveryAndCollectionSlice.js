@@ -128,10 +128,11 @@ export const deliveryAndCollectionSlice = createSlice({
     location: null,
   },
   reducers: {
+   
     chooseLocation: (state, { payload }) => {
       console.log("payload", payload);
       if (payload.id === 0) {
-        state.delivery = [...state.delivery];
+        state.delivery = [...state.delivery];                   // todo
         console.log("state.delivery", state.delivery);
         console.log("state.collection", state.collection);
       }

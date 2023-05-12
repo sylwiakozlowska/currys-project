@@ -10,9 +10,12 @@ import productSummaryReducer from "./Store/features/productSummary/productSummar
 import filterReducer from "./Store/features/filterComponent/FilterSlice";
 import locationReducer from "./Store/features/location/locationSlice";
 import deliveryAndCollectionReducer from "./Store/features/deliveryAndCollection/deliveryAndCollectionSlice";
+import cartProductReducer from "./Store/features/cart/cartProductSlice";
+
 export const store = configureStore({
   reducer: {
     app: appReducer,
+    cart: cartProductReducer,
     helpLinks: helpLinksReducer,
     searchBar: searchBarReducer,
     menu: menuReducer,

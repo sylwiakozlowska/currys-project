@@ -6,6 +6,7 @@ import {
   selectProduct,
   selectStatus,
 } from "../../Store/features/product/productSlice";
+import {addToBasket} from "../../Store/features/cart/cartProductSlice";
 import { ProductImage } from "../ProductSummary/ProductImage/ProductImage";
 import { Rating } from "../Rating/Rating";
 import { PricingOptions } from "../ProductSummary/ProductPrice/PricingOptions/PricingOptions";
@@ -22,6 +23,13 @@ export const Product = () => {
   console.log("product", product);
   const status = useSelector(selectStatus);
   console.log("status", status);
+
+
+  const onClickAddToBasket =()=>{
+    console.log(22222222, product, "Addproduct")
+    dispatch(addToBasket(product));
+  }
+
 
   const [priceOption, setPriceOption] = useState(0);
   const [colorOption, setColorOption] = useState(0);
@@ -83,7 +91,7 @@ export const Product = () => {
               <SearchStockWrapper deliveries={deliveries} />
             </CardComponent>
           </div>
-          <Button className="is-primary">
+          <Button className="is-primary" onClick={onClickAddToBasket}>
             <i className="glyph basket-icon"></i> Add to Basket
           </Button>
         </div>
