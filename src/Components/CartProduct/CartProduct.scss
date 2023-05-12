@@ -1,0 +1,21 @@
+.cart-product-component {
+  padding: 20px;
+  .cart-product-details {
+    margin-bottom: 20px;
+  }
+  .cart-product-details,
+  .select-quantity {
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: $anchor_text_primary;
+  }
+  .price-status {
+    font-weight: bold;
+  }
+}
