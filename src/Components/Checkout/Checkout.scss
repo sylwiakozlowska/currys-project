@@ -1,0 +1,35 @@
+.checkout-component {
+  .card {
+    border: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  width: 300px;
+  .payment-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 2px;
+    padding: 16px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #fff;
+    li {
+      display: flex;
+      align-items: center;
+      p {
+        margin-left: 5px;
+      }
+    }
+  }
+  .promotions {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cdd8df;
+  }
+  .price-details {
+    margin-bottom: 10px;
+  }
+  .button {
+    width: 100%;
+  }
+}
