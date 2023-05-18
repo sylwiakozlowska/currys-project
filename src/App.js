@@ -12,6 +12,7 @@ import { selectMenuOpen, selectIsLoading } from "./Store/features/app/appSlice";
 import { MenuNavTablet } from "./Components/MenuTablet/MenuNavTablet/MenuNavTablet";
 import { Product } from "./Components/Product/Product";
 import { Cart } from "./Pages/Cart/Cart";
+import { ShippingPage } from "./Pages/ShippingPage/ShippingPage";
 import { useSelector, useDispatch } from "react-redux";
 
 // import { selectSingleProductSummary } from "./Store/features/productSummary/productSummarySlice";
@@ -24,6 +25,7 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 import RingLoader from "react-spinners/RingLoader";
+import { SavedPage } from "./Pages/SavedPage/SavedPage";
 
 const props = {
   display: "block",
@@ -77,7 +79,17 @@ function App() {
           </Route>
           <Route path="/cart">
             <section className="cart-wrapper">
-              <Cart/>
+              <Cart />
+            </section>
+          </Route>
+          <Route path="/wishlist">
+            <section className="saved-page-wrapper">
+              <SavedPage />
+            </section>
+          </Route>
+          <Route path="/shipping">
+            <section className="shipping-page-wrapper">
+              <ShippingPage />
             </section>
           </Route>
         </Switch>
@@ -85,7 +97,7 @@ function App() {
           <Overlay>
             <MenuNavTablet />
           </Overlay>
-        )}{" "}
+        )}
         <p>{!data ? "Loading..." : data}</p>
       </div>
       {isLoading && (
@@ -103,8 +115,4 @@ function App() {
     </Router>
   );
 }
-// function Users() {
-//   return <h2>Users</h2>;
-// }
-
 export default App;
