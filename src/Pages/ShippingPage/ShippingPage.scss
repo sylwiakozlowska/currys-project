@@ -1,0 +1,28 @@
+.shipping-page-component {
+  h1 {
+    padding-top: 1.5rem;
+  }
+  .delivery-checkbox {
+    display: flex;
+    padding: 0.75rem;
+    p {
+      margin-left: 5px;
+    }
+  }
+  .details,
+  .address {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .error-message {
+    color: red;
+  }
+  .extra-info {
+    padding: 10px;
+    margin-bottom: 25px;
+  }
+  .payment-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
