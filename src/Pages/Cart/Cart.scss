@@ -1,9 +1,15 @@
 .cart-component {
+  display: flex;
+  flex-direction: column;
   padding-top: 20px;
   .product-title {
     padding: 20px 0;
   }
-  .card {
-    margin-bottom: 30px;
+
+  .cart-component-content {
+    display: flex;
+  }
+  .cart-products {
+    margin-right: 20px;
   }
 }

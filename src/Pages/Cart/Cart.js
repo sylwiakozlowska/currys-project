@@ -9,20 +9,19 @@ import {
 import {
   removeFromBasket,
   setProductCount,
-  selectItemCount
+  selectItemCount,
 } from "../../Store/features/cart/cartProductSlice";
 import { CartProduct } from "../../Components/CartProduct/CartProduct";
+import { Checkout } from "../../Components/Checkout/Checkout";
 // import { ProductImage } from "../../Components/ProductSummary/ProductImage/ProductImage";
 
 export const Cart = () => {
-  // const [quantity, setQuantity] = useState(0);
-
   const products = useSelector(selectCartProduct);
   console.log("products", products);
   const dispatch = useDispatch();
 
   //add the count to total when the quantity is changed
-  const itemsCount = useSelector(selectItemCount)
+  const itemsCount = useSelector(selectItemCount);
   const basketItems = `(${itemsCount} ${itemsCount === 1 ? "item" : "items"})`;
 
   const onChangeQuantity = (count, { id }) => {
@@ -45,10 +44,13 @@ export const Cart = () => {
 
   return (
     <div className="cart-component">
-      <h1 className="product-title title is-1">
-        Your basket {basketItems}
-      </h1>
-      {cartProducts}
+      <h1 className="product-title title is-1">Your basket {basketItems}</h1>
+      <div className="cart-component-content columns">
+        <div className="cart-products column is-two-thirds"> {cartProducts}</div>
+        <div className="checkout column">
+          <Checkout />
+        </div>
+      </div>
     </div>
   );
 };

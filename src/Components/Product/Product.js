@@ -26,7 +26,7 @@ export const Product = () => {
 
 
   const onClickAddToBasket =()=>{
-    console.log(22222222, product, "Addproduct")
+    console.log(22222222,product, "Addproduct")
     dispatch(addToBasket(product));
   }
 
