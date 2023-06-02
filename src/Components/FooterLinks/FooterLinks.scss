@@ -1,0 +1,29 @@
+.footer-links {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  @include touch {
+    display: flex;
+  }
+  .footer-links-content {
+    display: flex;
+    @include touch {
+      flex-direction: column;
+    }
+  }
+  p {
+    font-weight: bold;
+  }
+  .footer-website-links,
+  .footer-about-links {
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      color: #4c12a1;
+      padding: 10px;
+    }
+  }
+  .footer-website-links {
+    flex-grow: 1;
+  }
+}

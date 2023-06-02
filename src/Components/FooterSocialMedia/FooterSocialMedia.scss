@@ -1,0 +1,32 @@
+.footer-social-media-component {
+  .footer-social-media-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    @include mobile {
+      flex-direction: column;
+    }
+    .terms-and-conditions {
+      a {
+        color: #4c12a1;
+        padding: 10px;
+      }
+    }
+    .social-media {
+      .social-media-list {
+        display: flex;
+      }
+      .social-media-item {
+        padding: 10px;
+      }
+      svg {
+        height: 18px;
+        width: 18px;
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+  }
+}
