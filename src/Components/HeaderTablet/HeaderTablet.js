@@ -6,13 +6,19 @@ import { useDispatch } from "react-redux";
 import { showMenu } from "../../Store/features/app/appSlice";
 import { SearchBarWrapper } from "../SearchBar/SearchBarWrapper";
 import { RxHamburgerMenu } from "react-icons/rx";
+import {CgMenu} from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 export const HeaderTablet = () => {
   const dispatch = useDispatch();
   return (
     <section className="header-tablet-component">
       <div className="header-tablet-logo-wrapper">
-        <img src={logo} />
+        <Link to="/home">
+          <a href="#">
+            <img src={logo} />
+          </a>
+        </Link>
       </div>
       <div className="header-tablet-search-wrapper">
         <SearchBarWrapper />
@@ -25,7 +31,7 @@ export const HeaderTablet = () => {
             dispatch(showMenu());
           }}
         >
-          <RxHamburgerMenu className="menu-icon" />
+          <CgMenu className="menu-icon" />
           <p>Menu</p>
         </a>
       </div>

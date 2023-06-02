@@ -1,5 +1,9 @@
 .header-icons-component {
   .header-icons {
     display: flex;
+    a { 
+      text-align: center;
+      position: relative;
+    }
   }
 }
