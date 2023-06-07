@@ -1,23 +1,40 @@
 .card-deal-wrapper {
-  border: 1px solid goldenrod;
   h1 {
     text-align: center;
     font-size: 20px;
-    margin: 20px;
     font-weight: bold;
+    padding: 10px;
   }
-}
-
-.card-deal-component {
-  .card-deal-content {
-    display: flex;
-    @include mobile {
+  .card-deal-component {
+    .title {
+      margin: 0;
+      padding: 15px;
+    }
+    .card-deals,
+    .card-offers {
+      display: flex;
       flex-direction: column;
     }
-  }
-  .card-deal-save-content {
-    display: flex;
+    .card-deals {
+      padding-bottom: 30px;
 
+      // p {
+      //   text-align: center;
+      // }
+      img {
+        @include desktop {
+          width: 200px;
+          height: 200px;
+        }
+      }
+      .card-deals-img-wrapper {
+        .image {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
     .carousel {
       width: 100%;
     }

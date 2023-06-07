@@ -1,15 +1,13 @@
 .gift-deal-component {
-  img {
-    display: block;
-  }
-  .gift-deal-content-tablet {
+  .gift-deal-content {
+    display: flex;
     @include mobile {
-      display: none;
+      flex-direction: column;
     }
   }
-  .gift-deal-content-mobile {
-    @include tablet {
-      display: none;
-    }
+  img {
+    padding: 10px;
+    border-radius: 20px;
+    display: block;
   }
 }

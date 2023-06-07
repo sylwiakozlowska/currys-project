@@ -1,24 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  dealOptions: [
-    {
-      id: 0,
-      src: "https://media.currys.biz/i/currysprod/wk33-grid-pay-in-3?$webpMedium$",
-      alt: "Pay in 3",
-    },
-    {
-      id: 1,
-      src: "https://media.currys.biz/i/currysprod/wk33-grid-gaming-consoles?$jpegSmall$",
-      alt: "Console Games",
-    },
-    {
-      id: 2,
-      src: "	https://media.currys.biz/i/currysprod/wk33-grid-lstv-sony?$webpMedium$",
-      alt: "Televisions and gift card offer",
-    },
+  shopDeals: [
+    {id:0, src:"https://media.currys.biz/i/currysprod/top-cat-tvs-all?fmt=webp&amp;qlt=80", alt:"TV", text:"TV's" },
+    {id:1, src:"https://media.currys.biz/i/currysprod/top-cat-Fans-Air?fmt=webp&amp;qlt=80", alt:"Fans &amp; Air conditioners" , text:"Fans &amp; Air conditioners" },
+    {id:2, src:"https://media.currys.biz/i/currysprod/top-cat-laptops?fmt=webp&amp;qlt=80", alt:"Windows laptop" , text:"Laptops" },
+    {id:3, src:"https://media.currys.biz/i/currysprod/top-cat-gifting-fathersday-2023?fmt=webp&amp;qlt=80", alt:"Gifting", text:"Gifting" },
+    {id:4, src:"https://media.currys.biz/i/currysprod/top-cat-washing-machine?fmt=webp&amp;qlt=80", alt:"Washing machines" , text:"Washing machines" },
+    {id:5, src:"https://media.currys.biz/i/currysprod/top-category-fridge?fmt=webp&amp;qlt=80", alt:"Fridge freezer" , text:"Fridge freezer" },
+    {id:6, src:"https://media.currys.biz/i/currysprod/top-cat-Garden-outdoor?fmt=webp&amp;qlt=80", alt:"Garden &amp; Outdoor", text:"Garden &amp; Outdoor" },
+    {id:7, src:"https://cdn.media.amplience.net/i/currysprod/top-cat-mobile?fmt=webp&amp;qlt=80", alt:"Mobile phones" , text:"Mobile phones" },
+
+
+
+
+
   ],
-  dealSaveOptions: [
+  latestOffers: [
     {
       id: 0,
       src: "https://media.currys.biz/i/currysprod/wk32-block-iPad-ifc24-v2?$webpMedium$",

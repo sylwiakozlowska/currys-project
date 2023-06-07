@@ -11,33 +11,43 @@ const settings = {
   wheelScroll: 3,
   centerPadding: 90,
   rows: 1,
-  slidesToShow: 2,
+  slidesToShow: 3,
   // autoplayScroll: 1,
   // slidesPerRow: 1,
   arrows: true,
 };
 export const CardDeal = () => {
-  const { dealOptions, dealSaveOptions } = useSelector(selectCardDeal);
-  const dealOptionsList = dealOptions.map(({ id, src, alt }) => {
+  const { shopDeals, latestOffers } = useSelector(selectCardDeal);
+
+  const latestOffersList = latestOffers.map(({ id, src, alt }) => {
     return (
-      <figure className="card-deal-img-wrapper">
+      <figure className="image card-offers-img-wrapper">
         <img src={src} alt={alt} />
       </figure>
     );
   });
-  const dealSaveOptionsList = dealSaveOptions.map(({ id, src, alt }) => {
+  const shopDealsList = shopDeals.map(({ id, src, alt, text }) => {
     return (
-      <figure className="card-deal-save-img-wrapper">
-        <img src={src} alt={alt} />
-      </figure>
+      <div className="card-deals-img-wrapper">
+        <figure className="image">
+          <img src={src} alt={alt} />
+          <p>{text}</p>
+        </figure>
+      </div>
     );
   });
   return (
     <div className="card-deal-component">
-      <div className="card-deal-content">{dealOptionsList}</div>
-      <div className="card-deal-save-content">
+      <div className="card-deals">
+        <h1 className="title is-1">Shop deals</h1>
+        <Slider className="carousel" {...settings} slidesToShow={4}>
+          {shopDealsList}
+        </Slider>
+      </div>
+      <div className="card-offers">
+        <h1 className="title is-1">Discover the latest Apple offers</h1>
         <Slider className="carousel" {...settings}>
-          {dealSaveOptionsList}
+          {latestOffersList}
         </Slider>
       </div>
     </div>
