@@ -12,7 +12,6 @@ export const Home = () => {
         </BannerComponent>
       </section>
       <section className="card-deal-wrapper">
-        <h1>Christmas at Currys</h1>
         <CardDeal />
       </section>
     </>

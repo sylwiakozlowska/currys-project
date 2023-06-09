@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 
 export const DropdownBox = ({ title, children }) => {
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(true);
 
   let icon;
   if (shown) {

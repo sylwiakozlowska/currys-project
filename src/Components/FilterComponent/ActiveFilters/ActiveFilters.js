@@ -8,10 +8,8 @@ export const ActiveFilters = ({ selectedFilterItems, onClear }) => {
   console.log("filtersActive", selectedFilterItems);
   const activeFiltersContent = selectedFilterItems.map(
     ({ groupId, id, type, text, value, selected }) => {
-      console.log("id",groupId, id, selected);
-      // const { id, type, text, value } = selectedFilter;
-      // console.log(selectedFilterItems,"selectedFilterItems2");
-      // dispatch(addfilterActive({groupId, id, checked }))
+      console.log("id", groupId, id, selected);
+
       const onClearSelectedFilterItem = (groupId, id, checked) => {
         console.log("groupId, id, checked", groupId, id, checked);
         onClear(groupId, id, checked);
@@ -27,7 +25,11 @@ export const ActiveFilters = ({ selectedFilterItems, onClear }) => {
       }
       return (
         <span>
-          <PillBox groupId={groupId} id={id} onClear={onClearSelectedFilterItem}>
+          <PillBox
+            groupId={groupId}
+            id={id}
+            onClear={onClearSelectedFilterItem}
+          >
             {comp}
           </PillBox>
         </span>
