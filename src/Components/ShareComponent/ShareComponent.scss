@@ -1,0 +1,12 @@
+.share-component {
+  .social-media-item {
+    padding: 10px;
+    a {
+      display: flex;
+      align-items: center;
+    }
+    span {
+      margin-left: 5px;
+    }
+  }
+}
