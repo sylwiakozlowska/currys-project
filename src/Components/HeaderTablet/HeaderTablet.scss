@@ -9,7 +9,6 @@
   }
 }
 .header-tablet-component {
-  border: 1px solid blue;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -25,7 +24,6 @@
     display: flex;
   }
   .header-tablet-icons-wrapper {
-    border: 1px solid rgba(231, 77, 16, 0.165);
     display: flex;
     a {
       display: flex;
@@ -34,7 +32,7 @@
       margin-left: 10px;
     }
   }
-  .header-tablet-search-wrapper {
-    border: 1px solid brown;
-  }
+  // .header-tablet-search-wrapper {
+  //   border: 1px solid brown;
+  // }
 }

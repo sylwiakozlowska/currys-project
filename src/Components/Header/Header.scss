@@ -2,7 +2,7 @@
   width: 50%;
 }
 .header-component {
-  border: 1px solid red;
+  // border: 1px solid red;
   display: flex;
   @include until-widescreen {
     display: none;
@@ -14,7 +14,7 @@
     padding-left: 20px;
   }
   .header-content {
-    border: 1px solid blue;
+    // border: 1px solid blue;
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
@@ -28,20 +28,20 @@
 }
 
 //LOGO
-.header-logo-wrapper {
-  border: 1px solid red;
-}
+// .header-logo-wrapper {
+//   border: 1px solid red;
+// }
 //SEARCH BAR
 .header-search-wrapper {
-  border: 1px solid green;
+  // border: 1px solid green;
   @include touch {
     width: 20%;
   }
 }
 //ICONS
-.header-icons-wrapper {
-  border: 1px solid orangered;
-}
-.header-menu-nav-wrapper {
-  border: 1px solid purple;
-}
+// .header-icons-wrapper {
+//   border: 1px solid orangered;
+// }
+// .header-menu-nav-wrapper {
+//   border: 1px solid purple;
+// }
