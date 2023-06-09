@@ -32,7 +32,7 @@ export const CartProduct = ({ cartProduct, onClick, onChange }) => {
                 </div>
               </div>
               <button onClick={onClick}>Remove item</button>
-              <button>Save for later</button>
+              <button onClick={onClick}>Save for later</button>
               <div className="price-status">£{totalPrice}</div>
             </div>
             <DeliveryOptions deliveries={deliveries} />
