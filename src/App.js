@@ -14,8 +14,12 @@ import { Product } from "./Components/Product/Product";
 import { Cart } from "./Pages/Cart/Cart";
 import { ShippingPage } from "./Pages/ShippingPage/ShippingPage";
 import { useSelector, useDispatch } from "react-redux";
+import RingLoader from "react-spinners/RingLoader";
+import { SavedPage } from "./Pages/SavedPage/SavedPage";
+import { Footer } from "./Components/Footer/Footer";
+import { FooterLinks } from "./Components/FooterLinks/FooterLinks";
+import { FooterSocialMedia } from "./Components/FooterSocialMedia/FooterSocialMedia";
 
-// import { selectSingleProductSummary } from "./Store/features/productSummary/productSummarySlice";
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,9 +28,6 @@ import {
   useParams,
   useRouteMatch,
 } from "react-router-dom";
-import RingLoader from "react-spinners/RingLoader";
-import { SavedPage } from "./Pages/SavedPage/SavedPage";
-
 const props = {
   display: "block",
   margin: "0 auto",
@@ -38,13 +39,13 @@ function App() {
   const openMenu = useSelector(selectMenuOpen);
   const isLoading = useSelector(selectIsLoading);
   console.log("openMenu", openMenu);
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
 
-  useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
+  // useEffect(() => {
+  //   fetch("/api")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data.message));
+  // }, []);
   const scrollBarStyle = openMenu ? "hide-scroll" : "";
   return (
     <Router>
@@ -98,7 +99,12 @@ function App() {
             <MenuNavTablet />
           </Overlay>
         )}
-        <p>{!data ? "Loading..." : data}</p>
+        {/* <p>{!data ? "Loading..." : data}</p> */}
+        <footer className="footer-wrapper">
+          <Footer />
+          <FooterLinks/>
+          <FooterSocialMedia/>
+        </footer>
       </div>
       {isLoading && (
         <div className="loading">

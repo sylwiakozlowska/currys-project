@@ -11,11 +11,13 @@ import filterReducer from "./Store/features/filterComponent/FilterSlice";
 import locationReducer from "./Store/features/location/locationSlice";
 import deliveryAndCollectionReducer from "./Store/features/deliveryAndCollection/deliveryAndCollectionSlice";
 import cartProductReducer from "./Store/features/cart/cartProductSlice";
+import savedProductReducer from "./Store/features/saved/savedProductSlice";
 
 export const store = configureStore({
   reducer: {
     app: appReducer,
     cart: cartProductReducer,
+    savedProduct: savedProductReducer,
     helpLinks: helpLinksReducer,
     searchBar: searchBarReducer,
     menu: menuReducer,

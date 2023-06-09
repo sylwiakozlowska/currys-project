@@ -5,11 +5,14 @@ body,
   height: 100%;
   box-sizing: border-box;
   font-family: "currys";
+  font-size: 14px;
+
 }
 .App {
-  overflow-y: scroll;
+  // overflow-y: scroll; //todo
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 .hide-scroll {
   overflow-y: hidden;
@@ -24,22 +27,28 @@ body,
 .breadcrumb-wrapper {
   border: 1px solid #cdd8df;
 }
+.footer-wrapper {
+  background: #f2f2f2;
+  border-top: 1px solid #cdd8df;
+}
 .filters-wrapper,
-.product-wrapper,
 .saved-page-component {
   padding-top: 20px;
+}
+.product-wrapper {
+  flex-grow: 1;
 }
 .filters-wrapper,
 .cart-wrapper,
 .shipping-page-wrapper,
 .saved-page-wrapper {
   flex-grow: 1;
-  overflow: auto;
+  // overflow: auto;
   background: #f2f2f2;
 }
-@include until-widescreen {
+@include until-fullhd {
   .header-wrapper,
-  .help-links-wrapper,
+  // .help-links-wrapper,
   .breadcrumb-wrapper,
   .card-deal-wrapper,
   .service-menu-wrapper,
@@ -47,20 +56,27 @@ body,
   .product-wrapper,
   .cart-wrapper,
   .shipping-page-wrapper,
-  .saved-page-wrapper {
-    padding: 0 3%;
+  .saved-page-wrapper,
+  .footer-component,
+  .footer-links,
+  .footer-social-media-component {
+    padding: 1% 3%;
   }
 }
 @include fullhd {
   .header-wrapper,
+  .banner-wrapper,
   .breadcrumb-component,
   .card-deal-wrapper,
   .search-products-component,
   .product-wrapper,
   .cart-component,
   .shipping-page-component,
-  .saved-page-component {
-    margin: 0 15%;
+  .saved-page-component,
+  .footer-component,
+  .footer-links-content,
+  .footer-social-media-component {
+    margin: 0.5% 8%;
   }
 }
 .header-wrapper {

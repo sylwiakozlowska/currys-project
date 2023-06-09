@@ -1,0 +1,21 @@
+.saved-product-component {
+  .button.is-outlined {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    label {
+      color: #4c12a1;
+    }
+    .button-remove {
+      border: none;
+      background: none;
+      color: #4c12a1;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
