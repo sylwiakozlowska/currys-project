@@ -2,10 +2,17 @@ body {
   font-family: "currys";
 }
 .glyph {
+  // display: block;
   font-family: "dcg-icons";
   font-style: normal;
+  // width: 20px;
+  // height: 20px;
 }
-
+// svg {
+//   // display: block;
+//   // width: 20px;
+//   // height: 20px;
+// }
 .close-icon::before {
   content: "\e607";
   font-size: 1.5em;
@@ -19,7 +26,6 @@ body {
 }
 .basket-icon::before {
   content: "\e90e";
-  display: flex;
 }
 .deal-icon::before {
   content: "\e90a";
@@ -41,17 +47,12 @@ body {
   content: "\e91d";
   font-size: 1.5em;
 }
-// .search-icon::before {
-//   content: "\f002";
-//   font-size: 1.5em;
-//   color: white;
-// }
+
 .expand-menu-right-icon::before {
   content: "\f054";
   font-size: 1em;
   font-weight: lighter;
 }
-
 .washingmachine-icon::before {
   content: "\e901";
 }
@@ -64,7 +65,6 @@ body {
 .games-icon::before {
   content: "\e903";
 }
-
 .cameras-icon::before {
   content: "\e904";
 }
@@ -80,11 +80,6 @@ body {
 .cross-icon::before {
   content: "\e607";
 }
-// .tick-icon::before {
-//   content: "\e60f";
-//   color: #255227;
-// }
-
 .store-location-icon::before {
   content: "\e90c";
 }
@@ -92,20 +87,6 @@ body {
 .tick-icon::before,
 .cross-icon::before {
   font-size: 1.5em;
-}
-
-.carousel-next::before {
-  content: "";
-  background: url(https://currysprod.a.bigcontent.io/v1/static/icon-arrowright_1);
-  background-color: #56707a;
-  border-radius: 50%;
-  height: 32px;
-  width: 32px;
-  background-position: 5px;
-}
-.carousel-prev::before {
-  content: "";
-  display: none;
 }
 
 .washingmachine-icon,
@@ -124,30 +105,48 @@ body {
   height: 32px;
   content: " ";
 }
-//react icons
-.heart-icon,
-.menu-icon,
-.basket-icon,
-.account-icon,
-.location-icon {
-  height: 24px;
-  font-size: medium;
+.heart-icon-header,
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 .heart-icon {
-  width: 24px;
+  font-size: x-large;
 }
-
-.basket-icon.has-count::after {
+// .basket-icon::before {
+//   width: 20px;
+//   height: 20px;
+// }
+//CART AND SAVED PAGE
+.basket-icon.has-count::after,
+.heart-icon-header.has-count::after {
   content: attr(value);
   background: #e5006d;
   color: white;
   font-weight: bold;
-  font-size: 14px;
+  font-family: "currys";
   border-radius: 50%;
-  padding: 3px 6px;
-  position: relative;
-  // left: -8px;
-  // top: -10px;
-  left: 11px;
-  top: -38px;
+  padding: 1px 8px;
+  position: absolute;
+  top: -15px;
+  left: 20px;
+}
+
+//CAROUSEL
+.carousel-next::before {
+  content: "";
+  background: url(https://currysprod.a.bigcontent.io/v1/static/icon-arrowright_1);
+  background-color: #56707a;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  background-position: 5px;
+}
+.carousel-prev::before {
+  content: "";
+  display: none;
 }
