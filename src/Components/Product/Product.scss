@@ -1,7 +1,41 @@
+.product-component {
+  padding: 30px 0;
+  .button.is-primary {
+    margin: 10px 0;
+    width: 100%;
+    padding: 20px;
+    i {
+      margin-right: 5px;
+    }
+  }
+  .button-group {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+    .button-saved,
+    .button-save-later,
+    .button-share {
+      display: flex;
+      align-items: center;
+      border: none;
+      background: none;
+      color: #4c12a1;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+      span {
+        margin-left: 5px;
+      }
+    }
+  }
+  .dropdown-menu{
+    cursor: pointer;
+  }
+}
 .stock-wrapper {
   .card {
     padding: 0;
     // border: none;
-   
   }
 }
