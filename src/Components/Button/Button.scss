@@ -7,6 +7,19 @@
   font-style: normal;
 }
 .button {
+  &.is-outlined {
+    background: $button_background_primary_outlined;
+    border: 1px solid $button_border_primary_outlined;
+    color: $button_text_primary_outlined;
+    border-radius: 24px;
+    padding: 10px;
+    &:hover,
+    &.is-hovered {
+      background: $button_background_primary_outlined__hover;
+      border-color: $button_border_primary_outlined;
+      color: $button_text_primary_outlined;
+    }
+  }
   &.is-primary {
     background: $button_background_primary;
     border-color: $button_border_primary;
