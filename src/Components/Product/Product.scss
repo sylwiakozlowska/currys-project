@@ -1,5 +1,19 @@
 .product-component {
   padding: 30px 0;
+
+  //KEY FEATURES
+  .key-features {
+    .key-features-list {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        padding: 15px;
+        border-left: 4px solid #f5f7fd;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  //BUTTONS
   .button.is-primary {
     margin: 10px 0;
     width: 100%;
@@ -29,7 +43,7 @@
       }
     }
   }
-  .dropdown-menu{
+  .dropdown-menu {
     cursor: pointer;
   }
 }

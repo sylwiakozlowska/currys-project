@@ -3,20 +3,20 @@ import PropTypes from "prop-types";
 import cn from "classnames";
 import { SlArrowUp, SlArrowDown } from "react-icons/sl";
 
-
 /*
  * Read the blog post here:
  * https://letsbuildui.dev/articles/building-a-vertical-carousel-component-in-react
  */
 
-export const VerticalCarousel = ({ data, leadingText }) => {
+export const VerticalCarousel = ({ slides, leadingText }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  console.log("slides", slides);
 
   // Used to determine which items appear above the active item
-  const halfwayIndex = Math.ceil(data.length / 2);
+  const halfwayIndex = Math.ceil(slides.length / 2);
 
   // Usd to determine the height/spacing of each item
-  const itemHeight = 52;
+  const itemHeight = 90;
 
   // Used to determine at what point an item is moved from the top to the bottom
   const shuffleThreshold = halfwayIndex * itemHeight;
@@ -32,7 +32,7 @@ export const VerticalCarousel = ({ data, leadingText }) => {
       if (activeIndex > itemIndex - halfwayIndex) {
         return (itemIndex - activeIndex) * itemHeight;
       } else {
-        return -(data.length + activeIndex - itemIndex) * itemHeight;
+        return -(slides.length + activeIndex - itemIndex) * itemHeight;
       }
     }
 
@@ -42,7 +42,7 @@ export const VerticalCarousel = ({ data, leadingText }) => {
 
     if (itemIndex < activeIndex) {
       if ((activeIndex - itemIndex) * itemHeight >= shuffleThreshold) {
-        return (data.length - (activeIndex - itemIndex)) * itemHeight;
+        return (slides.length - (activeIndex - itemIndex)) * itemHeight;
       }
       return -(activeIndex - itemIndex) * itemHeight;
     }
@@ -51,14 +51,14 @@ export const VerticalCarousel = ({ data, leadingText }) => {
   const handleClick = (direction) => {
     setActiveIndex((prevIndex) => {
       if (direction === "next") {
-        if (prevIndex + 1 > data.length - 1) {
+        if (prevIndex + 1 > slides.length - 1) {
           return 0;
         }
         return prevIndex + 1;
       }
 
       if (prevIndex - 1 < 0) {
-        return data.length - 1;
+        return slides.length - 1;
       }
 
       return prevIndex - 1;
@@ -78,32 +78,38 @@ export const VerticalCarousel = ({ data, leadingText }) => {
           </button>
 
           <div className="carousel">
-            <div className="leading-text">
+            {/* <div className="leading-text">
               <p>{leadingText}</p>
-            </div>
+            </div> */}
             <div className="slides">
               <div className="carousel-inner">
-                {data.map((item, i) => (
-                  <button
-                    type="button"
-                    onClick={() => setActiveIndex(i)}
-                    className={cn("carousel-item", {
-                      active: activeIndex === i,
-                      visible:
-                        Math.abs(determinePlacement(i)) <= visibleStyleThreshold
-                    })}
-                    key={item.id}
-                    style={{
-                      transform: `translateY(${determinePlacement(i)}px)`
-                    }}
-                  >
-                    {item.introline}
-                  </button>
-                ))}
+                <ul>
+                  {slides.map((item, i) => (
+                    <li
+                      key={item.id}
+                      onClick={() => setActiveIndex(i)}
+                      className={cn("carousel-item", {
+                        active: activeIndex === i,
+                        visible:
+                          Math.abs(determinePlacement(i)) <=
+                          visibleStyleThreshold,
+                      })}
+                      style={{
+                        transform: `translateY(${determinePlacement(i)}px)`,
+                      }}
+                    >
+                      <figure className="image is-64x64">
+                        <img
+                          src={item.smallImage.src}
+                          alt={item.smallImage.alt}
+                        />
+                      </figure>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
-
           <button
             type="button"
             className="carousel-button next"
@@ -113,11 +119,12 @@ export const VerticalCarousel = ({ data, leadingText }) => {
           </button>
         </div>
         <div className="content">
-          <img
-            src={data[activeIndex].content.image}
-            alt={data[activeIndex].content.introline}
-          />
-          <p>{data[activeIndex].content.copy}</p>
+          <figure className="image">
+            <img
+              src={slides[activeIndex].content.image}
+              alt={slides[activeIndex].content.introline}
+            />
+          </figure>
         </div>
       </section>
     </div>
@@ -125,8 +132,8 @@ export const VerticalCarousel = ({ data, leadingText }) => {
 };
 
 VerticalCarousel.propTypes = {
-  data: PropTypes.array.isRequired,
-  leadingText: PropTypes.string.isRequired
+  slides: PropTypes.array.isRequired,
+  leadingText: PropTypes.string.isRequired,
 };
 
 export default VerticalCarousel;

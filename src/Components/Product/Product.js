@@ -24,9 +24,9 @@ import { ShareComponent } from "../ShareComponent/ShareComponent";
 import { VerticalCarousel } from "../VerticalCarousel/VerticalCarousel";
 // import { CiHeart } from "react-icons/ci";
 import { BsHeart, BsHeartFill, BsShare } from "react-icons/bs";
-import {data} from "../VerticalCarousel/data";
+// import { data } from "../VerticalCarousel/data";
 
-console.log("dataaaaaa",data)
+// console.log("dataaaaaa", data);
 // const data = [
 //   {
 //     introline: "dogs",
@@ -87,15 +87,11 @@ export const Product = () => {
     deliveries,
   } = product;
 
-  // const imagesGroupList = imagesGroup.map((miniImage) => {
-  //   const { src, alt } = miniImage;
-  //   return (
-  //     <figure className="image">
-  //       <img src={src} alt={alt} />
-  //     </figure>
-  //   );
-  // });
-  
+  const slides = imagesGroup.map((imageGroup, i) => ({
+    smallImage: { src: imageGroup.src },
+    id: i,
+    content: { image: imageGroup.src },
+  }));
   return (
     <section className="product-component">
       <div className="columns">
@@ -108,12 +104,26 @@ export const Product = () => {
           <div className="images-group">
             {/* {productMiniImagesList}
             <div> */}
-            <VerticalCarousel data={data.slides} leadingText={data.leadingText} />
+            <VerticalCarousel
+              slides={slides}
+              // data={data.slides}
+              // leadingText={data.leadingText}
+            />
             {/* <ProductImage
               productImageUrl={product.productImageUrl}
               formatBadges={product.formatBadges}
             /> */}
             {/* </div> */}
+          </div>
+          <div className="key-features">
+            <ul className="key-features-list">
+              <li>Android 10.0</li>
+              <li>HD Ready screen</li>
+              <li>32 GB storage: Perfect for apps / photos / videos</li>
+              <li>Add more storage with a microSD card</li>
+              <li>Dolby Atmos </li>
+              <li>2 year guarantee</li>
+            </ul>
           </div>
         </div>
         <div className="column">
