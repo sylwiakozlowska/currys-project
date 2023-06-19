@@ -34,6 +34,8 @@ img {
   .outer-container > div {
     // flex: 1;
     padding: 20px;
+    display: flex;
+    align-items: center;
   }
 
   .outer-container .carousel-wrapper {
@@ -70,7 +72,8 @@ img {
     flex: 5;
     align-items: center;
     // color: var(--white);
-    padding: 15px;
+    padding: 15px 25px;
+    width: 150px;
   }
 
   .carousel-button {
@@ -98,6 +101,7 @@ img {
     flex: 1;
     width: 100%;
     overflow: hidden;
+    padding: 5px 12px;
   }
 
   .carousel-inner {
@@ -128,11 +132,23 @@ img {
     position: absolute;
     background: none;
     border: none;
-    padding: 0;
+    padding: 5px;
     margin: 0;
     opacity: 0;
-    top: 112px;
+    top: 95px;
     transition: transform 0.4s ease, opacity 0.4s ease;
+
+    border: 1px solid grey;
+    &:active {
+      padding: 2px;
+      border: 2px solid purple;
+      border-radius: 50%;
+    }
+    .image img {
+      padding: 2px;
+
+      border-radius: 50%;
+    }
   }
 
   .carousel-item.visible {

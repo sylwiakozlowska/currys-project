@@ -98,12 +98,14 @@ export const VerticalCarousel = ({ slides, leadingText }) => {
                         transform: `translateY(${determinePlacement(i)}px)`,
                       }}
                     >
-                      <figure className="image is-64x64">
-                        <img
-                          src={item.smallImage.src}
-                          alt={item.smallImage.alt}
-                        />
-                      </figure>
+                      <a href="#">
+                        <figure className="image is-64x64" >
+                          <img
+                            src={item.smallImage.src}
+                            alt={item.smallImage.alt}
+                          />
+                        </figure>
+                      </a>
                     </li>
                   ))}
                 </ul>
