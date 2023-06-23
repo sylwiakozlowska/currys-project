@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "../../styles.scss";
 import classNames from "classnames";
-import { useSelector, useDispatch } from "react-redux";
+import { batch, useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+
 import {
-  fetchProduct,
-  selectStatus,
   selectCartProducts,
   removeFromBasket,
   setProductCount,
   selectItemCount,
 } from "../../Store/features/cart/cartProductSlice";
+import {
+  toggleSaved,
+  selectSavedProducts,
+  removeFromSaved,
+} from "../../Store/features/saved/savedProductSlice";
 import { selectMenu } from "../../Store/features/menu/menuSlice";
 import { CartProduct } from "../../Components/CartProduct/CartProduct";
 import { Checkout } from "../../Components/Checkout/Checkout";
@@ -26,14 +31,18 @@ export const Cart = () => {
   const itemsCount = useSelector(selectItemCount);
   const basketItems = `(${itemsCount} ${itemsCount === 1 ? "item" : "items"})`;
 
+  const savedProducts = useSelector(selectSavedProducts);
+  console.log("savedProducts cartProduct", savedProducts);
+
   const onChangeQuantity = (count, { id }) => {
     dispatch(setProductCount({ count, id }));
   };
-  const onClickRemoveItem = (cartProduct) => {
+  const onRemoveItem = (cartProduct) => {
     console.log(cartProduct);
     dispatch(removeFromBasket(cartProduct));
   };
-  const listOptionsList = listOptions.map(({ id, text, menuIcon}) => {
+
+  const listOptionsList = listOptions.map(({ id, text, menuIcon }) => {
     const menuIcons = classNames("glyph", menuIcon);
     return (
       <li className="options" key={id}>
@@ -44,12 +53,25 @@ export const Cart = () => {
       </li>
     );
   });
+
+  const onChangeSaved = (cartProduct) => {
+    const savedProduct = savedProducts.find(({ id }) => id === cartProduct.id);
+    console.log("saved", cartProduct);
+    batch(() => {
+      dispatch(toggleSaved(cartProduct));
+      dispatch(removeFromSaved(savedProduct));
+    });
+  };
   const cartProducts = products.map((cartProduct) => {
+    const isSaved = !!savedProducts.find(({ id }) => id === cartProduct.id);
+
     return (
       <CartProduct
+        isSaved={isSaved}
         cartProduct={cartProduct}
-        onClick={onClickRemoveItem}
-        onChange={onChangeQuantity}
+        onRemoveItem={onRemoveItem}
+        onChangeQuantity={onChangeQuantity}
+        onChangeSaved={onChangeSaved}
       />
     );
   });
