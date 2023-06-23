@@ -10,17 +10,17 @@ const searchProducts = {
   detailedProducts: [
     {
       id: 0,
-      text: "SAMSUNG Galaxy A13 - 64 GB, Black",
-      price: "£129.00",
+      text: "SAMSUNG Galaxy A14 - 64 GB, Silver",
+      price: "£179.00",
       rating: 4.5,
-      src: "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
+      src:"https://media.currys.biz/i/currysprod/M10248085_silver-grey?$g-small$&amp;fmt=auto" ,
     },
     {
       id: 1,
-      text: 'SAMSUNG Galaxy Tab A8 10.5" Tablet - 32 GB, Graphite',
+      text: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot, Tablet - 32 GB, Grey",
       price: "£211.99",
       rating: 4.5,
-      src: "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
+      src:"https://media.currys.biz/i/currysprod/M10224816_grey?$g-small$&amp;fmt=auto" ,
     },
     {
       id: 2,
@@ -38,10 +38,10 @@ const searchProducts = {
     },
     {
       id: 4,
-      text: 'SAMSUNG Galaxy Tab A8 10.5" Tablet - 32 GB, Graphite',
-      price: "£429",
+      text: 'SAMSUNG Galaxy Tab A8 10.5" Tablet - 64 GB, Graphite',
+      price: "£199",
       rating: 3.5,
-      src: "https://media.currys.biz/i/currysprod/M10234328_black?$g-small$&amp;fmt=auto",
+      src:"https://media.currys.biz/i/currysprod/M10234328_black?$g-small$&amp;fmt=auto",
     },
   ],
 };
