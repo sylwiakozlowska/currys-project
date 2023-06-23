@@ -8,9 +8,6 @@ export const NotificationDropdownBox = ({ children }) => {
   if (shownNotification) {
     text = <span>Close</span>;
     icon = <i className="glyph icon-arrow-up"></i>;
-    console.log("closed");
-
-    console.log("open");
   } else {
     text = <span>Brief product description</span>;
     icon = <i className="glyph icon-arrow-down"></i>;

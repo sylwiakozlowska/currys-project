@@ -157,20 +157,8 @@ export const filterSlice = createSlice({
     filterSelected(state, { payload }) {
       const groupItems = state.groups;
       const { groupId, id, checked } = payload;
-
-      console.log("groupItems", groupItems);
-      console.log("payload", payload);
-      //   console.log("payload",payload, state)
       const groupItem = groupItems.find((el) => el.id === groupId);
-      console.log(
-        "groupItem",
-        groupItem.id,
-        groupItem.title,
-        groupItem.filterItems
-      );
-
       const item = groupItem.filterItems.find((el) => el.id === id);
-      // console.log("item", item.id, item.text);
       item.selected = checked;
     },
   },
@@ -182,17 +170,13 @@ export const selectFilterItems = (state) => {
   const selectedFilterItems = [];
   // const findSelectedItems = 
   state.filter.groups.forEach(({id:groupId, filterItems})=>{
-    console.log("idslice",groupId, filterItems)
     filterItems.forEach((item)=>{
       if(item.selected === true){
         selectedFilterItems.push({...item, groupId })
       }
     })
   })
-  // console.log("findSelectedItem",findSelectedItem)
-  // selectedFilterItems.push(findSelectedItem);
   return selectedFilterItems;
-  console.log("selectedFilterItems",selectedFilterItems)
 };
 export const selectFilterGroups = (state) => {
   return state.filter.groups;

@@ -45,20 +45,15 @@ export const Product = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const product = useSelector(selectProduct);
-  // console.log("product", product);
   const status = useSelector(selectStatus);
-  // console.log("status", status);
   const isSaved = useSelector((state) => selectSavedProduct(state, Number(id)));
   const onClickAddToBasket = () => {
     dispatch(addToBasket(product));
   };
-
   const itemCount = useSelector(selectItemCount);
   const onClickToggleSaved = () => {
-    console.log(111111, product, "toggleSaved");
     dispatch(toggleSaved(product));
   };
-
   const [priceOption, setPriceOption] = useState(0);
   const [colorOption, setColorOption] = useState(0);
 

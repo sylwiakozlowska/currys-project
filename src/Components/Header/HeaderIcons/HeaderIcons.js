@@ -13,10 +13,6 @@ import {
 export const HeaderIcons = () => {
   const itemsCount = useSelector(selectItemCount);
   const savedItemsCount = useSelector(selectSavedItemCount);
-  console.log(savedItemsCount, "selectSavedItemCount");
-  // const savedItemsCount = useSelector(selectSavedItemCount);
-  // const savedItemsCount = useSelector(selectSavedProduct);
-  // console.log(savedItemsCount, "savedItemsCount,savedItemsCount")
 
   const basketItems = classNames("glyph basket-icon", {
     "has-count": itemsCount > 0,

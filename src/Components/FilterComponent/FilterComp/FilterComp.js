@@ -1,14 +1,10 @@
 import React from "react";
 
 export const FilterComp = ({ children, count, onChange, selected }) => {
-  // const {selected, count} = filter
-  console.log("selected", selected, children);
 
   const onChangeFilter = (e) => {
     const { checked } = e.target;
-    console.log("checked",checked)
     onChange(checked);
-    // onChange(filter /*, !selected*/);
   };
 
   return (

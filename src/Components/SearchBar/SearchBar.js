@@ -27,14 +27,12 @@ export const SearchBar = ({
   const onDetailedProductSelected = (item) => {
     setText("");
     onSelectedDetailedProduct(item);
-    console.log("onSelectedProduct", item);
   };
 
   const onChangeText = (e) => {
     const { value } = e.target;
     setText(value);
     if (value.length > MIN_LENGTH) {
-      console.log("open");
       onChange(value);
     }
   };
@@ -44,7 +42,6 @@ export const SearchBar = ({
 
   const onClickSearch = () => {
     onSearch(text);
-    console.log("text", text);
     setText("");
   };
   useEffect(() => {

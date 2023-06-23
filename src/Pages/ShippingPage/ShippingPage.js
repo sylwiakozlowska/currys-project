@@ -14,7 +14,6 @@ export const ShippingPage = () => {
 
   const onChangeSelectedDelivery = (e) => {
     const { checked } = e.target;
-    console.log(checked, "checked");
     setSelected((current) => !current);
   };
   const onSubmit = (data) => {

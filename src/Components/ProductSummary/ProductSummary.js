@@ -11,14 +11,10 @@ import { CiHeart } from "react-icons/ci";
 export const ProductSummary = ({ product, onCompare }) => {
   const [shownNotification, setShownNotification] = useState(false);
   const { rating } = product;
-  // const [compare, setCompare] = useState(false);
-  const checkClicked = (state) => {
-    console.log("clicked", product);
 
-    // setCompare(state);
+  const checkClicked = (state) => {
     onCompare(product, state);
   };
-  console.log("product1", product);
   return (
     <div className="product-summary-component">
       <div className="product-summary">

@@ -15,12 +15,9 @@ export const FilterComponentTablet = ({
 }) => {
   const groups = useSelector(selectFilterGroups);
   const selectedFilterItems = useSelector(selectFilterItems);
-  console.log("selectedFilterItems", selectedFilterItems);
   const dispatch = useDispatch();
-  // console.log("selectedFilterItems1", "groups1", selectedFilterItems, groups);
   const onChangeSelected = (groupId, id, checked) => {
     dispatch(filterSelected({ groupId, id, checked }));
-    console.log("groupId,id,checked", id, groupId, checked);
   };
   const filterBoxes = groups.map(({ id: groupId, title, filterItems }) => {
     return (

@@ -21,21 +21,17 @@ export const SearchBarWrapper = () => {
   const dispatch = useDispatch();
 
   const onChangeText = (value) => {
-    console.log("value", value);
     dispatch(fetchProductsList(value));
   };
 
   const onSearchText = (text) => {
     history.push(`/products?q=${text}`);
-    // dispatch(sendDataToServer(selectProductSummary))
   };
 
   const onSelectedSimpleItem = (item) => {
     history.push(`/products`, { selected: item });
   };
   const onSelectedDetailedItem = (item) => {
-    console.log("item", item);
-    // dispatch(fetchDetailedProducts());
     history.push(`/product/${item.id}`, { selected: item });
   };
   return (

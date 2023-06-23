@@ -8,10 +8,8 @@ export const DropdownBox = ({ title, children }) => {
   let icon;
   if (shown) {
     icon = <i className="glyph arrow-up"></i>;
-    console.log("open", title);
   } else {
     icon = <i className="glyph arrow-down"></i>;
-    console.log("closed");
   }
   
   return (

@@ -7,12 +7,10 @@ export const FilterOptions = () => {
   const onChangeSortByOption = (e) => {
     const { value } = e.target;
     selectSortBy(value);
-    console.log(value);
   };
   const onChangePage = (e) => {
     const { value } = e.target;
     setShowPage(value);
-    console.log(value);
   };
   return (
     <div className="filter-options-component">

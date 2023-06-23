@@ -4,18 +4,13 @@ import "../../styles.scss";
 import classnames from "classnames";
 
 export const Tabs = ({ items }) => {
-  //   console.log("items", items);
   const [selectedTab, setSelectedTab] = useState(0);
-  //   const [children, setChildren] = useState(items[0].comp);
-  //   console.log("children",children)
   const tabOptions = items.map((tabOption, i) => {
     const { title } = tabOption;
 
     const onChangeTab = () => {
       setSelectedTab(i);
-      console.log("changed", title, i);
     };
-
     //i = index
     const active = classnames({ "is-active": selectedTab === i });
     return (

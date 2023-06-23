@@ -28,7 +28,7 @@ export const DeliveryList = ({ deliveries }) => {
             <BsShopWindow />
           </i>
         );
-        text = "Free collection from Store";
+        text = "Free collection (subject to availability)"
         break;
       case "free-collection-stock-availability":
         icon = (
@@ -36,7 +36,7 @@ export const DeliveryList = ({ deliveries }) => {
             <BsShopWindow />
           </i>
         );
-        text = "FREE collection from Store subject to Stock availability";
+        text = "Free collection (subject to availability)"
         break;
     }
 

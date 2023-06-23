@@ -9,17 +9,11 @@ import { PriceStatus } from "../ProductSummary/ProductPrice/PriceStatus/PriceSta
 import { ExtraInfo } from "../ProductSummary/ProductPrice/ExtraInfo/ExtraInfo";
 import { ProductOffers } from "../ProductSummary/ProductOffers/ProductOffers";
 export const ProductSummaryMobile = ({ product, onCompare }) => {
-  // const [shownNotification, setShownNotification] = useState(false);
   const { rating, productPrice, savedMoney, extraInfo, productOffers } =
     product;
-  // const [compare, setCompare] = useState(false);
   const checkClicked = (state) => {
-    console.log("clicked", product);
-
-    // setCompare(state);
     onCompare(product, state);
   };
-  console.log("product1", product);
   return (
     <div className="product-summary-component-mobile">
       <div className="product-summary-mobile">
@@ -51,7 +45,10 @@ export const ProductSummaryMobile = ({ product, onCompare }) => {
               <ProductOffers offers={productOffers} max={1} />
             ) : null}
           </div>
-          <DeliveryOptions className="primary" deliveries={product.deliveries} />
+          <DeliveryOptions
+            className="primary"
+            deliveries={product.deliveries}
+          />
         </div>
       </div>
       <div>

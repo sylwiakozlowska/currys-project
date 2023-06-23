@@ -14,18 +14,15 @@ export const locationSlice = createSlice({
   reducers: {
     //searchternm updated
     setSearchLocation: (state, { payload }) => {
-      console.log("payload", payload);
       state = locations.filter(({ text }) =>
         new RegExp(payload, "i").test(text)
       );
-      console.log(state);
       return state;
     },
   },
 });
 export const { setSearchLocation } = locationSlice.actions;
 export const selectLocation = (state) => {
-  console.log("state", state);
   return state.location;
 };
 export default locationSlice.reducer;

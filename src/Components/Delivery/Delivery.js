@@ -7,7 +7,6 @@ import { BsChevronDown } from "react-icons/bs";
 
 export const Delivery = ({ deliveryOptions, onClick, location }) => {
   const [selectedSlot, setSelectedSlot] = useState(deliveryOptions);
-  console.log("location","deliveryOptions", location, deliveryOptions);
   const [startDate, setStartDate] = useState(new Date());
 
   const deliveryOptionList = deliveryOptions.map((deliveryOption) => {
@@ -15,7 +14,6 @@ export const Delivery = ({ deliveryOptions, onClick, location }) => {
 
     const onChangeDeliverySlot = (e) => {
       setSelectedSlot(id);
-      console.log("clicked", id, slotLabel);
     };
     return (
       <li>

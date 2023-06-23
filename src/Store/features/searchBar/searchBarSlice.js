@@ -15,6 +15,7 @@ export const fetchProductsList = createAsyncThunk(
   }
 );
 
+
 export const searchBarSlice = createSlice({
   name: "searchBar",
   initialState: {

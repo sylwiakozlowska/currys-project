@@ -10,7 +10,6 @@ import { SlArrowUp, SlArrowDown } from "react-icons/sl";
 
 export const VerticalCarousel = ({ slides, leadingText }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  console.log("slides", slides);
 
   // Used to determine which items appear above the active item
   const halfwayIndex = Math.ceil(slides.length / 2);

@@ -23,7 +23,6 @@ import { CardComponent } from "../../Components/CardComponent/CardComponent";
 
 export const Cart = () => {
   const products = useSelector(selectCartProducts);
-  console.log("products", products);
   const dispatch = useDispatch();
   const { listOptions } = useSelector(selectMenu);
 

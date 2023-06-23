@@ -28,9 +28,6 @@ export const savedProductSlice = createSlice({
       }
     },
     removeFromSaved(state, { payload }) {
-      // const filteredItems = state.products.filter((el) => el.id === payload);
-      // console.log("filteredItems", filteredItems);
-      // return filteredItems;
       const index = state.products.findIndex((el) => el.id === payload.id);
       state.products.splice(index, 1);
     },

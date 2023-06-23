@@ -21,34 +21,21 @@ export const SearchStockWrapper = ({deliveries}) => {
   const { id } = useParams();
   const dispatch = useDispatch();
   // const product = useSelector((state) => selectSingleProductSummary(state, id));
-  // console.log("product", product);
   const deliveryOptions = useSelector(selectDeliveryOptions);
   const collectionOptions = useSelector(selectCollectionOptions);
   const status = useSelector(selectStatus);
 
-  console.log(
-    deliveryOptions,
-    collectionOptions,
-    "deliveryOptions, collectionOptions"
-  );
   const location = useSelector(selectDeliveryArea);
-  console.log("deliveryLocation", location);
   const locations = useSelector(selectLocation);
-
   const [shown, setShown] = useState(true);
-
-  // const { deliveries } = product;
-  console.log("locations", locations);
 
   const onChangeText = (value) => {
     dispatch(setSearchLocation(value));
-    console.log("value11", value);
   };
-  const onClickSearch = () => {
-    console.log("search");
-  };
+  // const onClickSearch = () => {
+  //   console.log("search");
+  // };
   const onSelectedLocation = (location) => {
-    console.log("select");
     dispatch(chooseLocation(location));
     setShown((state) => !state);
   };

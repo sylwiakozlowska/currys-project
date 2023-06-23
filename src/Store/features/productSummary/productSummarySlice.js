@@ -246,12 +246,10 @@ export const productSummarySlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchData.pending, (state, action) => {
       state.status = "loading";
-      console.log(JSON.stringify(state), state.status, "state.status");
     });
     builder.addCase(fetchData.fulfilled, (state, action) => {
       state.status = "succeeded";
       state.productSummary = action.payload;
-      console.log(state.productSummary);
     });
     builder.addCase(fetchData.rejected, (state, action) => {
       state.status = "failed";

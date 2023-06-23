@@ -5,7 +5,6 @@ export const FilterOptionsTablet = () => {
   const onChangeSortByOption = (e) => {
     const { value } = e.target;
     selectSortBy(value);
-    console.log(value);
   };
 
   return (

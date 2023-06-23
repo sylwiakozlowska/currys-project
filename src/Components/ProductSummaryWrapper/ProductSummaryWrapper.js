@@ -32,10 +32,7 @@ export const ProductSummaryWrapper = () => {
   const products = useSelector((state) =>
     selectProductSummary(state, params.get("q"))
   );
-  console.log(products, "products");
   const status = useSelector(selectStatus);
-  console.log(status, "status");
-
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch, fetchData]);

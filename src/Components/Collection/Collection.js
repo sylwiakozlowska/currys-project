@@ -5,7 +5,6 @@ import { CardComponent } from "../CardComponent/CardComponent";
 import { BsChevronDown } from "react-icons/bs";
 
 export const Collection = ({ collectionOptions, onClick, location }) => {
-  console.log("collectionOptions", collectionOptions);
 
   const [collectionStore, setCollectionStore] = useState(
     collectionOptions[0].id
@@ -31,7 +30,6 @@ export const Collection = ({ collectionOptions, onClick, location }) => {
 
       const onChangeCollectionStore = (e) => {
         setCollectionStore(id);
-        console.log("clicked", id, location);
       };
       return (
         <li>

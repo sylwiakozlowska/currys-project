@@ -11,7 +11,6 @@ export const SearchStock = ({ locations, deliveries, onClick, onChange,onSelecte
   const onClickSelectedLocation = (e, id, locations) => {
     e.preventDefault();
     const location = locations.find((el) => el.id === id);
-    console.log("location",location);
     onSelected(location)
     setText("")
   };
@@ -26,12 +25,10 @@ export const SearchStock = ({ locations, deliveries, onClick, onChange,onSelecte
   const onChangeText = (e) => {
     const { value } = e.target;
     setText(value);
-    console.log("value", value);
     if (value.length > MIN_LENGTH) {
       onChange(value);
     }
   };
-
   const onClose = () => {
     setText("");
   };

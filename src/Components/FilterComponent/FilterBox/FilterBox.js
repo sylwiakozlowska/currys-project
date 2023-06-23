@@ -11,7 +11,6 @@ export const FilterBox = ({ groupId, title, filterItems, onChange }) => {
     const { id, type, text, count, value, selected } = filter;
     const onChangeSelected = (checked) => {
       onChange(groupId,id,checked);
-      // console.log("id,groupId,checked", id,groupId,checked);
     };
     let comp;
     let ratingText;

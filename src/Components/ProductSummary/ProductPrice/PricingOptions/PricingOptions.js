@@ -6,12 +6,8 @@ export const PricingOptions = ({
 }) => {
   const pricingOptionsList = pricingOptions.map((option) => {
     const { id, price, text, selected } = option;
-    console.log("mapped inputs", id, selected);
     const onChangeOption = (e) => {
-      //   const { value } = e.target;
       setPriceOption(Number(id));
-      //   console.log("selected,id", selected, id);
-      console.log("clicked", id);
     };
 
     const selectedOption =

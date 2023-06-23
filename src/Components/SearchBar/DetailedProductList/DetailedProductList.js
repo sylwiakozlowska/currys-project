@@ -13,9 +13,7 @@ export const DetailedProductList = ({
   const shownProductList = detailedProducts.slice(0, shownProductListCount);
   const onClickDetailedProduct = (e, id, detailedProducts) => {
     e.preventDefault();
-    console.log(e, id, detailedProducts);
     const detailedProduct = detailedProducts.find((el) => el.id === id);
-    console.log("detailedProduct", detailedProduct);
     onSelected(detailedProduct);
   };
   return (

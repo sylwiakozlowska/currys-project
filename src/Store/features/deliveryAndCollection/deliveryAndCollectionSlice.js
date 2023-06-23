@@ -130,34 +130,20 @@ export const deliveryAndCollectionSlice = createSlice({
   reducers: {
    
     chooseLocation: (state, { payload }) => {
-      console.log("payload", payload);
       if (payload.id === 0) {
         state.delivery = [...state.delivery];                   // todo
-        console.log("state.delivery", state.delivery);
-        console.log("state.collection", state.collection);
       }
       state.location = payload;
 
       const sorted = [...state.collection].sort(
         (a, b) => Number(a.distance) - Number(b.distance)
       );
-      console.log("sorted", sorted);
       state.collection = sorted;
-      // const closest = sorted.shift();
-
-      // console.log("closest", closest);
-
-      // state.collection.local = closest;
-      // console.log("state.collection.local", state.collection.local);
-
-      // state.collection.other = sorted;
-      // console.log("otherStores", otherStores);
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchDeliveryAndCollectionList.pending, (state) => {
-        // debugger
         state.status = "loading";
       
       })
@@ -177,14 +163,12 @@ export const deliveryAndCollectionSlice = createSlice({
 export const { chooseLocation } = deliveryAndCollectionSlice.actions;
 
 export const selectDeliveryOptions = (state) => {
-  // console.log("state", state.deliveryOptions.delivery);
   return state.deliveryAndCollection.delivery;
 };
 export const selectDeliveryArea = (state) => {
   return state.deliveryAndCollection.location?.text;
 };
 export const selectCollectionOptions = (state) => {
-  // console.log("state", state.deliveryOptions.delivery);
   return state.deliveryAndCollection.collection;
 };
 export const selectStatus = (state) => {

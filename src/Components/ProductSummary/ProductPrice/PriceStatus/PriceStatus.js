@@ -1,7 +1,6 @@
 import React from "react";
 
 export const PriceStatus = ({ productPrices, saved }) => {
-  console.log("productPrices", productPrices);
   productPrices = `£${productPrices}`;
   saved = `Save £${saved}`;
   

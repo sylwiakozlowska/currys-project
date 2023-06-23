@@ -19,8 +19,6 @@ export const ProductPrice = ({
 }) => {
   const [shownCostCard, setshownCostCard] = useState(false);
 
-  console.log("productPrice", productPrice);
-
   const closeCard = useCallback(() => {
     setshownCostCard(false);
   }, []);

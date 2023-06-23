@@ -15,7 +15,6 @@ export const Checkout = () => {
 
     const onChangePayment = () => {
       setPaymentOption(id);
-      console.log("clicked", id, text);
     };
     return (
       <li>

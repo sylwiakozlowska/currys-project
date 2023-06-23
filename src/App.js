@@ -38,7 +38,6 @@ const props = {
 function App() {
   const openMenu = useSelector(selectMenuOpen);
   const isLoading = useSelector(selectIsLoading);
-  console.log("openMenu", openMenu);
   // const [data, setData] = useState(null);
 
   // useEffect(() => {

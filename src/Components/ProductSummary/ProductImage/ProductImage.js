@@ -6,8 +6,6 @@ const mapImg = {
   "4kHDR": "https://media.currys.biz/i/currysprod/new_oel-28959.png",
 };
 export const ProductImage = ({ productImageUrl, formatBadges }) => {
-  // console.log("list", formatBadges);
-
   const badgesList = formatBadges.map((badge) => (
     <img key={badge} src={mapImg[badge]} />
   ));

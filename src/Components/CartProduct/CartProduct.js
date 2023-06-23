@@ -14,7 +14,6 @@ export const CartProduct = ({
 }) => {
   const { title, count, productImageUrl, productPrice, deliveries } =
     cartProduct;
-  console.log(cartProduct, "cartProduct");
   const totalPrice = count * Number(productPrice).toFixed(2);
 
   return (
