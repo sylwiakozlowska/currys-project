@@ -1,19 +1,33 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+
 import { CardComponent } from "../CardComponent/CardComponent";
 import { DeliveryOptions } from "../DeliveryOptions/DeliveryOptions";
-export const CartProduct = ({ cartProduct, onClick, onChange }) => {
+
+export const CartProduct = ({
+  isSaved,
+  cartProduct,
+  onRemoveItem,
+  onChangeQuantity,
+  onChangeSaved,
+}) => {
   const { title, count, productImageUrl, productPrice, deliveries } =
     cartProduct;
-
+  console.log(cartProduct, "cartProduct");
   const totalPrice = count * Number(productPrice).toFixed(2);
+
   return (
-    <CardComponent>
-      <div className="cart-product-component">
+    <div className="cart-product-component">
+      <CardComponent>
         <div className="columns">
-        <div className="column is-one-third">
-          <img src={productImageUrl} /></div>
+          <div className="column is-one-third">
+            <img src={productImageUrl} />
+          </div>
           <div className="column">
-            <h1 className="cart-product-title title is-1">{title}</h1>
+            <h1 className="cart-product-title title is-1">
+              <a href="">{title}</a>
+            </h1>
             <div className="cart-product-details">
               <div className="select-quantity">
                 <div>Quantity</div>
@@ -21,7 +35,9 @@ export const CartProduct = ({ cartProduct, onClick, onChange }) => {
                   <select
                     className="show-quantity"
                     value={count}
-                    onChange={(e) => onChange(e.target.value, cartProduct)}
+                    onChange={(e) =>
+                      onChangeQuantity(e.target.value, cartProduct)
+                    }
                   >
                     <option value="1"> 1</option>
                     <option value="2"> 2</option>
@@ -31,14 +47,19 @@ export const CartProduct = ({ cartProduct, onClick, onChange }) => {
                   </select>
                 </div>
               </div>
-              <button onClick={onClick}>Remove item</button>
-              <button onClick={onClick}>Save for later</button>
+              <button onClick={() => onRemoveItem(cartProduct)}>
+                Remove item
+              </button>
+
+              <button onClick={() => onChangeSaved(cartProduct)}>
+                {isSaved ? "Saved" : "Save for later"}
+              </button>
               <div className="price-status">£{totalPrice}</div>
             </div>
-            <DeliveryOptions deliveries={deliveries} />
+            {/* <DeliveryOptions deliveries={deliveries} /> */}
           </div>
         </div>
-      </div>
-    </CardComponent>
+      </CardComponent>
+    </div>
   );
 };

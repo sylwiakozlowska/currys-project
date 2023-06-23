@@ -1,4 +1,5 @@
 .saved-page-component {
+  margin-bottom: 20px;
   .saved-items-info {
     display: flex;
     flex-direction: column;
@@ -9,5 +10,16 @@
   }
   p:first-child {
     font-weight: bold;
+  }
+  .saved-page-items {
+    .saved-items-count {
+      padding: 20px;
+      text-align: center;
+    }
+    .saved-page-content {
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }

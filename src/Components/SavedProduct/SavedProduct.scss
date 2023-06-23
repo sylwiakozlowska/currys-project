@@ -1,4 +1,18 @@
+.saved-product-card {
+  margin: 10px;
+}
 .saved-product-component {
+  padding: 10px;
+  .image {
+    padding: 10px;
+  }
+  .saved-product-title {
+    margin: 15px;
+    font-weight: inherit;
+  }
+  .product-price {
+    font-weight: bold;
+  }
   .button.is-outlined {
     width: 100%;
     margin: 10px 0;

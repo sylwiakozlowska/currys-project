@@ -6,7 +6,10 @@ import {
   selectProduct,
   selectStatus,
 } from "../../Store/features/product/productSlice";
-import { addToBasket } from "../../Store/features/cart/cartProductSlice";
+import {
+  addToBasket,
+  selectItemCount,
+} from "../../Store/features/cart/cartProductSlice";
 import {
   toggleSaved,
   selectSavedItemCount,
@@ -24,19 +27,7 @@ import { ShareComponent } from "../ShareComponent/ShareComponent";
 import { VerticalCarousel } from "../VerticalCarousel/VerticalCarousel";
 // import { CiHeart } from "react-icons/ci";
 import { BsHeart, BsHeartFill, BsShare } from "react-icons/bs";
-// import { data } from "../VerticalCarousel/data";
 
-// console.log("dataaaaaa", data);
-// const data = [
-//   {
-//     introline: "dogs",
-//     id: "dogs",
-//     content: {
-//       image: "https://via.placeholder.com/400x200?text=Dogs",
-//       copy: "Dog ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan est ornare, ultricies erat a, dapibus lectus.",
-//     },
-//   },
-// ];
 const settings = {
   // autoplay: true,
   autoplay: false,
@@ -50,7 +41,7 @@ const settings = {
   arrows: true,
 };
 export const Product = () => {
-  const [shown, setShown] = useState(false);
+  // const [shown, setShown] = useState(false);
   const { id } = useParams();
   const dispatch = useDispatch();
   const product = useSelector(selectProduct);
@@ -62,6 +53,7 @@ export const Product = () => {
     dispatch(addToBasket(product));
   };
 
+  const itemCount = useSelector(selectItemCount);
   const onClickToggleSaved = () => {
     console.log(111111, product, "toggleSaved");
     dispatch(toggleSaved(product));
@@ -77,6 +69,14 @@ export const Product = () => {
   if (status === "loading") {
     return "loading";
   }
+
+  const buttonAddToBasketProps =
+    itemCount > 4
+      ? {
+          title:
+            "Unable to update product quantity. Please try again! If the issue continues please contact customer service",
+        }
+      : {};
   const {
     imagesGroup,
     productImageUrl,
@@ -145,7 +145,12 @@ export const Product = () => {
               colorVariation={colorVariation}
             />
           </div>
-          <Button className="is-primary" onClick={onClickAddToBasket}>
+          <Button
+            {...buttonAddToBasketProps}
+            className="is-primary"
+            onClick={onClickAddToBasket}
+            disabled={itemCount > 4}
+          >
             <i className="glyph basket-icon"></i> Add to Basket
           </Button>
           <div className="button-group">

@@ -1,12 +1,13 @@
 import React from "react";
 import { CiHeart } from "react-icons/ci";
 import { CardComponent } from "../../Components/CardComponent/CardComponent";
-import { useSelector, useDispatch } from "react-redux";
+import { batch, useSelector, useDispatch } from "react-redux";
 import {
   selectSavedProducts,
   removeFromSaved,
   selectSavedItemCount,
 } from "../../Store/features/saved/savedProductSlice";
+import { addToBasket } from "../../Store/features/cart/cartProductSlice";
 import { SavedProduct } from "../../Components/SavedProduct/SavedProduct";
 
 export const SavedPage = () => {
@@ -22,13 +23,23 @@ export const SavedPage = () => {
   //   console.log(cartProduct);
   //   dispatch(removeFromSaved(cartProduct));
   // };
-
-  const onClickRemoveFromSaved = (savedItem) => {
+  const onMoveToBasket = (savedItem) => {
+    batch(() => {
+      dispatch(addToBasket(savedItem));
+      dispatch(removeFromSaved(savedItem));
+    });
+  };
+  const onRemoveFromSaved = (savedItem) => {
     dispatch(removeFromSaved(savedItem));
   };
+
   const savedProducts = products.map((savedItem) => {
     return (
-      <SavedProduct savedItem={savedItem} onClick={onClickRemoveFromSaved} />
+      <SavedProduct
+        savedItem={savedItem}
+        onRemoveFromSaved={onRemoveFromSaved}
+        onMoveToBasket={onMoveToBasket}
+      />
     );
   });
   if (savedProducts.length === 0) {
@@ -55,18 +66,18 @@ export const SavedPage = () => {
   }
   return (
     <div className="saved-page-component">
-      <h1 className="title is-1">Saved Items</h1>
-      <CardComponent>
-        <p>Don’t lose your saved items</p>
-        <p>
-          Sign in/Register to view your saved items at any time and avoid losing
-          them when you leave the site.
-        </p>
-      </CardComponent>
-      Saved Items:{savedItemsCount}
-      <div className="columns">
-        <div className="column is-one-third"> {savedProducts}</div>
+      <div className="saved-page-items">
+        <h1 className="title is-1">Saved Items</h1>
+        <CardComponent>
+          <p>Don’t lose your saved items</p>
+          <p>
+            Sign in/Register to view your saved items at any time and avoid
+            losing them when you leave the site.
+          </p>
+        </CardComponent>
+        <div className="saved-items-count"> Saved Items: {savedItemsCount}</div>
       </div>
+      <div className="saved-page-content columns">{savedProducts}</div>
     </div>
   );
 };

@@ -19,9 +19,13 @@ export const cartProductSlice = createSlice({
   reducers: {
     addToBasket(state, { payload }) {
       const product = state.products.find((el) => el.id === payload.id);
+    
       console.log("product,product", product);
       if (product) {
-        product.count++;
+        if(product.count < 5){
+          product.count++;
+        } 
+        
       } else {
         state.products.push({ ...payload, count: 1 });
       }
