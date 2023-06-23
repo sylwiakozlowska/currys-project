@@ -2,51 +2,51 @@ const allProducts = [
   {
     id: 0,
     // manufactorId: "SAMSUNG",
-    title: " SAMSUNG Galaxy A13 - 64 GB, Black",
+    title: "SAMSUNG Galaxy A14 - 64 GB, Silver",
     productImageUrl:
-      "https://media.currys.biz/i/currysprod/M10240938_black?$g-small$&amp;fmt=auto",
-      imagesGroup: [
-        {
-          id: 0,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 0",
-        },
-        {
-          id: 1,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_001?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 1",
-        },
-        {
-          id: 2,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_002?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 2",
-        },
-        {
-          id: 3,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_003?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 3",
-        },
-        {
-          id: 4,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_004?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 4",
-        },
-        {
-          id: 5,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_005?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 5",
-        },
-        {
-          id: 6,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_006?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 6",
-        },
-        {
-          id: 7,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_007?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 7",
-        },
-      ],
+      "https://media.currys.biz/i/currysprod/M10248085_silver-grey?$g-small$&amp;fmt=auto",
+    imagesGroup: [
+      {
+        id: 0,
+        src: "https://media.currys.biz/i/currysprod/M10248085_silver-grey?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy A14 - 64 GB, Silver image number 0",
+      },
+      {
+        id: 1,
+        src: "https://media.currys.biz/i/currysprod/M10248085_silver-grey_001?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy A14 - 64 GB, Silver image number 1",
+      },
+      {
+        id: 2,
+        src: "https://media.currys.biz/i/currysprod/M10248085_silver-grey?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy A14 - 64 GB, Silver image number 2",
+      },
+      {
+        id: 3,
+        src: "https://media.currys.biz/i/currysprod/M10248085_silver-grey?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy A14 - 64 GB, Silver image number 3",
+      },
+      {
+        id: 4,
+        src: "https://media.currys.biz/i/currysprod/M10248085_silver-grey_004?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy A14 - 64 GB, Silver image number 4",
+      },
+      {
+        id: 5,
+        src: "https://media.currys.biz/i/currysprod/M10248085_silver-grey?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy A14 - 64 GB, Silver image number 5",
+      },
+      {
+        id: 6,
+        src: "https://media.currys.biz/i/currysprod/M10248085_silver-grey?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy A14 - 64 GB, Silver image number 6",
+      },
+      {
+        id: 7,
+        src: "https://media.currys.biz/i/currysprod/M10248085_silver-grey?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy A14 - 64 GB, Silver image number 7",
+      },
+    ],
     formatBadges: ["freewiew", "4kHDR"],
     productDescription: [
       "Android 12",
@@ -118,7 +118,7 @@ const allProducts = [
     // manufactorId: "SAMSUNG",
     title: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot, Tablet - 32 GB, Grey",
     productImageUrl:
-      "https://media.currys.biz/i/currysprod/M10224816_grey?$l-large$&amp;fmt=auto",
+      "https://media.currys.biz/i/currysprod/M10224816_grey?$g-small$&amp;fmt=auto",
     imagesGroup: [
       {
         id: 0,
@@ -186,8 +186,8 @@ const allProducts = [
     savedMoney: "30.00",
     deliveries: [
       { id: 0, type: "free-delivery" },
-      { id: 1, type: "noCollection" },
-      // { id: 2, type: "free-collection-stock-availability" },
+      // { id: 1, type: "noCollection" },
+      { id: 2, type: "free-collection-stock-availability" },
       // { id: 3, type: "free-collection" },
     ],
     extraInfo: [
@@ -230,51 +230,51 @@ const allProducts = [
   {
     id: 2,
     // manufactorId: "SAMSUNG",
-    title: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot, Tablet - 32 GB, Grey",
+    title: 'SAMSUNG Galaxy Tab A8 10.5" Tablet - 64 GB, Graphite',
     productImageUrl:
-      "https://media.currys.biz/i/currysprod/M10224816_grey?$l-large$&amp;fmt=auto",
-      imagesGroup: [
-        {
-          id: 0,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 0",
-        },
-        {
-          id: 1,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_001?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 1",
-        },
-        {
-          id: 2,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_002?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 2",
-        },
-        {
-          id: 3,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_003?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 3",
-        },
-        {
-          id: 4,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_004?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 4",
-        },
-        {
-          id: 5,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_005?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 5",
-        },
-        {
-          id: 6,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_006?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 6",
-        },
-        {
-          id: 7,
-          src: "https://media.currys.biz/i/currysprod/M10224816_grey_007?$l-large$&amp;fmt=auto",
-          alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 7",
-        },
-      ],
+      "https://media.currys.biz/i/currysprod/M10234328_black?$g-small$&amp;fmt=auto",
+    imagesGroup: [
+      {
+        id: 0,
+        src: "https://media.currys.biz/i/currysprod/M10224816_grey?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 0",
+      },
+      {
+        id: 1,
+        src: "https://media.currys.biz/i/currysprod/M10224816_grey_001?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 1",
+      },
+      {
+        id: 2,
+        src: "https://media.currys.biz/i/currysprod/M10224816_grey_002?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 2",
+      },
+      {
+        id: 3,
+        src: "https://media.currys.biz/i/currysprod/M10224816_grey_003?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 3",
+      },
+      {
+        id: 4,
+        src: "https://media.currys.biz/i/currysprod/M10224816_grey_004?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 4",
+      },
+      {
+        id: 5,
+        src: "https://media.currys.biz/i/currysprod/M10224816_grey_005?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 5",
+      },
+      {
+        id: 6,
+        src: "https://media.currys.biz/i/currysprod/M10224816_grey_006?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 6",
+      },
+      {
+        id: 7,
+        src: "https://media.currys.biz/i/currysprod/M10224816_grey_007?$l-large$&amp;fmt=auto",
+        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 7",
+      },
+    ],
     formatBadges: ["freewiew", "4kHDR"],
     productDescription: [
       "Android 12",
@@ -415,8 +415,8 @@ const allProducts = [
     deliveries: [
       { id: 0, type: "free-delivery" },
       // { id: 1, type: "noCollection" },
-      // { id: 2, type: "free-collection-stock-availability" },
-      { id: 3, type: "free-collection" },
+      { id: 2, type: "free-collection-stock-availability" },
+      // { id: 3, type: "free-collection" },
     ],
     extraInfo: [
       { text: "2 year guarantee", color: "special", url: "" },

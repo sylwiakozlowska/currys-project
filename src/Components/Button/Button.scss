@@ -7,6 +7,19 @@
   font-style: normal;
 }
 .button {
+  &.is-primary {
+    background: $button_background_primary;
+    border-color: $button_border_primary;
+    color: $button_text_primary;
+    border-radius: 24px;
+    &:hover {
+      cursor: pointer;
+      background: $button_background_primary;
+    }
+    &[disabled] {
+      background: $button_background_primary;
+    }
+  }
   &.is-outlined {
     background: $button_background_primary_outlined;
     border: 1px solid $button_border_primary_outlined;
@@ -20,111 +33,103 @@
       color: $button_text_primary_outlined;
     }
   }
-  &.is-primary {
-    background: $button_background_primary;
-    border-color: $button_border_primary;
-    color: $button_text_primary;
-    border-radius: 24px;
-    &:hover {
-      cursor: pointer;
-      background: $button_background_primary;
-    }
-    // &:hover, &.is-hovered {
-    //   background-color: $button_background_primary__hover;
-    //   border-color: $button_border_primary;
-    //   color: $button_text_primary__hover;
-    // }
 
-    //   &.is-outlined {
-    //     background: $button_background_primary_outlined;
-    //     border: 2px solid $button_border_primary_outlined;
-    //     color: $button_text_primary_outlined;
+  // &:hover, &.is-hovered {
+  //   background-color: $button_background_primary__hover;
+  //   border-color: $button_border_primary;
+  //   color: $button_text_primary__hover;
+  // }
 
-    //     &:hover, &.is-hovered {
-    //       background: $button_background_primary_outlined__hover;
-    //       border-color: $button_border_primary_outlined;
-    //       color: $button_text_primary_outlined;
-    //     }
-    //   }
-    //   &.is-outlined-alt {
-    //     position: relative;
-    //     background: $button_background_primary_outlined-alt;
-    //     color: $button_text_primary_outlined-alt;
+  //   &.is-outlined {
+  //     background: $button_background_primary_outlined;
+  //     border: 2px solid $button_border_primary_outlined;
+  //     color: $button_text_primary_outlined;
 
-    //     &:hover, &.is-hovered {
-    //       position: relative;
-    //       background: $button_background_primary_outlined-alt__hover;
-    //       color: $button_text_primary_outlined-alt__hover;
+  //     &:hover, &.is-hovered {
+  //       background: $button_background_primary_outlined__hover;
+  //       border-color: $button_border_primary_outlined;
+  //       color: $button_text_primary_outlined;
+  //     }
+  //   }
+  //   &.is-outlined-alt {
+  //     position: relative;
+  //     background: $button_background_primary_outlined-alt;
+  //     color: $button_text_primary_outlined-alt;
 
-    //       &:before {
-    //         position: absolute;
-    //         content: ' ';
-    //         width: 100%;
-    //         height: 100%;
-    //         border: 1px solid $button_border_primary_outlined-alt;
-    //       }
-    //     }
+  //     &:hover, &.is-hovered {
+  //       position: relative;
+  //       background: $button_background_primary_outlined-alt__hover;
+  //       color: $button_text_primary_outlined-alt__hover;
 
-    //     &:before {
-    //       position: absolute;
-    //       width: 100%;
-    //       height: 100%;
-    //       content: ' ';
-    //       border: 2px solid $button_border_primary_outlined-alt;
-    //       border-radius: 4px;
-    //     }
-    //   }
-    // }
+  //       &:before {
+  //         position: absolute;
+  //         content: ' ';
+  //         width: 100%;
+  //         height: 100%;
+  //         border: 1px solid $button_border_primary_outlined-alt;
+  //       }
+  //     }
 
-    // &.is-secondary {
-    //   background: $button_background_secondary;
-    //   border-color: $button_border_secondary;
-    //   color: $button_text_secondary;
+  //     &:before {
+  //       position: absolute;
+  //       width: 100%;
+  //       height: 100%;
+  //       content: ' ';
+  //       border: 2px solid $button_border_primary_outlined-alt;
+  //       border-radius: 4px;
+  //     }
+  //   }
+  // }
 
-    //   &:hover, &.is-hovered {
-    //     background-color: $button_background_secondary__hover;
-    //     border-color: $button_border_secondary;
-    //     color: $button_text_secondary__hover;
-    //   }
+  // &.is-secondary {
+  //   background: $button_background_secondary;
+  //   border-color: $button_border_secondary;
+  //   color: $button_text_secondary;
 
-    //   &.is-outlined {
-    //     background: $button_background_secondary_outlined;
-    //     border: 2px solid $button_border_secondary_outlined;
-    //     color: $button_text_secondary_outlined;
+  //   &:hover, &.is-hovered {
+  //     background-color: $button_background_secondary__hover;
+  //     border-color: $button_border_secondary;
+  //     color: $button_text_secondary__hover;
+  //   }
 
-    //     &:hover, &.is-hovered {
-    //       background: $button_background_secondary_outlined__hover;
-    //     }
-    //   }
+  //   &.is-outlined {
+  //     background: $button_background_secondary_outlined;
+  //     border: 2px solid $button_border_secondary_outlined;
+  //     color: $button_text_secondary_outlined;
 
-    //   &.is-outlined-alt {
-    //     position: relative;
-    //     background: $button_background_secondary_outlined-alt;
-    //     color: $button_text_secondary_outlined-alt;
+  //     &:hover, &.is-hovered {
+  //       background: $button_background_secondary_outlined__hover;
+  //     }
+  //   }
 
-    //     &:hover, &.is-hovered {
-    //       position: relative;
-    //       background: $button_background_secondary_outlined-alt__hover;
-    //       color: $button_text_secondary_outlined-alt__hover;
+  //   &.is-outlined-alt {
+  //     position: relative;
+  //     background: $button_background_secondary_outlined-alt;
+  //     color: $button_text_secondary_outlined-alt;
 
-    //       &:before {
-    //         position: absolute;
-    //         content: ' ';
-    //         width: 100%;
-    //         height: 100%;
-    //         border: 1px solid $button_border_secondary_outlined-alt;
-    //       }
-    //     }
+  //     &:hover, &.is-hovered {
+  //       position: relative;
+  //       background: $button_background_secondary_outlined-alt__hover;
+  //       color: $button_text_secondary_outlined-alt__hover;
 
-    //     &:before {
-    //       position: absolute;
-    //       width: 100%;
-    //       height: 100%;
-    //       content: ' ';
-    //       border: 2px solid $button_border_secondary_outlined-alt;
-    //       border-radius: 4px;
-    //     }
-    //   }
-    // }
-  }
+  //       &:before {
+  //         position: absolute;
+  //         content: ' ';
+  //         width: 100%;
+  //         height: 100%;
+  //         border: 1px solid $button_border_secondary_outlined-alt;
+  //       }
+  //     }
+
+  //     &:before {
+  //       position: absolute;
+  //       width: 100%;
+  //       height: 100%;
+  //       content: ' ';
+  //       border: 2px solid $button_border_secondary_outlined-alt;
+  //       border-radius: 4px;
+  //     }
+  //   }
+  // }
+  // }
 }
