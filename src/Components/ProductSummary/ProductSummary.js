@@ -8,10 +8,14 @@ import { ProductPrice } from "./ProductPrice/ProductPrice";
 import { Compare } from "./Compare/Compare";
 import { Rating } from "../Rating/Rating";
 import { CiHeart } from "react-icons/ci";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Button } from "../Button/Button";
+
 export const ProductSummary = ({ product, onCompare }) => {
   const [shownNotification, setShownNotification] = useState(false);
-  const { rating } = product;
-
+  const { id, rating } = product;
+  // product = useSelector(selectProduct);
+  console.log("id", id);
   const checkClicked = (state) => {
     onCompare(product, state);
   };
@@ -25,11 +29,10 @@ export const ProductSummary = ({ product, onCompare }) => {
         />
         {/* </div> */}
         <div className="product-summary-content">
-          <a href="#" className="product-name-link">
-            <h1 className="product-title title is-1">{product.title}</h1>
-            <CiHeart className="heart-icon" />
-          </a>
-
+          <Link to={`/product/${id}`} className="product-name-link">
+          <h1 className="product-title title is-1">{product.title}</h1>
+          <CiHeart className="heart-icon" />
+          </Link>
           <div className="columns">
             <div className="column">
               <div className="product-rating">
@@ -54,6 +57,9 @@ export const ProductSummary = ({ product, onCompare }) => {
                 savedMoney={product.savedMoney}
                 stock={product.stock}
               />
+              <Link to={`/product/${id}`}>
+                <Button className="is-outlined">View product</Button>
+              </Link>
             </div>
           </div>
         </div>
