@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-
 import { CardComponent } from "../CardComponent/CardComponent";
-import { DeliveryOptions } from "../DeliveryOptions/DeliveryOptions";
+import { DeliveryList } from "../DeliveryOptions/DeliveryList";
 
 export const CartProduct = ({
   isSaved,
@@ -55,7 +52,15 @@ export const CartProduct = ({
               </button>
               <div className="price-status">£{totalPrice}</div>
             </div>
-            {/* <DeliveryOptions deliveries={deliveries} /> */}
+            <div className="delivery-preferences">
+              <CardComponent>
+                <p>
+                  You can choose your delivery or collection preferences at
+                  checkout
+                </p>
+                <DeliveryList deliveries={deliveries} />
+              </CardComponent>
+            </div>
           </div>
         </div>
       </CardComponent>
