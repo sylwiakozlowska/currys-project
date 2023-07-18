@@ -98,12 +98,10 @@ export const VerticalCarousel = ({ slides, leadingText }) => {
                       }}
                     >
                       <a href="#">
-                        <figure className="image is-64x64" >
-                          <img
+                          <img className="image is-64x64"
                             src={item.smallImage.src}
                             alt={item.smallImage.alt}
                           />
-                        </figure>
                       </a>
                     </li>
                   ))}
@@ -120,12 +118,10 @@ export const VerticalCarousel = ({ slides, leadingText }) => {
           </button>
         </div>
         <div className="content">
-          <figure className="image">
-            <img
+            <img className="image"
               src={slides[activeIndex].content.image}
               alt={slides[activeIndex].content.introline}
             />
-          </figure>
         </div>
       </section>
     </div>

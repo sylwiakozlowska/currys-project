@@ -2,6 +2,9 @@
   margin-top: 40px;
   background: white;
   border-radius: 20px;
+  @include fullhd {
+    margin: 3% 25%;
+  }
   ul {
     padding: 0 20px;
   }

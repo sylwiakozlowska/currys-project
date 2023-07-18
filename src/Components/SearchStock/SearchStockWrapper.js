@@ -32,9 +32,9 @@ export const SearchStockWrapper = ({deliveries}) => {
   const onChangeText = (value) => {
     dispatch(setSearchLocation(value));
   };
-  // const onClickSearch = () => {
-  //   console.log("search");
-  // };
+  const onClickSearch = () => {
+    console.log("search");
+  };
   const onSelectedLocation = (location) => {
     dispatch(chooseLocation(location));
     setShown((state) => !state);

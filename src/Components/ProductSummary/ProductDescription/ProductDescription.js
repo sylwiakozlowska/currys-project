@@ -21,25 +21,25 @@ export const ProductDescription = ({
     );
   });
 
-  const iconClass = classNames(
-    "glyph",
-    { "icon-arrow-up": shownNotification },
-    { "icon-arrow-down": !shownNotification }
-  );
-  const icon = <i className={iconClass}></i>;
-  const text = shownNotification ? "Close" : "Brief product description";
+  // const iconClass = classNames(
+  //   "glyph",
+  //   { "icon-arrow-up": shownNotification },
+  //   { "icon-arrow-down": !shownNotification }
+  // );
+  // const icon = <i className={iconClass}></i>;
+  // const text = shownNotification ? "Close" : "Brief product description";
 
   return (
     <div className="product-description-component">
       <div className="product-info">
         <ul className="product-item-description-list">{productDescriptionList}</ul>
-        <button
+        {/* <button
           className="content"
           onClick={() => setShownNotification((current) => !current)}
         >
           {text}
           {icon}
-        </button>
+        </button> */}
         <div className="product-offers-component">
           {productOffers?.length ? (
             <ProductOffers offers={productOffers} max={1} />
