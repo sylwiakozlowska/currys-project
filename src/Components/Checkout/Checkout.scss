@@ -1,9 +1,4 @@
 .checkout-component {
-  .card {
-    border: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
   width: 300px;
   .payment-list {
     display: flex;
@@ -21,15 +16,34 @@
       }
     }
   }
-  .promotions {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cdd8df;
+  .checkout-card-wrapper,
+  .credit-card-wrapper {
+    margin-bottom: 20px;
   }
-  .price-details {
-    margin-bottom: 10px;
+  .checkout-card-wrapper {
+    border: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    .promotions {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #cdd8df;
+    }
+    .price-details {
+      margin-bottom: 10px;
+    }
+    .button {
+      width: 100%;
+      padding: 20px 0;
+    }
+    .pay-with {
+      p {
+        padding: 20px 0;
+        text-align: center;
+      }
+    }
   }
-  .button {
-    width: 100%;
+  .credit-card-wrapper {
+    background: #e9eaeb;
   }
 }

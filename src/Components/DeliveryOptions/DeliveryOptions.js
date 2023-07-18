@@ -7,7 +7,6 @@ export const DeliveryOptions = ({ className, deliveries }) => {
   return (
     <div className="delivery-options-component">
       <CardComponent className={className}>
-        <p>You can choose your delivery or collection preferences at checkout</p>
         <DeliveryList deliveries={deliveries} />
       </CardComponent>
     </div>
