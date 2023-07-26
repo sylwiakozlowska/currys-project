@@ -45,16 +45,6 @@ export const SearchBar = ({
     setText("");
   };
   useEffect(() => {
-    //if (the input has text)
-    //{then open the dropdown}
-    //else the input is empty
-    //{then dont open the dropdown}
-
-    // if (text.length > 0) {
-    //   setShown(true);
-    // } else {
-    //   setShown(false);
-    // }
     setShown(
       !!(simpleProducts.length || detailedProducts.length) &&
         text.length > MIN_LENGTH

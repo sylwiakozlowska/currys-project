@@ -10,7 +10,7 @@ import {
   selectStatus,
 } from "../../Store/features/productSummary/productSummarySlice";
 import { FilterOptions } from "../FilterOptions/FilterOptions";
-import RingLoader from "react-spinners/RingLoader";
+// import RingLoader from "react-spinners/RingLoader";
 
 const props = {
   display: "block",

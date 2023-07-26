@@ -25,7 +25,6 @@ import { SearchStockWrapper } from "../SearchStock/SearchStockWrapper";
 import { CardComponent } from "../CardComponent/CardComponent";
 import { ShareComponent } from "../ShareComponent/ShareComponent";
 import { VerticalCarousel } from "../VerticalCarousel/VerticalCarousel";
-// import { CiHeart } from "react-icons/ci";
 import { BsHeart, BsHeartFill, BsShare } from "react-icons/bs";
 
 const settings = {

@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 import "../../../styles.scss";
 import { Rating } from "../../Rating/Rating";
 
-const COUNT = 5;
 export const DetailedProductList = ({
   detailedProducts,
   onSelected,
   status,
 }) => {
-  const shownProductListCount = 3;
+  console.log(detailedProducts.length, "detailedProducts")
+  const shownProductListCount = 5;
   const shownProductList = detailedProducts.slice(0, shownProductListCount);
   const onClickDetailedProduct = (e, id, detailedProducts) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ export const DetailedProductList = ({
                   <img src={src} alt="product image" />
                   <div className="column is-one-third text-rating-group">
                     <span className="column">{text}</span>
-                    <Rating value={rating} count={COUNT} />
+                    <Rating value={rating.value} count={rating.count} />
                   </div>
                   <div className="column product-price">{price}</div>
                 </div>

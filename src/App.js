@@ -14,11 +14,11 @@ import { Product } from "./Components/Product/Product";
 import { Cart } from "./Pages/Cart/Cart";
 import { ShippingPage } from "./Pages/ShippingPage/ShippingPage";
 import { useSelector, useDispatch } from "react-redux";
-import RingLoader from "react-spinners/RingLoader";
 import { SavedPage } from "./Pages/SavedPage/SavedPage";
 import { Footer } from "./Components/Footer/Footer";
 import { FooterLinks } from "./Components/FooterLinks/FooterLinks";
 import { FooterSocialMedia } from "./Components/FooterSocialMedia/FooterSocialMedia";
+import RingLoader from "react-spinners/RingLoader";
 
 import {
   BrowserRouter as Router,
