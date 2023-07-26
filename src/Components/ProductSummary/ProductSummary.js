@@ -1,23 +1,36 @@
 import React, { useState } from "react";
 // import PropTypes from "prop-types";
 // import classNames from "classnames";
+import { useSelector, useDispatch } from "react-redux";
 import { ProductImage } from "./ProductImage/ProductImage";
 import { ProductDescription } from "./ProductDescription/ProductDescription";
 import { NotificationBox } from "../NotificationDropdownBox/NotificationBox/NotificationBox";
 import { ProductPrice } from "./ProductPrice/ProductPrice";
 import { Compare } from "./Compare/Compare";
 import { Rating } from "../Rating/Rating";
-import { CiHeart } from "react-icons/ci";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { Button } from "../Button/Button";
+import {
+  toggleSaved,
+  selectSavedItemCount,
+  selectSavedProduct,
+} from "../../Store/features/saved/savedProductSlice";
 
 export const ProductSummary = ({ product, onCompare }) => {
   const [shownNotification, setShownNotification] = useState(false);
   const { id, rating } = product;
+  const dispatch = useDispatch();
+  const isSaved = useSelector((state) => selectSavedProduct(state, Number(id)));
+
   // product = useSelector(selectProduct);
   console.log("id", id);
   const checkClicked = (state) => {
     onCompare(product, state);
+  };
+
+  const onClickToggleSaved = () => {
+    dispatch(toggleSaved(product));
   };
   return (
     <div className="product-summary-component">
@@ -29,10 +42,20 @@ export const ProductSummary = ({ product, onCompare }) => {
         />
         {/* </div> */}
         <div className="product-summary-content">
-          <Link to={`/product/${id}`} className="product-name-link">
-          <h1 className="product-title title is-1">{product.title}</h1>
-          <CiHeart className="heart-icon" />
-          </Link>
+          <div className="product-heading-info">
+            <Link to={`/product/${id}`} className="product-link">
+              <h1 className="product-title title is-1">{product.title}</h1>
+            </Link>
+            {isSaved ? (
+              <button className="button-toggle-saved" onClick={onClickToggleSaved}>
+                <BsHeartFill className="heart-icon" fill="red" />
+              </button>
+            ) : (
+              <button className="button-toggle-saved" onClick={onClickToggleSaved}>
+                <BsHeart className="heart-icon" />
+              </button>
+            )}
+          </div>
           <div className="columns">
             <div className="column">
               <div className="product-rating">

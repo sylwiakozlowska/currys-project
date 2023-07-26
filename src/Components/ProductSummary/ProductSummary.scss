@@ -24,23 +24,31 @@
   .product-summary-content {
     padding-left: 20px;
     width: 100%;
-    .product-name-link {
+    .product-heading-info {
       display: flex;
+      margin-bottom: 20px;
+    }
+    .product-link {
+      flex-grow: 1;
       color: #213038;
       margin: 0;
     }
     .product-title {
-      flex-grow: 1;
       &:hover {
         text-decoration: underline;
       }
+    }
+    .button-toggle-saved {
+      border: none;
+      background: none;
     }
     .column {
       padding: 10px 20px;
     }
     .button {
+      margin-top: 20px;
       padding: 10px;
-      width: 100%
+      width: 100%;
     }
   }
   // .product-images {
