@@ -344,29 +344,29 @@ const allProducts = [
   {
     id: 3,
     // manufactorId: "SAMSUNG",
-    title: "SAMSUNG Galaxy A14 - 64 GB, Black",
+    title: "APPLE iPhone 14 - 128 GB, Midnight",
     productImageUrl:
       "https://media.currys.biz/i/currysprod/M10248085_black?$g-small$&amp;fmt=auto",
     imagesGroup: [
       {
         id: 0,
-        src: "https://media.currys.biz/i/currysprod/M10224816_grey?$l-large$&amp;fmt=auto",
-        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 0",
+        src: "https://media.currys.biz/i/currysprod/10242696?$l-large$&amp;fmt=auto",
+        alt: "APPLE iPhone 14 - 128 GB, Midnight image number 0",
       },
       {
         id: 1,
-        src: "https://media.currys.biz/i/currysprod/M10224816_grey_001?$l-large$&amp;fmt=auto",
-        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 1",
+        src: "https://media.currys.biz/i/currysprod/10242696_001?$l-large$&amp;fmt=auto",
+        alt: "APPLE iPhone 14 - 128 GB, Midnight image number 1",
       },
       {
         id: 2,
-        src: "https://media.currys.biz/i/currysprod/M10224816_grey_002?$l-large$&amp;fmt=auto",
-        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 2",
+        src: "https://media.currys.biz/i/currysprod/10242696_002?$l-large$&amp;fmt=auto",
+        alt: "APPLE iPhone 14 - 128 GB, Midnight image number 2",
       },
       {
         id: 3,
-        src: "https://media.currys.biz/i/currysprod/M10224816_grey_003?$l-large$&amp;fmt=auto",
-        alt: "SAMSUNG Galaxy Tab A7 Lite 8.7&quot; Tablet - 32 GB, Grey image number 3",
+        src: "https://media.currys.biz/i/currysprod/10242696?$l-large$&amp;fmt=auto",
+        alt: "APPLE iPhone 14 - 128 GB, Midnight image number 0",
       },
       {
         id: 4,
@@ -407,10 +407,10 @@ const allProducts = [
       { id: 1, price: "6.10", text: "per month*", selected: false },
     ],
     rating: {
-      value: 3,
+      value: 4.5,
       count: 5,
     },
-    productPrice: "1049.00",
+    productPrice: "849.00",
     savedMoney: "300.00",
     deliveries: [
       { id: 0, type: "free-delivery" },

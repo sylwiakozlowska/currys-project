@@ -52,7 +52,7 @@ app.get("/search", (req, res) => {
       ),
       detailedProducts: searchProducts.detailedProducts
         .filter(({ text }) => new RegExp(query, "i").test(text))
-        .slice(0, 2),
+        .slice(0, 5),
     });
   }, 2000);
 });
