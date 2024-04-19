@@ -58,7 +58,7 @@ export const Product = () => {
 
   useEffect(() => {
     dispatch(fetchProduct(id));
-  }, [dispatch, fetchProduct, id]);
+  }, [dispatch, id]);
 
   if (status === "loading") {
     return "loading";

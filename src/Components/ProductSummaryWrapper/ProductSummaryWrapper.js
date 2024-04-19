@@ -51,8 +51,3 @@ export const ProductSummaryWrapper = () => {
     </section>
   );
 };
-{
-  /* {products.length && (
-        <ComparePanel products={productsToCompare} onClear={onCompare} />
-      )} */
-}
